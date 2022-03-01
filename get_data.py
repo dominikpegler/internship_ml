@@ -7,7 +7,7 @@ def get_data():
 
     df = pd.read_csv("data",sep='\t',index_col=0)
     
-    X = df.copy()[[
+    X = df[[
         "ffmq_aa1",
         "ffmq_ds2",
         "ffmq_aa2",
@@ -58,6 +58,6 @@ def get_data():
         "erwerbstaetig_sub"
     ]]
     
-    y = df.copy()["audit"]
+    y = df["audit"]
     
     return X,y
