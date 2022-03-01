@@ -10,9 +10,7 @@ def main():
     start = time.time()
 
     X, y = get_data()
-
     linreg_mod = LinearRegression()
-
     cv = ShuffleSplit(n_splits=5, test_size=0.2, random_state=0)
     scores = cross_val_score(linreg_mod, X, y, cv=cv)
 
