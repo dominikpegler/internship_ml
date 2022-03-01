@@ -17,6 +17,7 @@ def main():
     scores = cross_val_score(linreg_mod, X, y, cv=cv)
 
     print(f"{scores.mean():.2f} accuracy with a standard deviation of {scores.std():.2f}")
+
     end = time.time()
 
     print(f"\nExecution time: {(end-start):.3f}s")
