@@ -30,16 +30,16 @@ if not flickr.token_valid(perms='read'):
 
 
 json_obj = flickr.activity.userComments(
-    user=USER_OF_INTEREST, per_page='10', type="comment")
+    user=USER_OF_INTEREST, per_page=50, page=2, type="photo")
 
 
 for item in json_obj["items"]["item"]:
-    print(item.get("type"), item.get("id"))
+    print(item.get("type"), item.get("id"), ",owner:", item.get("owner"))
 
     for event in item.get("activity").get("event"):
-
-        print("*", event.get("type"), "by", event.get(
-            "username"), ":", event.get("_content"))
-        print("\n")
+        if event.get("user") == USER_OF_INTEREST:
+            print("*", event.get("type"), "by", event.get(
+                "username"), ":", event.get("_content"))
+            print("\n")
 
     print("---\n")
