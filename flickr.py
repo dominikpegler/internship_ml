@@ -18,13 +18,11 @@ if not flickr.token_valid(perms='read'):
     # Get a request token
     flickr.get_request_token(oauth_callback='oob')
 
-    # Open a browser at the authentication URL. Do this however
-    # you want, as long as the user visits that URL.
+    # Open a browser at the authentication URL
     authorize_url = flickr.auth_url(perms='read')
     webbrowser.open_new_tab(authorize_url)
 
-    # Get the verifier code from the user. Do this however you
-    # want, as long as the user gives the application the code.
+    # Get the verifier code from the user
     verifier = str(input('Verifier code: '))
 
     # Trade the request token for an access token
