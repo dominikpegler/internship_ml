@@ -5,6 +5,9 @@ credentials.json
 __pycache__/
 *.py[cod]
 *$py.class
+*.tex
+docs/*.tex
+docs/tmp/*
 
 # C extensions
 *.so

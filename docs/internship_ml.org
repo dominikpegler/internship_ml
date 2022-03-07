@@ -1,0 +1,217 @@
+#+TITLE: ML Internship 2022
+#+SUBTITLE: Department for Cognition, Emotion & Research Methods \\
+#+SUBTITLE: [[https://www.github.com/dominikpegler/internship_ml][code repo]] -- [[https://meet.jit.si/UnexpectedMachineLearningAlgorithmsLeftNoDoubt][jitsi room]]
+#+AUTHOR: Dominik PEGLER
+#+EMAIL: dominikpegler@posteo.org
+# +SETUPFILE: setupfile_article_fls_en.org
+#+FILETAGS: ml
+#+CATEGORY: machine-learning
+#+LANGUAGE: de
+#+STARTUP: overview indent
+#+OPTIONS: ^:nil toc:nil email:nil num:nil todo:t email:t tags:t broken-links:mark p:t html-style:nil
+# +INFOJS_OPT: view:overview toc:nil mouse:#efefef buttons:t sdepth:nil
+#+EXPORT_FILE_NAME: ~/Dropbox/org/internship_ml_page/index.html
+#+html: <center>
+#+ATTR_HTML: :width 75px
+file:./img/mlicon2.png
+#+html: </center>
+#+TOC: headlines 2
+
+
+# kann im weiteren verlauf ins berichtformat transformiert werden.
+# Praktikum März und April 2022
+# 8 Wochen je 30h = 240h
+
+* Tasks
+
+** TODO Standard-ML-Script erstellen
+DEADLINE: <2022-03-13 Sun>
+   :LOGBOOK:
+   CLOCK: [2022-03-06 Sun 22:15]--[2022-03-06 Sun 23:19] =>  1:04
+   CLOCK: [2022-03-06 Sun 17:15]--[2022-03-06 Sun 18:05] =>  0:50
+   CLOCK: [2022-03-05 Sat 11:00]--[2022-03-05 Sat 13:03] =>  2:03
+   CLOCK: [2022-03-04 Fri 23:00]--[2022-03-05 Sat 00:30] =>  1:30
+   CLOCK: [2022-03-04 Fri 14:00]--[2022-03-04 Fri 15:30] =>  1:30
+   CLOCK: [2022-03-03 Thu 23:00]--[2022-03-04 Fri 00:25] =>  1:25
+   CLOCK: [2022-03-03 Thu 11:45]--[2022-03-03 Thu 14:56] =>  3:11
+   CLOCK: [2022-03-02 Wed 21:00]--[2022-03-02 Wed 23:55] =>  2:55
+   CLOCK: [2022-03-02 Wed 12:20]--[2022-03-02 Wed 15:20] =>  3:00
+   CLOCK: [2022-03-01 Tue 22:30]--[2022-03-01 Tue 23:50] =>  1:20
+   CLOCK: [2022-03-01 Tue 19:35]--[2022-03-01 Tue 20:44] =>  1:09
+   CLOCK: [2022-02-28 Mon 19:45]--[2022-02-28 Mon 23:43] =>  3:58
+   :END:
+
+#+begin_src python :session *py* :exports both :results output :dir /home/user/data/psy_misc/internship_ml
+
+from sklearn.model_selection import GroupShuffleSplit
+from sklearn.linear_model import Ridge
+from get_data import get_data
+from utils import split_train_test
+import time
+
+def main():
+
+    start = time.time()
+
+    X, y = get_data()
+
+    hps = [0.0, 0.2, 0.5, 1.0, 1.5]
+    hp_name = 'alpha'
+
+    # main cv splitter
+    cv = GroupShuffleSplit(
+        n_splits=5,
+        test_size=0.2,
+        random_state=0)
+
+    # Iterate over main splitter
+    for i_cv, (i_train, i_test) in enumerate(cv.split(X, y, groups=X.index), start=1):
+
+        y_train, y_test = split_train_test(y, i_train, i_test)
+        X_train, X_test = split_train_test(X, i_train, i_test)
+
+        print(f"Split {i_cv}")
+
+        # iterate over possible hyperparameters
+        for j, hp in enumerate(hps):
+            m = Ridge(alpha=hp)
+            result = m.fit(X_train, y_train.ravel())
+            score = result.score(X_test, y_test)
+            print(f"{hp_name}={hp}: R²={score:.2f}")
+
+        print("\n")
+
+    print(f"Execution time: {(time.time()-start):.3f}s")
+
+
+if __name__ == "__main__":
+    main()
+
+#+end_src
+
+   #+RESULTS:
+   #+begin_example
+   Split 1
+   alpha=0.0: R²=0.23
+   alpha=0.2: R²=0.23
+   alpha=0.5: R²=0.23
+   alpha=1.0: R²=0.23
+   alpha=1.5: R²=0.24
+
+
+   Split 2
+   alpha=0.0: R²=0.41
+   alpha=0.2: R²=0.41
+   alpha=0.5: R²=0.41
+   alpha=1.0: R²=0.41
+   alpha=1.5: R²=0.41
+
+
+   Split 3
+   alpha=0.0: R²=0.28
+   alpha=0.2: R²=0.28
+   alpha=0.5: R²=0.28
+   alpha=1.0: R²=0.29
+   alpha=1.5: R²=0.29
+
+
+   Split 4
+   alpha=0.0: R²=0.31
+   alpha=0.2: R²=0.31
+   alpha=0.5: R²=0.31
+   alpha=1.0: R²=0.31
+   alpha=1.5: R²=0.31
+
+
+   Split 5
+   alpha=0.0: R²=0.14
+   alpha=0.2: R²=0.14
+   alpha=0.5: R²=0.14
+   alpha=1.0: R²=0.14
+   alpha=1.5: R²=0.14
+
+
+   Execution time: 0.126s
+   #+end_example
+
+** TODO Bericht
+DEADLINE: <2022-04-30 Sat>
+
+*** Woche 1
+Einführung, Data preprocessing & cross-validation, Scikit-learn-Dokumentation,
+Regularisierte lineare Modelle (Ridge, Lasso etc.)
+*** Woche 2
+
+*** Wochen 3--8
+
+* Meetings
+
+** TODO 2. Meeting mit David
+SCHEDULED: <2022-03-08 Tue 10:00>
+*** Themen
+     1. Fortschritt beim Script
+     2. Besprechen der Regressoren und Hyperparameter
+     3. Möglichkeit Mitschauen via zoom bei TEWA1?
+     4. Besprechen von anderem möglichen Projekt zu Computer vision
+     
+** TODO 2. Meeting mit Steyrl-Gruppe via Skype
+SCHEDULED: <2022-03-09 Wed>
+** DONE 1. Meeting mit Steyrl-Gruppe via Skype
+    CLOSED: [2022-03-02 Wed 11:35] SCHEDULED: <2022-03-02 Wed 11:00>
+    :LOGBOOK:
+    CLOCK: [2022-03-02 Wed 11:00]--[2022-03-02 Wed 11:35] =>  0:35
+    :END:
+- Vorstellung Gruppe und Masterarbeiten
+
+** DONE 1. Meeting mit David via Zoom
+    CLOSED: [2022-02-28 Mon 10:55] SCHEDULED: <2022-02-28 Mon 10:00>
+    :LOGBOOK:
+    CLOCK: [2022-02-28 Mon 10:00]--[2022-02-28 Mon 10:55] =>  0:55
+    :END:
+
+    Folgendes wurde besprochen:
+
+    1. Thema des Praktikums
+       1. Daten aus Bachelorarbeit mit ML-Methoden bearbeiten
+          (regularisierte lineare Modelle & Random Forests)
+       2. Weitere Themen sehen wir dann im weiteren Verlauf
+    2. Allgemeines zu den Python Libraries und Arbeitsweise
+    3. Erstes Ziel definiert: Standard-ML-Script erstellen, das vorerst nur
+       1. Daten einliest,
+       2. Daten in X und y, sowie in Trainings- und Testdaten teilt,
+       3. Kreuzvalidierung (GroupShuffleSplit) vornimmt
+	  1. Äußere Schleife (zur Vermeidung von Overfitting)
+	  2. Innere Schleife (zum Finden der optimalen Hyperparameter)
+    4. Nächster Termin vereinbart in zwei Tagen (zusammen mit seinen
+       Masterbetreuungen)
+   
+* Literatur
+:LOGBOOK:
+CLOCK: [2022-03-06 Sun 18:45]--[2022-03-06 Sun 20:10] =>  1:25
+CLOCK: [2022-03-05 Sat 19:05]--[2022-03-05 Sat 22:35] =>  3:30
+:END:
+
+- Géron, A. (2019). Hands-On Machine Learning with Scikit-Learn, Keras,
+  and TensorFlow, 2nd Edition. O'Reilly. https://www.oreilly.com/library/view/hands-on-machine-learning/9781492032632
+
+- scikit-learn developers (2022). Scikit-learn User Guide. https://scikit-learn.org/stable/user_guide.html
+
+
+
+* code                                                             :noexport:
+
+#   #+begin_src elisp
+
+# (custom-set-faces
+#  '(org-block-begin-line
+#    ((t (:underline "#A7A6AA" :foreground "#008ED1" :background "#EAEAFF" :extend t))))
+#  '(org-block
+#    ((t (:background "#EFF0F1" :extend t))))
+#  '(org-block-end-line
+#    ((t (:overline "#A7A6AA" :foreground "#008ED1" :background "#EAEAFF" :extend t))))
+#  )
+
+
+#   #+end_src
+
+  #+RESULTS:
