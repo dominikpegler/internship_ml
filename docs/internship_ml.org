@@ -1,6 +1,6 @@
 #+TITLE: ML Internship 2022
 #+SUBTITLE: Department for Cognition, Emotion & Research Methods \\
-#+SUBTITLE: [[https://www.github.com/dominikpegler/internship_ml][code repo]] -- [[https://meet.jit.si/UnexpectedMachineLearningAlgorithmsLeftNoDoubt][jitsi room]]
+#+SUBTITLE: [[https://www.github.com/dominikpegler/internship_ml][code repo]]
 #+AUTHOR: Dominik PEGLER
 #+EMAIL: dominikpegler@posteo.org
 # +SETUPFILE: setupfile_article_fls_en.org
@@ -10,7 +10,7 @@
 #+STARTUP: overview indent
 #+OPTIONS: ^:nil toc:nil email:nil num:nil todo:t email:t tags:t broken-links:mark p:t html-style:nil
 # +INFOJS_OPT: view:overview toc:nil mouse:#efefef buttons:t sdepth:nil
-#+EXPORT_FILE_NAME: ~/Dropbox/org/internship_ml_page/index.html
+#+EXPORT_FILE_NAME: ~/Dropbox/org/internship_ml/docs/index.html
 #+html: <center>
 #+ATTR_HTML: :width 75px
 file:./img/mlicon2.png
@@ -27,6 +27,8 @@ file:./img/mlicon2.png
 ** TODO Standard-ML-Script erstellen
 DEADLINE: <2022-03-13 Sun>
    :LOGBOOK:
+   CLOCK: [2022-03-08 Tue 19:55]--[2022-03-08 Tue 22:11] =>  2:16
+   CLOCK: [2022-03-07 Mon 16:15]--[2022-03-07 Mon 19:19] =>  3:04
    CLOCK: [2022-03-06 Sun 22:15]--[2022-03-06 Sun 23:19] =>  1:04
    CLOCK: [2022-03-06 Sun 17:15]--[2022-03-06 Sun 18:05] =>  0:50
    CLOCK: [2022-03-05 Sat 11:00]--[2022-03-05 Sat 13:03] =>  2:03
@@ -72,7 +74,7 @@ def main():
 
         print(f"Split {i_cv}")
 
-        # iterate over possible hyperparameters
+        # iterate over possible models
         for j, hp in enumerate(hps):
             m = Ridge(alpha=hp)
             result = m.fit(X_train, y_train.ravel())
@@ -141,21 +143,21 @@ DEADLINE: <2022-04-30 Sat>
 Einführung, Data preprocessing & cross-validation, Scikit-learn-Dokumentation,
 Regularisierte lineare Modelle (Ridge, Lasso etc.)
 *** Woche 2
-
+Literatur, Fortsetzung Script
 *** Wochen 3--8
 
 * Meetings
 
-** TODO 2. Meeting mit David
-SCHEDULED: <2022-03-08 Tue 10:00>
-*** Themen
+** TODO 2. Meeting mit Steyrl-Gruppe via Skype
+SCHEDULED: <2022-03-15 Tue 11:00>
+** DONE 2. Meeting mit David
+CLOSED: [2022-03-08 Tue 22:05] SCHEDULED: <2022-03-08 Tue 10:00>
+:LOGBOOK:
+CLOCK: [2022-03-08 Tue 10:00]--[2022-03-08 Tue 10:50] =>  0:50
+:END:
      1. Fortschritt beim Script
      2. Besprechen der Regressoren und Hyperparameter
-     3. Möglichkeit Mitschauen via zoom bei TEWA1?
-     4. Besprechen von anderem möglichen Projekt zu Computer vision
      
-** TODO 2. Meeting mit Steyrl-Gruppe via Skype
-SCHEDULED: <2022-03-09 Wed>
 ** DONE 1. Meeting mit Steyrl-Gruppe via Skype
     CLOSED: [2022-03-02 Wed 11:35] SCHEDULED: <2022-03-02 Wed 11:00>
     :LOGBOOK:
@@ -187,6 +189,7 @@ SCHEDULED: <2022-03-09 Wed>
    
 * Literatur
 :LOGBOOK:
+CLOCK: [2022-03-07 Mon 19:20]--[2022-03-07 Mon 23:55] =>  4:35
 CLOCK: [2022-03-06 Sun 18:45]--[2022-03-06 Sun 20:10] =>  1:25
 CLOCK: [2022-03-05 Sat 19:05]--[2022-03-05 Sat 22:35] =>  3:30
 :END:

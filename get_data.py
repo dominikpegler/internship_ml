@@ -1,4 +1,6 @@
 import pandas as pd
+from sklearn.preprocessing import StandardScaler
+from sklearn.impute import SimpleImputer
 
 
 def get_data():
@@ -62,3 +64,28 @@ def get_data():
     y = df[["audit"]]
 
     return X, y
+
+def get_housing_data():
+    
+    df = pd.read_csv("housing.csv")
+    y_label = "median_house_value"
+    
+    # convert categorial variables to bool
+    df = pd.get_dummies(df,prefix="",prefix_sep="")
+
+    # impute missing values
+    imputer = SimpleImputer(strategy="median")
+    df = pd.DataFrame(imputer.fit_transform(df),columns=df.columns)
+
+    # rescale the features
+    non_numeric_features = ['<1H OCEAN', 'INLAND', 'ISLAND', 'NEAR BAY',
+           'NEAR OCEAN']
+    do_not_to_scale = non_numeric_features+[y_label]
+    scaler = StandardScaler()
+    df_scaled = pd.DataFrame(scaler.fit_transform(df.drop(do_not_to_scale,axis=1)),columns=df.columns.drop(do_not_to_scale))
+    df = df_scaled.join(df[do_not_to_scale])
+    
+    X = df[df.columns.drop(y_label)]
+    y = df[[y_label]]
+    
+    return X,y
