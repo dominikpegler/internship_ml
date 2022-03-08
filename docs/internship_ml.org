@@ -92,49 +92,7 @@ if __name__ == "__main__":
 #+end_src
 
    #+RESULTS:
-   #+begin_example
-   Split 1
-   alpha=0.0: R²=0.23
-   alpha=0.2: R²=0.23
-   alpha=0.5: R²=0.23
-   alpha=1.0: R²=0.23
-   alpha=1.5: R²=0.24
-
-
-   Split 2
-   alpha=0.0: R²=0.41
-   alpha=0.2: R²=0.41
-   alpha=0.5: R²=0.41
-   alpha=1.0: R²=0.41
-   alpha=1.5: R²=0.41
-
-
-   Split 3
-   alpha=0.0: R²=0.28
-   alpha=0.2: R²=0.28
-   alpha=0.5: R²=0.28
-   alpha=1.0: R²=0.29
-   alpha=1.5: R²=0.29
-
-
-   Split 4
-   alpha=0.0: R²=0.31
-   alpha=0.2: R²=0.31
-   alpha=0.5: R²=0.31
-   alpha=1.0: R²=0.31
-   alpha=1.5: R²=0.31
-
-
-   Split 5
-   alpha=0.0: R²=0.14
-   alpha=0.2: R²=0.14
-   alpha=0.5: R²=0.14
-   alpha=1.0: R²=0.14
-   alpha=1.5: R²=0.14
-
-
-   Execution time: 0.126s
-   #+end_example
+   : Split 1
 
 ** TODO Bericht
 DEADLINE: <2022-04-30 Sat>
