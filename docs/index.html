@@ -3,7 +3,7 @@
  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="de" xml:lang="de">
   <head>
-    <!-- 2022-03-08 Tue 22:20 -->
+    <!-- 2022-03-08 Tue 22:21 -->
     <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>ML Internship 2022</title>
@@ -2931,7 +2931,7 @@
       </h1>
       <center>
 
-	<div id="org2de09a6" class="figure">
+	<div id="org65981c3" class="figure">
 	  <p><img src="./img/mlicon2.png" alt="mlicon2.png" width="75px" />
 	  </p>
 	</div>
@@ -2940,32 +2940,32 @@
 	<h2>Inhaltsverzeichnis</h2>
 	<div id="text-table-of-contents">
 	  <ul>
-	    <li><a href="#orgbf382d9">Tasks</a>
+	    <li><a href="#orgc02e8fd">Tasks</a>
 	      <ul>
-		<li><a href="#orge01d6b6"><span class="todo TODO">TODO</span> Standard-ML-Script erstellen</a></li>
-		<li><a href="#org2ff3d76"><span class="todo TODO">TODO</span> Bericht</a></li>
+		<li><a href="#org3d9e503"><span class="todo TODO">TODO</span> Standard-ML-Script erstellen</a></li>
+		<li><a href="#org752d8e1"><span class="todo TODO">TODO</span> Bericht</a></li>
 	      </ul>
 	    </li>
-	    <li><a href="#org8f50b14">Meetings</a>
+	    <li><a href="#org6f813e1">Meetings</a>
 	      <ul>
-		<li><a href="#org7d9aa62"><span class="todo TODO">TODO</span> 2. Meeting mit Steyrl-Gruppe via Skype</a></li>
-		<li><a href="#org74aab25"><span class="done DONE">DONE</span> 2. Meeting mit David</a></li>
-		<li><a href="#org5969aae"><span class="done DONE">DONE</span> 1. Meeting mit Steyrl-Gruppe via Skype</a></li>
-		<li><a href="#orgfed0244"><span class="done DONE">DONE</span> 1. Meeting mit David via Zoom</a></li>
+		<li><a href="#org01c3d3a"><span class="todo TODO">TODO</span> 2. Meeting mit Steyrl-Gruppe via Skype</a></li>
+		<li><a href="#orge772bff"><span class="done DONE">DONE</span> 2. Meeting mit David</a></li>
+		<li><a href="#org914f2a8"><span class="done DONE">DONE</span> 1. Meeting mit Steyrl-Gruppe via Skype</a></li>
+		<li><a href="#org998c11a"><span class="done DONE">DONE</span> 1. Meeting mit David via Zoom</a></li>
 	      </ul>
 	    </li>
-	    <li><a href="#org65cf33d">Literatur</a></li>
+	    <li><a href="#orgafff629">Literatur</a></li>
 	  </ul>
 	</div>
       </div>
 
-      <div id="outline-container-orgbf382d9" class="outline-2">
-	<h2 id="orgbf382d9">Tasks</h2>
-	<div class="outline-text-2" id="text-orgbf382d9">
+      <div id="outline-container-orgc02e8fd" class="outline-2">
+	<h2 id="orgc02e8fd">Tasks</h2>
+	<div class="outline-text-2" id="text-orgc02e8fd">
 	</div>
-	<div id="outline-container-orge01d6b6" class="outline-3">
-	  <h3 id="orge01d6b6"><span class="todo TODO">TODO</span> Standard-ML-Script erstellen</h3>
-	  <div class="outline-text-3" id="text-orge01d6b6">
+	<div id="outline-container-org3d9e503" class="outline-3">
+	  <h3 id="org3d9e503"><span class="todo TODO">TODO</span> Standard-ML-Script erstellen</h3>
+	  <div class="outline-text-3" id="text-org3d9e503">
 	    <p><span class="timestamp-wrapper"><span class="timestamp-kwd">DEADLINE:</span> <span class="timestamp">&lt;2022-03-13 Sun&gt;</span></span></p>
 	    <div class="org-src-container">
 	      <pre class="src src-python">
@@ -3001,7 +3001,7 @@
 		<span style="background-color: #f5f5f5;"> </span>   <span style="background-color: #f5f5f5;"> </span>   <span style="color: #2aa1ae; background-color: #fff;"># </span><span style="color: #2aa1ae; background-color: #fff;">iterate over possible models</span>
 		<span style="background-color: #f5f5f5;"> </span>   <span style="background-color: #f5f5f5;"> </span>   <span style="color: #4f97d7; font-weight: bold;">for</span> j, hp <span style="color: #4f97d7; font-weight: bold;">in</span> <span style="color: #4f97d7;">enumerate</span>(hps):
 		<span style="background-color: #f5f5f5;"> </span>   <span style="background-color: #f5f5f5;"> </span>   <span style="background-color: #f5f5f5;"> </span>   <span style="color: #7590db;">m</span> = Ridge(alpha=hp)
-		<span style="background-color: #f5f5f5;"> </span>   <span style="background-color: #f5f5f5;"> </span>   <span style="background-color: #f5f5f5;"> </span>   <span style="color: #7590db;">result</span> = m.fit(X_train, y_train.ravel())
+		<span style="background-color: #f5f5f5;"> </span>   <span style="background-color: #f5f5f5;"> </span>   <span style="background-color: #f5f5f5;"> </span>   <span style="color: #7590db;">result</span> = m.fit(X_train, y_train)
 		<span style="background-color: #f5f5f5;"> </span>   <span style="background-color: #f5f5f5;"> </span>   <span style="background-color: #f5f5f5;"> </span>   <span style="color: #7590db;">score</span> = result.score(X_test, y_test)
 		<span style="background-color: #f5f5f5;"> </span>   <span style="background-color: #f5f5f5;"> </span>   <span style="background-color: #f5f5f5;"> </span>   <span style="color: #4f97d7; font-weight: bold;">print</span>(f<span style="color: #2d9574;">"{hp_name}={hp}: R&#178;={score:.2f}"</span>)
 		
@@ -3016,54 +3016,94 @@
 	      </pre>
 	    </div>
 
-	    <pre class="example">
+	    <pre class="example" id="org8be288d">
 	      Split 1
+	      alpha=0.0: R²=0.23
+	      alpha=0.2: R²=0.23
+	      alpha=0.5: R²=0.23
+	      alpha=1.0: R²=0.23
+	      alpha=1.5: R²=0.24
+
+
+	      Split 2
+	      alpha=0.0: R²=0.41
+	      alpha=0.2: R²=0.41
+	      alpha=0.5: R²=0.41
+	      alpha=1.0: R²=0.41
+	      alpha=1.5: R²=0.41
+
+
+	      Split 3
+	      alpha=0.0: R²=0.28
+	      alpha=0.2: R²=0.28
+	      alpha=0.5: R²=0.28
+	      alpha=1.0: R²=0.29
+	      alpha=1.5: R²=0.29
+
+
+	      Split 4
+	      alpha=0.0: R²=0.31
+	      alpha=0.2: R²=0.31
+	      alpha=0.5: R²=0.31
+	      alpha=1.0: R²=0.31
+	      alpha=1.5: R²=0.31
+
+
+	      Split 5
+	      alpha=0.0: R²=0.14
+	      alpha=0.2: R²=0.14
+	      alpha=0.5: R²=0.14
+	      alpha=1.0: R²=0.14
+	      alpha=1.5: R²=0.14
+
+
+	      Execution time: 0.141s
 	    </pre>
 	  </div>
 	</div>
 
-	<div id="outline-container-org2ff3d76" class="outline-3">
-	  <h3 id="org2ff3d76"><span class="todo TODO">TODO</span> Bericht</h3>
-	  <div class="outline-text-3" id="text-org2ff3d76">
+	<div id="outline-container-org752d8e1" class="outline-3">
+	  <h3 id="org752d8e1"><span class="todo TODO">TODO</span> Bericht</h3>
+	  <div class="outline-text-3" id="text-org752d8e1">
 	    <p><span class="timestamp-wrapper"><span class="timestamp-kwd">DEADLINE:</span> <span class="timestamp">&lt;2022-04-30 Sat&gt;</span></span></p>
 	  </div>
 
-	  <div id="outline-container-orga96feed" class="outline-4">
-	    <h4 id="orga96feed">Woche 1</h4>
-	    <div class="outline-text-4" id="text-orga96feed">
+	  <div id="outline-container-org9176ca3" class="outline-4">
+	    <h4 id="org9176ca3">Woche 1</h4>
+	    <div class="outline-text-4" id="text-org9176ca3">
 	      <p>
 		Einführung, Data preprocessing &amp; cross-validation, Scikit-learn-Dokumentation,
 		Regularisierte lineare Modelle (Ridge, Lasso etc.)
 	      </p>
 	    </div>
 	  </div>
-	  <div id="outline-container-orgcdf1b77" class="outline-4">
-	    <h4 id="orgcdf1b77">Woche 2</h4>
-	    <div class="outline-text-4" id="text-orgcdf1b77">
+	  <div id="outline-container-org42a95d1" class="outline-4">
+	    <h4 id="org42a95d1">Woche 2</h4>
+	    <div class="outline-text-4" id="text-org42a95d1">
 	      <p>
 		Literatur, Fortsetzung Script
 	      </p>
 	    </div>
 	  </div>
-	  <div id="outline-container-orgf0e1fd7" class="outline-4">
-	    <h4 id="orgf0e1fd7">Wochen 3&#x2013;8</h4>
+	  <div id="outline-container-orgbce95e0" class="outline-4">
+	    <h4 id="orgbce95e0">Wochen 3&#x2013;8</h4>
 	  </div>
 	</div>
       </div>
 
-      <div id="outline-container-org8f50b14" class="outline-2">
-	<h2 id="org8f50b14">Meetings</h2>
-	<div class="outline-text-2" id="text-org8f50b14">
+      <div id="outline-container-org6f813e1" class="outline-2">
+	<h2 id="org6f813e1">Meetings</h2>
+	<div class="outline-text-2" id="text-org6f813e1">
 	</div>
-	<div id="outline-container-org7d9aa62" class="outline-3">
-	  <h3 id="org7d9aa62"><span class="todo TODO">TODO</span> 2. Meeting mit Steyrl-Gruppe via Skype</h3>
-	  <div class="outline-text-3" id="text-org7d9aa62">
+	<div id="outline-container-org01c3d3a" class="outline-3">
+	  <h3 id="org01c3d3a"><span class="todo TODO">TODO</span> 2. Meeting mit Steyrl-Gruppe via Skype</h3>
+	  <div class="outline-text-3" id="text-org01c3d3a">
 	    <p><span class="timestamp-wrapper"><span class="timestamp-kwd">SCHEDULED:</span> <span class="timestamp">&lt;2022-03-15 Tue 11:00&gt;</span></span></p>
 	  </div>
 	</div>
-	<div id="outline-container-org74aab25" class="outline-3">
-	  <h3 id="org74aab25"><span class="done DONE">DONE</span> 2. Meeting mit David</h3>
-	  <div class="outline-text-3" id="text-org74aab25">
+	<div id="outline-container-orge772bff" class="outline-3">
+	  <h3 id="orge772bff"><span class="done DONE">DONE</span> 2. Meeting mit David</h3>
+	  <div class="outline-text-3" id="text-orge772bff">
 	    <p><span class="timestamp-wrapper"><span class="timestamp-kwd">CLOSED:</span> <span class="timestamp">[2022-03-08 Tue 22:05] </span> <span class="timestamp-kwd">SCHEDULED:</span> <span class="timestamp">&lt;2022-03-08 Tue 10:00&gt;</span></span></p>
 	    <ol class="org-ol">
 	      <li>Fortschritt beim Script</li>
@@ -3072,9 +3112,9 @@
 	  </div>
 	</div>
 
-	<div id="outline-container-org5969aae" class="outline-3">
-	  <h3 id="org5969aae"><span class="done DONE">DONE</span> 1. Meeting mit Steyrl-Gruppe via Skype</h3>
-	  <div class="outline-text-3" id="text-org5969aae">
+	<div id="outline-container-org914f2a8" class="outline-3">
+	  <h3 id="org914f2a8"><span class="done DONE">DONE</span> 1. Meeting mit Steyrl-Gruppe via Skype</h3>
+	  <div class="outline-text-3" id="text-org914f2a8">
 	    <p><span class="timestamp-wrapper"><span class="timestamp-kwd">CLOSED:</span> <span class="timestamp">[2022-03-02 Wed 11:35] </span> <span class="timestamp-kwd">SCHEDULED:</span> <span class="timestamp">&lt;2022-03-02 Wed 11:00&gt;</span></span></p>
 	    <ul class="org-ul">
 	      <li>Vorstellung Gruppe und Masterarbeiten</li>
@@ -3082,9 +3122,9 @@
 	  </div>
 	</div>
 
-	<div id="outline-container-orgfed0244" class="outline-3">
-	  <h3 id="orgfed0244"><span class="done DONE">DONE</span> 1. Meeting mit David via Zoom</h3>
-	  <div class="outline-text-3" id="text-orgfed0244">
+	<div id="outline-container-org998c11a" class="outline-3">
+	  <h3 id="org998c11a"><span class="done DONE">DONE</span> 1. Meeting mit David via Zoom</h3>
+	  <div class="outline-text-3" id="text-org998c11a">
 	    <p><span class="timestamp-wrapper"><span class="timestamp-kwd">CLOSED:</span> <span class="timestamp">[2022-02-28 Mon 10:55] </span> <span class="timestamp-kwd">SCHEDULED:</span> <span class="timestamp">&lt;2022-02-28 Mon 10:00&gt;</span></span></p>
 	    <p>
 	      Folgendes wurde besprochen:
@@ -3115,9 +3155,9 @@
 	</div>
       </div>
 
-      <div id="outline-container-org65cf33d" class="outline-2">
-	<h2 id="org65cf33d">Literatur</h2>
-	<div class="outline-text-2" id="text-org65cf33d">
+      <div id="outline-container-orgafff629" class="outline-2">
+	<h2 id="orgafff629">Literatur</h2>
+	<div class="outline-text-2" id="text-orgafff629">
 	  <ul class="org-ul">
 	    <li>Géron, A. (2019). Hands-On Machine Learning with Scikit-Learn, Keras,
 	      and TensorFlow, 2nd Edition. O'Reilly. <a href="https://www.oreilly.com/library/view/hands-on-machine-learning/9781492032632">https://www.oreilly.com/library/view/hands-on-machine-learning/9781492032632</a></li>
@@ -3130,7 +3170,7 @@
     <div id="postamble" class="status">
       <p class="author">Autor: Dominik PEGLER</p>
       <p class="email">Email: <a href="mailto:dominikpegler@posteo.org">dominikpegler@posteo.org</a></p>
-      <p class="date">Created: 2022-03-08 Tue 22:20</p>
+      <p class="date">Created: 2022-03-08 Tue 22:21</p>
       <p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
     </div>
   </body>
