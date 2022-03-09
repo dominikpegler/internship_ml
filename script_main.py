@@ -1,7 +1,7 @@
 from sklearn.model_selection import GroupShuffleSplit
 from sklearn.model_selection import RandomizedSearchCV
 from sklearn.linear_model import ElasticNet
-from get_data import get_housing_data
+from get_data import get_data
 from utils import split_train_test
 import time
 
@@ -10,7 +10,7 @@ def main():
 
     start = time.time()
 
-    X, y = get_housing_data()
+    X, y = get_data()
 
     hyperparams_grid = {
         "alpha":

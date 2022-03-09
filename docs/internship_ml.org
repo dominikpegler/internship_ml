@@ -27,6 +27,9 @@ file:./img/mlicon2.png
 ** TODO Standard-ML-Script erstellen
 DEADLINE: <2022-03-13 Sun>
    :LOGBOOK:
+   CLOCK: [2022-03-09 Wed 19:02]
+   CLOCK: [2022-03-09 Wed 17:15]--[2022-03-09 Wed 18:15] =>  1:00
+   CLOCK: [2022-03-09 Wed 13:00]--[2022-03-09 Wed 15:15] =>  2:15
    CLOCK: [2022-03-08 Tue 19:55]--[2022-03-08 Tue 23:00] =>  3:05
    CLOCK: [2022-03-07 Mon 16:15]--[2022-03-07 Mon 19:19] =>  3:04
    CLOCK: [2022-03-06 Sun 22:15]--[2022-03-06 Sun 23:19] =>  1:04
@@ -48,7 +51,7 @@ DEADLINE: <2022-03-13 Sun>
 from sklearn.model_selection import GroupShuffleSplit
 from sklearn.model_selection import RandomizedSearchCV
 from sklearn.linear_model import ElasticNet
-from get_data import get_housing_data
+from get_data import get_data
 from utils import split_train_test
 import time
 
@@ -57,7 +60,7 @@ def main():
 
     start = time.time()
 
-    X, y = get_housing_data()
+    X, y = get_data()
 
     hyperparams_grid = {
         "alpha":
