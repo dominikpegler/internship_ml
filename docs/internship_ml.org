@@ -46,6 +46,8 @@ DEADLINE: <2022-03-13 Sun>
    CLOCK: [2022-02-28 Mon 19:45]--[2022-02-28 Mon 23:43] =>  3:58
    :END:
 
+Vorhersage von problematischem Alkoholkonsum anhand von Trait Mindfulness (FFMQ)
+   
 #+begin_src python :session *py* :exports both :results output :dir /home/user/data/psy_misc/internship_ml
 
 from sklearn.model_selection import GroupShuffleSplit
