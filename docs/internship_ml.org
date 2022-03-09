@@ -48,7 +48,7 @@ DEADLINE: <2022-03-13 Sun>
 from sklearn.model_selection import GroupShuffleSplit
 from sklearn.model_selection import RandomizedSearchCV
 from sklearn.linear_model import Ridge
-from get_data import get_data
+from get_data import get_housing_data
 from utils import split_train_test
 import time
 
@@ -57,7 +57,7 @@ def main():
 
     start = time.time()
     
-    X, y = get_data()
+    X, y = get_housing_data()
     
     hyperparams_grid = {"alpha": [0, 1, 10, 50, 100, 150, 175, 200, 225, 250, 275, 300, 325, 350, 375, 400, 450, 500, 700]}
     
@@ -101,51 +101,36 @@ if __name__ == "__main__":
    #+RESULTS:
    #+begin_example
    Split 1
-   alpha=0.0: R²=0.23
-   alpha=10.0: R²=0.26
-   alpha=100.0: R²=0.33
-   alpha=1000.0: R²=0.28
-   alpha=10000.0: R²=0.07
-   alpha=100000.0: R²=-0.00
+   best model: Ridge(alpha=175)
+   score on train data: 0.4135031705261416
+   score on  test data: 0.34184279369583503
 
 
    Split 2
-   alpha=0.0: R²=0.41
-   alpha=10.0: R²=0.40
-   alpha=100.0: R²=0.37
-   alpha=1000.0: R²=0.27
-   alpha=10000.0: R²=0.08
-   alpha=100000.0: R²=0.00
+   best model: Ridge(alpha=325)
+   score on train data: 0.3750219749088204
+   score on  test data: 0.3314578657437346
 
 
    Split 3
-   alpha=0.0: R²=0.28
-   alpha=10.0: R²=0.30
-   alpha=100.0: R²=0.33
-   alpha=1000.0: R²=0.27
-   alpha=10000.0: R²=0.07
-   alpha=100000.0: R²=0.00
+   best model: Ridge(alpha=225)
+   score on train data: 0.40876226512662284
+   score on  test data: 0.32626281745262575
 
 
    Split 4
-   alpha=0.0: R²=0.31
-   alpha=10.0: R²=0.32
-   alpha=100.0: R²=0.34
-   alpha=1000.0: R²=0.28
-   alpha=10000.0: R²=0.09
-   alpha=100000.0: R²=0.01
+   best model: Ridge(alpha=225)
+   score on train data: 0.402936433716616
+   score on  test data: 0.34148479321013503
 
 
    Split 5
-   alpha=0.0: R²=0.14
-   alpha=10.0: R²=0.16
-   alpha=100.0: R²=0.21
-   alpha=1000.0: R²=0.24
-   alpha=10000.0: R²=0.09
-   alpha=100000.0: R²=0.01
+   best model: Ridge(alpha=175)
+   score on train data: 0.4490062411714646
+   score on  test data: 0.22463502011492265
 
 
-   Execution time: 0.158s
+   Execution time: 2.017s
    #+end_example
 
 ** TODO Bericht

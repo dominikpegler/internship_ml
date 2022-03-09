@@ -3,7 +3,7 @@
  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="de" xml:lang="de">
   <head>
-    <!-- 2022-03-09 Wed 17:23 -->
+    <!-- 2022-03-09 Wed 17:38 -->
     <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>ML Internship 2022</title>
@@ -2931,7 +2931,7 @@
       </h1>
       <center>
 
-	<div id="org00a7fc5" class="figure">
+	<div id="org5be3ec0" class="figure">
 	  <p><img src="./img/mlicon2.png" alt="mlicon2.png" width="75px" />
 	  </p>
 	</div>
@@ -2940,39 +2940,39 @@
 	<h2>Inhaltsverzeichnis</h2>
 	<div id="text-table-of-contents">
 	  <ul>
-	    <li><a href="#org26c0909">Tasks</a>
+	    <li><a href="#orgebfd8f4">Tasks</a>
 	      <ul>
-		<li><a href="#org98e18eb"><span class="todo TODO">TODO</span> Standard-ML-Script erstellen</a></li>
-		<li><a href="#orgfa5a642"><span class="todo TODO">TODO</span> Bericht</a></li>
+		<li><a href="#orgea80a11"><span class="todo TODO">TODO</span> Standard-ML-Script erstellen</a></li>
+		<li><a href="#org5e33b27"><span class="todo TODO">TODO</span> Bericht</a></li>
 	      </ul>
 	    </li>
-	    <li><a href="#org4494c8b">Meetings</a>
+	    <li><a href="#org30b8313">Meetings</a>
 	      <ul>
-		<li><a href="#org74859bf"><span class="todo TODO">TODO</span> 2. Meeting mit Steyrl-Gruppe via Skype</a></li>
-		<li><a href="#orgcdaa987"><span class="done DONE">DONE</span> 2. Meeting mit David</a></li>
-		<li><a href="#org00ef819"><span class="done DONE">DONE</span> 1. Meeting mit Steyrl-Gruppe via Skype</a></li>
-		<li><a href="#org19a577d"><span class="done DONE">DONE</span> 1. Meeting mit David via Zoom</a></li>
+		<li><a href="#orga3c9754"><span class="todo TODO">TODO</span> 2. Meeting mit Steyrl-Gruppe via Skype</a></li>
+		<li><a href="#orga8ac003"><span class="done DONE">DONE</span> 2. Meeting mit David</a></li>
+		<li><a href="#orgab83124"><span class="done DONE">DONE</span> 1. Meeting mit Steyrl-Gruppe via Skype</a></li>
+		<li><a href="#org2f41934"><span class="done DONE">DONE</span> 1. Meeting mit David via Zoom</a></li>
 	      </ul>
 	    </li>
-	    <li><a href="#orgc9f847a">Literatur</a></li>
+	    <li><a href="#org8555819">Literatur</a></li>
 	  </ul>
 	</div>
       </div>
 
-      <div id="outline-container-org26c0909" class="outline-2">
-	<h2 id="org26c0909">Tasks</h2>
-	<div class="outline-text-2" id="text-org26c0909">
+      <div id="outline-container-orgebfd8f4" class="outline-2">
+	<h2 id="orgebfd8f4">Tasks</h2>
+	<div class="outline-text-2" id="text-orgebfd8f4">
 	</div>
-	<div id="outline-container-org98e18eb" class="outline-3">
-	  <h3 id="org98e18eb"><span class="todo TODO">TODO</span> Standard-ML-Script erstellen</h3>
-	  <div class="outline-text-3" id="text-org98e18eb">
+	<div id="outline-container-orgea80a11" class="outline-3">
+	  <h3 id="orgea80a11"><span class="todo TODO">TODO</span> Standard-ML-Script erstellen</h3>
+	  <div class="outline-text-3" id="text-orgea80a11">
 	    <p><span class="timestamp-wrapper"><span class="timestamp-kwd">DEADLINE:</span> <span class="timestamp">&lt;2022-03-13 Sun&gt;</span></span></p>
 	    <div class="org-src-container">
 	      <pre class="src src-python">
 		<span style="color: #4f97d7; font-weight: bold;">from</span> sklearn.model_selection <span style="color: #4f97d7; font-weight: bold;">import</span> GroupShuffleSplit
 		<span style="color: #4f97d7; font-weight: bold;">from</span> sklearn.model_selection <span style="color: #4f97d7; font-weight: bold;">import</span> RandomizedSearchCV
 		<span style="color: #4f97d7; font-weight: bold;">from</span> sklearn.linear_model <span style="color: #4f97d7; font-weight: bold;">import</span> Ridge
-		<span style="color: #4f97d7; font-weight: bold;">from</span> get_data <span style="color: #4f97d7; font-weight: bold;">import</span> get_data
+		<span style="color: #4f97d7; font-weight: bold;">from</span> get_data <span style="color: #4f97d7; font-weight: bold;">import</span> get_housing_data
 		<span style="color: #4f97d7; font-weight: bold;">from</span> utils <span style="color: #4f97d7; font-weight: bold;">import</span> split_train_test
 		<span style="color: #4f97d7; font-weight: bold;">import</span> time
 
@@ -2981,7 +2981,7 @@
 		
 		<span style="background-color: #f5f5f5;"> </span>   <span style="color: #7590db;">start</span> = time.time()
 		<span style="background-color: #f5f5f5;"> </span>   
-		<span style="background-color: #f5f5f5;"> </span>   <span style="color: #7590db;">X</span>, <span style="color: #7590db;">y</span> = get_data()
+		<span style="background-color: #f5f5f5;"> </span>   <span style="color: #7590db;">X</span>, <span style="color: #7590db;">y</span> = get_housing_data()
 		<span style="background-color: #f5f5f5;"> </span>   
 		<span style="background-color: #f5f5f5;"> </span>   <span style="color: #7590db;">hyperparams_grid</span> = {<span style="color: #2d9574;">"alpha"</span>: [0, 1, 10, 50, 100, 150, 175, 200, 225, 250, 275, 300, 325, 350, 375, 400, 450, 500, 700]}
 		<span style="background-color: #f5f5f5;"> </span>   
@@ -3023,84 +3023,88 @@
 	      </pre>
 	    </div>
 
-	    <pre class="example" id="org67d3135">
+	    <pre class="example" id="org9291a4d">
 	      Split 1
-	      best model: Ridge(alpha=250)
-	      score on train data: 0.3984053916809538
-	      score on  test data: 0.3408954312892344
+	      /home/user/miniconda3/envs/py39/lib/python3.9/site-packages/sklearn/linear_model/_ridge.py:157: LinAlgWarning: Ill-conditioned matrix (rcond=2.60741e-17): result may not be accurate.
+	      return linalg.solve(A, Xy, sym_pos=True, overwrite_a=True).T
+	      /home/user/miniconda3/envs/py39/lib/python3.9/site-packages/sklearn/linear_model/_ridge.py:157: LinAlgWarning: Ill-conditioned matrix (rcond=9.51057e-18): result may not be accurate.
+	      return linalg.solve(A, Xy, sym_pos=True, overwrite_a=True).T
+	      best model: Ridge(alpha=400)
+	      score on train data: 0.6437435453540272
+	      score on  test data: 0.6331768351514946
 
 
 	      Split 2
-	      best model: Ridge(alpha=350)
-	      score on train data: 0.37199472294244873
-	      score on  test data: 0.32833561737440853
+	      best model: Ridge(alpha=700)
+	      score on train data: 0.6417269167498425
+	      score on  test data: 0.6239371518366774
 
 
 	      Split 3
-	      best model: Ridge(alpha=200)
-	      score on train data: 0.41312730257743613
-	      score on  test data: 0.3278334573632141
+	      best model: Ridge(alpha=500)
+	      score on train data: 0.6373896961524828
+	      score on  test data: 0.6520620247666246
 
 
 	      Split 4
-	      best model: Ridge(alpha=225)
-	      score on train data: 0.402936433716616
-	      score on  test data: 0.34148479321013503
+	      best model: Ridge(alpha=450)
+	      score on train data: 0.6372985688287104
+	      score on  test data: 0.6585157112684251
 
 
 	      Split 5
-	      best model: Ridge(alpha=200)
-	      score on train data: 0.4439725637084335
-	      score on  test data: 0.2289617759065644
+	      best model: Ridge(alpha=700)
+	      score on train data: 0.639076264611163
+	      score on  test data: 0.6356444771306535
 
 
-	      Execution time: 2.185s
+	      Execution time: 2.664s
 	    </pre>
 	  </div>
 	</div>
 
-	<div id="outline-container-orgfa5a642" class="outline-3">
-	  <h3 id="orgfa5a642"><span class="todo TODO">TODO</span> Bericht</h3>
-	  <div class="outline-text-3" id="text-orgfa5a642">
+	<div id="outline-container-org5e33b27" class="outline-3">
+	  <h3 id="org5e33b27"><span class="todo TODO">TODO</span> Bericht</h3>
+	  <div class="outline-text-3" id="text-org5e33b27">
 	    <p><span class="timestamp-wrapper"><span class="timestamp-kwd">DEADLINE:</span> <span class="timestamp">&lt;2022-04-30 Sat&gt;</span></span></p>
 	  </div>
 
-	  <div id="outline-container-org60a5c9a" class="outline-4">
-	    <h4 id="org60a5c9a">Woche 1</h4>
-	    <div class="outline-text-4" id="text-org60a5c9a">
+	  <div id="outline-container-org4d67be0" class="outline-4">
+	    <h4 id="org4d67be0">Woche 1</h4>
+	    <div class="outline-text-4" id="text-org4d67be0">
 	      <p>
 		Einführung, Data preprocessing &amp; cross-validation, Scikit-learn-Dokumentation,
 		Regularisierte lineare Modelle (Ridge, Lasso etc.)
 	      </p>
 	    </div>
 	  </div>
-	  <div id="outline-container-orga40f157" class="outline-4">
-	    <h4 id="orga40f157">Woche 2</h4>
-	    <div class="outline-text-4" id="text-orga40f157">
+	  <div id="outline-container-orga8e4d0f" class="outline-4">
+	    <h4 id="orga8e4d0f">Woche 2</h4>
+	    <div class="outline-text-4" id="text-orga8e4d0f">
 	      <p>
 		Literatur, Fortsetzung Script
 	      </p>
 	    </div>
 	  </div>
-	  <div id="outline-container-org3669fc6" class="outline-4">
-	    <h4 id="org3669fc6">Wochen 3&#x2013;8</h4>
+	  <div id="outline-container-org25e9840" class="outline-4">
+	    <h4 id="org25e9840">Wochen 3&#x2013;8</h4>
 	  </div>
 	</div>
       </div>
 
-      <div id="outline-container-org4494c8b" class="outline-2">
-	<h2 id="org4494c8b">Meetings</h2>
-	<div class="outline-text-2" id="text-org4494c8b">
+      <div id="outline-container-org30b8313" class="outline-2">
+	<h2 id="org30b8313">Meetings</h2>
+	<div class="outline-text-2" id="text-org30b8313">
 	</div>
-	<div id="outline-container-org74859bf" class="outline-3">
-	  <h3 id="org74859bf"><span class="todo TODO">TODO</span> 2. Meeting mit Steyrl-Gruppe via Skype</h3>
-	  <div class="outline-text-3" id="text-org74859bf">
+	<div id="outline-container-orga3c9754" class="outline-3">
+	  <h3 id="orga3c9754"><span class="todo TODO">TODO</span> 2. Meeting mit Steyrl-Gruppe via Skype</h3>
+	  <div class="outline-text-3" id="text-orga3c9754">
 	    <p><span class="timestamp-wrapper"><span class="timestamp-kwd">SCHEDULED:</span> <span class="timestamp">&lt;2022-03-15 Tue 11:00&gt;</span></span></p>
 	  </div>
 	</div>
-	<div id="outline-container-orgcdaa987" class="outline-3">
-	  <h3 id="orgcdaa987"><span class="done DONE">DONE</span> 2. Meeting mit David</h3>
-	  <div class="outline-text-3" id="text-orgcdaa987">
+	<div id="outline-container-orga8ac003" class="outline-3">
+	  <h3 id="orga8ac003"><span class="done DONE">DONE</span> 2. Meeting mit David</h3>
+	  <div class="outline-text-3" id="text-orga8ac003">
 	    <p><span class="timestamp-wrapper"><span class="timestamp-kwd">CLOSED:</span> <span class="timestamp">[2022-03-08 Tue 22:05] </span> <span class="timestamp-kwd">SCHEDULED:</span> <span class="timestamp">&lt;2022-03-08 Tue 10:00&gt;</span></span></p>
 	    <ol class="org-ol">
 	      <li>Fortschritt beim Script</li>
@@ -3109,9 +3113,9 @@
 	  </div>
 	</div>
 
-	<div id="outline-container-org00ef819" class="outline-3">
-	  <h3 id="org00ef819"><span class="done DONE">DONE</span> 1. Meeting mit Steyrl-Gruppe via Skype</h3>
-	  <div class="outline-text-3" id="text-org00ef819">
+	<div id="outline-container-orgab83124" class="outline-3">
+	  <h3 id="orgab83124"><span class="done DONE">DONE</span> 1. Meeting mit Steyrl-Gruppe via Skype</h3>
+	  <div class="outline-text-3" id="text-orgab83124">
 	    <p><span class="timestamp-wrapper"><span class="timestamp-kwd">CLOSED:</span> <span class="timestamp">[2022-03-02 Wed 11:35] </span> <span class="timestamp-kwd">SCHEDULED:</span> <span class="timestamp">&lt;2022-03-02 Wed 11:00&gt;</span></span></p>
 	    <ul class="org-ul">
 	      <li>Vorstellung Gruppe und Masterarbeiten</li>
@@ -3119,9 +3123,9 @@
 	  </div>
 	</div>
 
-	<div id="outline-container-org19a577d" class="outline-3">
-	  <h3 id="org19a577d"><span class="done DONE">DONE</span> 1. Meeting mit David via Zoom</h3>
-	  <div class="outline-text-3" id="text-org19a577d">
+	<div id="outline-container-org2f41934" class="outline-3">
+	  <h3 id="org2f41934"><span class="done DONE">DONE</span> 1. Meeting mit David via Zoom</h3>
+	  <div class="outline-text-3" id="text-org2f41934">
 	    <p><span class="timestamp-wrapper"><span class="timestamp-kwd">CLOSED:</span> <span class="timestamp">[2022-02-28 Mon 10:55] </span> <span class="timestamp-kwd">SCHEDULED:</span> <span class="timestamp">&lt;2022-02-28 Mon 10:00&gt;</span></span></p>
 	    <p>
 	      Folgendes wurde besprochen:
@@ -3152,9 +3156,9 @@
 	</div>
       </div>
 
-      <div id="outline-container-orgc9f847a" class="outline-2">
-	<h2 id="orgc9f847a">Literatur</h2>
-	<div class="outline-text-2" id="text-orgc9f847a">
+      <div id="outline-container-org8555819" class="outline-2">
+	<h2 id="org8555819">Literatur</h2>
+	<div class="outline-text-2" id="text-org8555819">
 	  <ul class="org-ul">
 	    <li>Géron, A. (2019). Hands-On Machine Learning with Scikit-Learn, Keras,
 	      and TensorFlow, 2nd Edition. O'Reilly. <a href="https://www.oreilly.com/library/view/hands-on-machine-learning/9781492032632">https://www.oreilly.com/library/view/hands-on-machine-learning/9781492032632</a></li>
@@ -3167,7 +3171,7 @@
     <div id="postamble" class="status">
       <p class="author">Autor: Dominik PEGLER</p>
       <p class="email">Email: <a href="mailto:dominikpegler@posteo.org">dominikpegler@posteo.org</a></p>
-      <p class="date">Created: 2022-03-09 Wed 17:23</p>
+      <p class="date">Created: 2022-03-09 Wed 17:38</p>
       <p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
     </div>
   </body>
