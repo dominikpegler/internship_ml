@@ -8,7 +8,7 @@ def get_data():
     loads tab-separated file and returns pandas dataframes for X and y
     """
 
-    df = pd.read_csv("data", sep='\t', index_col=0)
+    df = pd.read_csv("mindfulness.csv", sep='\t', index_col=0)
 
     X = df[[
         "ffmq_aa1",
@@ -65,27 +65,29 @@ def get_data():
 
     return X, y
 
+
 def get_housing_data():
-    
+
     df = pd.read_csv("housing.csv")
     y_label = "median_house_value"
-    
+
     # convert categorial variables to bool
-    df = pd.get_dummies(df,prefix="",prefix_sep="")
+    df = pd.get_dummies(df, prefix="", prefix_sep="")
 
     # impute missing values
     imputer = SimpleImputer(strategy="median")
-    df = pd.DataFrame(imputer.fit_transform(df),columns=df.columns)
+    df = pd.DataFrame(imputer.fit_transform(df), columns=df.columns)
 
     # rescale the features
     non_numeric_features = ['<1H OCEAN', 'INLAND', 'ISLAND', 'NEAR BAY',
-           'NEAR OCEAN']
+                            'NEAR OCEAN']
     do_not_to_scale = non_numeric_features+[y_label]
     scaler = StandardScaler()
-    df_scaled = pd.DataFrame(scaler.fit_transform(df.drop(do_not_to_scale,axis=1)),columns=df.columns.drop(do_not_to_scale))
+    df_scaled = pd.DataFrame(scaler.fit_transform(
+        df.drop(do_not_to_scale, axis=1)), columns=df.columns.drop(do_not_to_scale))
     df = df_scaled.join(df[do_not_to_scale])
-    
+
     X = df[df.columns.drop(y_label)]
     y = df[[y_label]]
-    
-    return X,y
+
+    return X, y
