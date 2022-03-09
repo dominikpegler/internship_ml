@@ -1,9 +1,8 @@
 from sklearn.model_selection import GroupShuffleSplit
-from sklearn.ensemble import RandomForestRegressor
+from sklearn.linear_model import Ridge
 from get_data import get_data
 from utils import split_train_test
 import time
-
 
 def main():
 
@@ -11,7 +10,8 @@ def main():
 
     X, y = get_data()
 
-    dummy_hyperparams = [2, 5, 8]
+    hps = [0.0, 1e1, 1e2, 1e3, 1e4]
+    hp_name = 'alpha'
 
     # main cv splitter
     cv = GroupShuffleSplit(
@@ -25,15 +25,20 @@ def main():
         y_train, y_test = split_train_test(y, i_train, i_test)
         X_train, X_test = split_train_test(X, i_train, i_test)
 
-        # Iterate over possible hyperparameters
-        for j, hp in enumerate(dummy_hyperparams):
-            m = RandomForestRegressor()
-            result = m.fit(X_train, y_train.ravel())
-            score = result.score(X_test, y_test)
-            print(f"Split {i_cv} with DummyHypParam {hp} => R²: {score:.2f}")
+        print(f"Split {i_cv}")
 
-    print(f"\nExecution time: {(time.time()-start):.3f}s")
+        # iterate over possible models
+        for j, hp in enumerate(hps):
+            m = Ridge(alpha=hp)
+            result = m.fit(X_train, y_train)
+            score = result.score(X_test, y_test)
+            print(f"{hp_name}={hp}: R²={score:.2f}")
+
+        print("\n")
+
+    print(f"Execution time: {(time.time()-start):.3f}s")
 
 
 if __name__ == "__main__":
     main()
+
