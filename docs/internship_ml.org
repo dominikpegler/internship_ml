@@ -27,7 +27,7 @@ file:./img/mlicon2.png
 ** TODO Standard-ML-Script erstellen
 DEADLINE: <2022-03-13 Sun>
    :LOGBOOK:
-   CLOCK: [2022-03-09 Wed 19:02]
+   CLOCK: [2022-03-09 Wed 19:02]--[2022-03-09 Wed 21:13] =>  2:11
    CLOCK: [2022-03-09 Wed 17:15]--[2022-03-09 Wed 18:15] =>  1:00
    CLOCK: [2022-03-09 Wed 13:00]--[2022-03-09 Wed 15:15] =>  2:15
    CLOCK: [2022-03-08 Tue 19:55]--[2022-03-08 Tue 23:00] =>  3:05
