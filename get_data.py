@@ -8,7 +8,7 @@ def get_data():
     loads tab-separated file and returns pandas dataframes for X and y
     """
 
-    df = pd.read_csv("mindfulness.csv", sep='\t', index_col=0)
+    df = pd.read_csv("./data/mindfulness.csv", sep='\t', index_col=0)
 
     X = df[[
         "ffmq_aa1",
@@ -68,7 +68,7 @@ def get_data():
 
 def get_housing_data():
 
-    df = pd.read_csv("housing.csv")
+    df = pd.read_csv("./data/housing.csv")
     y_label = "median_house_value"
 
     # convert categorial variables to bool
