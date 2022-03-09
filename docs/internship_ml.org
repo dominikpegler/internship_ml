@@ -58,21 +58,20 @@ def main():
     start = time.time()
 
     X, y = get_housing_data()
-
-    hyperparams_grid = {"alpha": [1, 10, 50, 100, 150, 175, 200, 225, 250, 275,
-                                  300, 325, 350, 375, 400, 450, 500, 700, 1000],
+    hyperparams_grid = {"alpha": [0.1, 0.5, 1, 10, 50, 100, 150, 175, 200, 225,
+                                  250, 275, 300, 325, 350, 375, 400, 450, 500, 700,
+                                  1000],
                         "l1_ratio": [0.01, 0.05, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7,
                                      0.8, 0.9, 0.95, 0.99]}
-
     reg = ElasticNet()
 
-    # Outer CV
+    # outer CV
     outer_cv = GroupShuffleSplit(
         n_splits=5,
         test_size=0.2,
         random_state=0)
 
-    # Iterate over main splitter
+    # Iterate over outer CV splitter
     for i_cv, (i_train, i_test) in enumerate(outer_cv.split(X, y, groups=X.index), start=1):
 
         y_train, y_test = split_train_test(y, i_train, i_test)
@@ -102,27 +101,27 @@ if __name__ == "__main__":
    #+RESULTS:
    #+begin_example
    Split 1
-   best model: ElasticNet(alpha=1, l1_ratio=0.95)
-   score on train data: 0.638956432706804
-   score on  test data: 0.6273295157467076
+   best model: ElasticNet(alpha=0.1, l1_ratio=0.6)
+   score on train data: 0.6408830871487755
+   score on  test data: 0.6296417794620053
 
 
    Split 2
-   best model: ElasticNet(alpha=1, l1_ratio=0.95)
-   score on train data: 0.6402922976028544
-   score on  test data: 0.6222885247909571
+   best model: ElasticNet(alpha=0.1, l1_ratio=0.6)
+   score on train data: 0.6421658304122375
+   score on  test data: 0.6244548003243462
 
 
    Split 3
-   best model: ElasticNet(alpha=1, l1_ratio=0.9)
-   score on train data: 0.6232786644758622
-   score on  test data: 0.6352241335010895
+   best model: ElasticNet(alpha=0.1)
+   score on train data: 0.6336695795675005
+   score on  test data: 0.6474037756037557
 
 
    Split 4
-   best model: ElasticNet(alpha=1, l1_ratio=0.9)
-   score on train data: 0.6222482016652948
-   score on  test data: 0.6434799437340415
+   best model: ElasticNet(alpha=0.1, l1_ratio=0.7)
+   score on train data: 0.6367876011324975
+   score on  test data: 0.6580576873961166
 
 
    Split 5
@@ -131,7 +130,7 @@ if __name__ == "__main__":
    score on  test data: 0.6340913881550586
 
 
-   Execution time: 22.220s
+   Execution time: 43.542s
    #+end_example
 
 ** TODO Bericht
