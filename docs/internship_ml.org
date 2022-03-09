@@ -101,36 +101,42 @@ if __name__ == "__main__":
    #+RESULTS:
    #+begin_example
    Split 1
-   best model: Ridge(alpha=175)
-   score on train data: 0.4135031705261416
-   score on  test data: 0.34184279369583503
+   best model: Ridge(alpha=700)
+   score on train data: 0.640429750632078
+   score on  test data: 0.629093367098714
 
 
    Split 2
-   best model: Ridge(alpha=325)
-   score on train data: 0.3750219749088204
-   score on  test data: 0.3314578657437346
+   /home/user/miniconda3/envs/py39/lib/python3.9/site-packages/sklearn/linear_model/_ridge.py:157: LinAlgWarning: Ill-conditioned matrix (rcond=2.97077e-18): result may not be accurate.
+     return linalg.solve(A, Xy, sym_pos=True, overwrite_a=True).T
+   /home/user/miniconda3/envs/py39/lib/python3.9/site-packages/sklearn/linear_model/_ridge.py:157: LinAlgWarning: Ill-conditioned matrix (rcond=1.8442e-17): result may not be accurate.
+     return linalg.solve(A, Xy, sym_pos=True, overwrite_a=True).T
+   /home/user/miniconda3/envs/py39/lib/python3.9/site-packages/sklearn/linear_model/_ridge.py:157: LinAlgWarning: Ill-conditioned matrix (rcond=1.5574e-17): result may not be accurate.
+     return linalg.solve(A, Xy, sym_pos=True, overwrite_a=True).T
+   best model: Ridge(alpha=450)
+   score on train data: 0.6444045662458875
+   score on  test data: 0.6272407519286938
 
 
    Split 3
-   best model: Ridge(alpha=225)
-   score on train data: 0.40876226512662284
-   score on  test data: 0.32626281745262575
+   best model: Ridge(alpha=500)
+   score on train data: 0.6373896961524828
+   score on  test data: 0.6520620247666246
 
 
    Split 4
-   best model: Ridge(alpha=225)
-   score on train data: 0.402936433716616
-   score on  test data: 0.34148479321013503
+   best model: Ridge(alpha=500)
+   score on train data: 0.6367353259630151
+   score on  test data: 0.6580102522201935
 
 
    Split 5
-   best model: Ridge(alpha=175)
-   score on train data: 0.4490062411714646
-   score on  test data: 0.22463502011492265
+   best model: Ridge(alpha=700)
+   score on train data: 0.639076264611163
+   score on  test data: 0.6356444771306535
 
 
-   Execution time: 2.017s
+   Execution time: 2.259s
    #+end_example
 
 ** TODO Bericht
