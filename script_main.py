@@ -11,10 +11,15 @@ def main():
     start = time.time()
 
     X, y = get_housing_data()
-    hyperparams_grid = {"alpha": [0.1, 0.5, 1, 10, 50, 100, 150, 175, 200, 225,
-                                  250, 275, 300, 325, 350, 375, 400, 450, 500, 700, 1000],
-                        "l1_ratio": [0.01, 0.05, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7,
-                                     0.8, 0.9, 0.95, 0.99]}
+
+    hyperparams_grid = {
+        "alpha":
+            [0.1, 0.5, 1, 10, 50, 100, 150, 175, 200, 225, 250,
+             275, 300, 325, 350, 375, 400, 450, 500, 700],
+        "l1_ratio":
+            [0.01, 0.05, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 0.95,
+             0.99]}
+
     reg = ElasticNet()
 
     # outer CV
@@ -29,17 +34,14 @@ def main():
         y_train, y_test = split_train_test(y, i_train, i_test)
         X_train, X_test = split_train_test(X, i_train, i_test)
 
-        print(f"Split {i_cv}")
-
         # Nested CV with parameter optimization
         search_reg = RandomizedSearchCV(
             estimator=reg, n_iter=100, param_distributions=hyperparams_grid, cv=5)
         result = search_reg.fit(X_train, y_train)
 
-        print("best model:", result.best_estimator_)
-        print("score on train data:", result.score(X_train, y_train))
-        print("score on  test data:", result.score(X_test, y_test))
-
+        print(f"Split {i_cv}:", result.best_estimator_)
+        print("train score:", round(result.score(X_train, y_train), 5))
+        print("test  score:", round(result.score(X_test, y_test), 5))
         print("\n")
 
     print(f"Execution time: {(time.time()-start):.3f}s")

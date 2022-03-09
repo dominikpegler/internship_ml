@@ -3,7 +3,7 @@
  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="de" xml:lang="de">
   <head>
-    <!-- 2022-03-09 Wed 20:41 -->
+    <!-- 2022-03-09 Wed 20:59 -->
     <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>ML Internship 2022</title>
@@ -2931,7 +2931,7 @@
       </h1>
       <center>
 
-	<div id="orgb929c2e" class="figure">
+	<div id="orgc2d1fe7" class="figure">
 	  <p><img src="./img/mlicon2.png" alt="mlicon2.png" width="75px" />
 	  </p>
 	</div>
@@ -2940,32 +2940,32 @@
 	<h2>Inhaltsverzeichnis</h2>
 	<div id="text-table-of-contents">
 	  <ul>
-	    <li><a href="#org02ee6c1">Tasks</a>
+	    <li><a href="#org3a85552">Tasks</a>
 	      <ul>
-		<li><a href="#org2ccd241"><span class="todo TODO">TODO</span> Standard-ML-Script erstellen</a></li>
-		<li><a href="#orga2597c8"><span class="todo TODO">TODO</span> Bericht</a></li>
+		<li><a href="#orgc4f840c"><span class="todo TODO">TODO</span> Standard-ML-Script erstellen</a></li>
+		<li><a href="#org3787d07"><span class="todo TODO">TODO</span> Bericht</a></li>
 	      </ul>
 	    </li>
-	    <li><a href="#org2ca56dd">Meetings</a>
+	    <li><a href="#org96e1f41">Meetings</a>
 	      <ul>
-		<li><a href="#org05a0d7a"><span class="todo TODO">TODO</span> 2. Meeting mit Steyrl-Gruppe via Skype</a></li>
-		<li><a href="#org1f119c9"><span class="done DONE">DONE</span> 2. Meeting mit David</a></li>
-		<li><a href="#orgcfebedb"><span class="done DONE">DONE</span> 1. Meeting mit Steyrl-Gruppe via Skype</a></li>
-		<li><a href="#org2238606"><span class="done DONE">DONE</span> 1. Meeting mit David via Zoom</a></li>
+		<li><a href="#org3b110ee"><span class="todo TODO">TODO</span> 2. Meeting mit Steyrl-Gruppe via Skype</a></li>
+		<li><a href="#org05a3435"><span class="done DONE">DONE</span> 2. Meeting mit David</a></li>
+		<li><a href="#orgbc2d3f9"><span class="done DONE">DONE</span> 1. Meeting mit Steyrl-Gruppe via Skype</a></li>
+		<li><a href="#org84dc949"><span class="done DONE">DONE</span> 1. Meeting mit David via Zoom</a></li>
 	      </ul>
 	    </li>
-	    <li><a href="#org4a27d2c">Literatur</a></li>
+	    <li><a href="#org2610ebf">Literatur</a></li>
 	  </ul>
 	</div>
       </div>
 
-      <div id="outline-container-org02ee6c1" class="outline-2">
-	<h2 id="org02ee6c1">Tasks</h2>
-	<div class="outline-text-2" id="text-org02ee6c1">
+      <div id="outline-container-org3a85552" class="outline-2">
+	<h2 id="org3a85552">Tasks</h2>
+	<div class="outline-text-2" id="text-org3a85552">
 	</div>
-	<div id="outline-container-org2ccd241" class="outline-3">
-	  <h3 id="org2ccd241"><span class="todo TODO">TODO</span> Standard-ML-Script erstellen</h3>
-	  <div class="outline-text-3" id="text-org2ccd241">
+	<div id="outline-container-orgc4f840c" class="outline-3">
+	  <h3 id="orgc4f840c"><span class="todo TODO">TODO</span> Standard-ML-Script erstellen</h3>
+	  <div class="outline-text-3" id="text-orgc4f840c">
 	    <p><span class="timestamp-wrapper"><span class="timestamp-kwd">DEADLINE:</span> <span class="timestamp">&lt;2022-03-13 Sun&gt;</span></span></p>
 	    <div class="org-src-container">
 	      <pre class="src src-python">
@@ -2982,11 +2982,15 @@
 		<span style="background-color: #f5f5f5;"> </span>   <span style="color: #7590db;">start</span> = time.time()
 		
 		<span style="background-color: #f5f5f5;"> </span>   <span style="color: #7590db;">X</span>, <span style="color: #7590db;">y</span> = get_housing_data()
-		<span style="background-color: #f5f5f5;"> </span>   <span style="color: #7590db;">hyperparams_grid</span> = {<span style="color: #2d9574;">"alpha"</span>: [0.1, 0.5, 1, 10, 50, 100, 150, 175, 200, 225,
-		<span style="background-color: #f5f5f5;"> </span>   <span style="background-color: #f5f5f5;"> </span>   <span style="background-color: #f5f5f5;"> </span>   <span style="background-color: #f5f5f5;"> </span>   <span style="background-color: #f5f5f5;"> </span>   <span style="background-color: #f5f5f5;"> </span>   <span style="background-color: #f5f5f5;"> </span>   <span style="background-color: #f5f5f5;"> </span>   <span style="background-color: #f5f5f5;"> </span> 250, 275, 300, 325, 350, 375, 400, 450, 500, 700,
-		<span style="background-color: #f5f5f5;"> </span>   <span style="background-color: #f5f5f5;"> </span>   <span style="background-color: #f5f5f5;"> </span>   <span style="background-color: #f5f5f5;"> </span>   <span style="background-color: #f5f5f5;"> </span>   <span style="background-color: #f5f5f5;"> </span>   <span style="background-color: #f5f5f5;"> </span>   <span style="background-color: #f5f5f5;"> </span>   <span style="background-color: #f5f5f5;"> </span> 1000],
-		<span style="background-color: #f5f5f5;"> </span>   <span style="background-color: #f5f5f5;"> </span>   <span style="background-color: #f5f5f5;"> </span>   <span style="background-color: #f5f5f5;"> </span>   <span style="background-color: #f5f5f5;"> </span>   <span style="background-color: #f5f5f5;"> </span>   <span style="color: #2d9574;">"l1_ratio"</span>: [0.01, 0.05, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7,
-		<span style="background-color: #f5f5f5;"> </span>   <span style="background-color: #f5f5f5;"> </span>   <span style="background-color: #f5f5f5;"> </span>   <span style="background-color: #f5f5f5;"> </span>   <span style="background-color: #f5f5f5;"> </span>   <span style="background-color: #f5f5f5;"> </span>   <span style="background-color: #f5f5f5;"> </span>   <span style="background-color: #f5f5f5;"> </span>   <span style="background-color: #f5f5f5;"> </span>   <span style="background-color: #f5f5f5;"> </span>0.8, 0.9, 0.95, 0.99]}
+		
+		<span style="background-color: #f5f5f5;"> </span>   <span style="color: #7590db;">hyperparams_grid</span> = {
+		<span style="background-color: #f5f5f5;"> </span>   <span style="background-color: #f5f5f5;"> </span>   <span style="color: #2d9574;">"alpha"</span>:
+		<span style="background-color: #f5f5f5;"> </span>   <span style="background-color: #f5f5f5;"> </span>   <span style="background-color: #f5f5f5;"> </span>   [0.1, 0.5, 1, 10, 50, 100, 150, 175, 200, 225, 250,
+		<span style="background-color: #f5f5f5;"> </span>   <span style="background-color: #f5f5f5;"> </span>   <span style="background-color: #f5f5f5;"> </span>   <span style="background-color: #f5f5f5;"> </span>275, 300, 325, 350, 375, 400, 450, 500, 700],
+		<span style="background-color: #f5f5f5;"> </span>   <span style="background-color: #f5f5f5;"> </span>   <span style="color: #2d9574;">"l1_ratio"</span>:
+		<span style="background-color: #f5f5f5;"> </span>   <span style="background-color: #f5f5f5;"> </span>   <span style="background-color: #f5f5f5;"> </span>   [0.01, 0.05, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 0.95,
+		<span style="background-color: #f5f5f5;"> </span>   <span style="background-color: #f5f5f5;"> </span>   <span style="background-color: #f5f5f5;"> </span>   <span style="background-color: #f5f5f5;"> </span>0.99]}
+		
 		<span style="background-color: #f5f5f5;"> </span>   <span style="color: #7590db;">reg</span> = ElasticNet()
 		
 		<span style="background-color: #f5f5f5;"> </span>   <span style="color: #2aa1ae; background-color: #fff;"># </span><span style="color: #2aa1ae; background-color: #fff;">outer CV</span>
@@ -3001,17 +3005,14 @@
 		<span style="background-color: #f5f5f5;"> </span>   <span style="background-color: #f5f5f5;"> </span>   <span style="color: #7590db;">y_train</span>, <span style="color: #7590db;">y_test</span> = split_train_test(y, i_train, i_test)
 		<span style="background-color: #f5f5f5;"> </span>   <span style="background-color: #f5f5f5;"> </span>   <span style="color: #7590db;">X_train</span>, <span style="color: #7590db;">X_test</span> = split_train_test(X, i_train, i_test)
 		
-		<span style="background-color: #f5f5f5;"> </span>   <span style="background-color: #f5f5f5;"> </span>   <span style="color: #4f97d7; font-weight: bold;">print</span>(f<span style="color: #2d9574;">"Split {i_cv}"</span>)
-		
 		<span style="background-color: #f5f5f5;"> </span>   <span style="background-color: #f5f5f5;"> </span>   <span style="color: #2aa1ae; background-color: #fff;"># </span><span style="color: #2aa1ae; background-color: #fff;">Nested CV with parameter optimization</span>
 		<span style="background-color: #f5f5f5;"> </span>   <span style="background-color: #f5f5f5;"> </span>   <span style="color: #7590db;">search_reg</span> = RandomizedSearchCV(
 		<span style="background-color: #f5f5f5;"> </span>   <span style="background-color: #f5f5f5;"> </span>   <span style="background-color: #f5f5f5;"> </span>   estimator=reg, n_iter=100, param_distributions=hyperparams_grid, cv=5)
 		<span style="background-color: #f5f5f5;"> </span>   <span style="background-color: #f5f5f5;"> </span>   <span style="color: #7590db;">result</span> = search_reg.fit(X_train, y_train)
 		
-		<span style="background-color: #f5f5f5;"> </span>   <span style="background-color: #f5f5f5;"> </span>   <span style="color: #4f97d7; font-weight: bold;">print</span>(<span style="color: #2d9574;">"best model:"</span>, result.best_estimator_)
-		<span style="background-color: #f5f5f5;"> </span>   <span style="background-color: #f5f5f5;"> </span>   <span style="color: #4f97d7; font-weight: bold;">print</span>(<span style="color: #2d9574;">"score on train data:"</span>, result.score(X_train, y_train))
-		<span style="background-color: #f5f5f5;"> </span>   <span style="background-color: #f5f5f5;"> </span>   <span style="color: #4f97d7; font-weight: bold;">print</span>(<span style="color: #2d9574;">"score on  test data:"</span>, result.score(X_test, y_test))
-		
+		<span style="background-color: #f5f5f5;"> </span>   <span style="background-color: #f5f5f5;"> </span>   <span style="color: #4f97d7; font-weight: bold;">print</span>(f<span style="color: #2d9574;">"Split {i_cv}:"</span>, result.best_estimator_)
+		<span style="background-color: #f5f5f5;"> </span>   <span style="background-color: #f5f5f5;"> </span>   <span style="color: #4f97d7; font-weight: bold;">print</span>(<span style="color: #2d9574;">"train score:"</span>, <span style="color: #4f97d7;">round</span>(result.score(X_train, y_train), 5))
+		<span style="background-color: #f5f5f5;"> </span>   <span style="background-color: #f5f5f5;"> </span>   <span style="color: #4f97d7; font-weight: bold;">print</span>(<span style="color: #2d9574;">"test  score:"</span>, <span style="color: #4f97d7;">round</span>(result.score(X_test, y_test), 5))
 		<span style="background-color: #f5f5f5;"> </span>   <span style="background-color: #f5f5f5;"> </span>   <span style="color: #4f97d7; font-weight: bold;">print</span>(<span style="color: #2d9574;">"\n"</span>)
 		
 		<span style="background-color: #f5f5f5;"> </span>   <span style="color: #4f97d7; font-weight: bold;">print</span>(f<span style="color: #2d9574;">"Execution time: {(time.time()-start):.3f}s"</span>)
@@ -3023,84 +3024,79 @@
 	      </pre>
 	    </div>
 
-	    <pre class="example" id="org542a95a">
-	      Split 1
-	      best model: ElasticNet(alpha=0.5, l1_ratio=0.95)
-	      score on train data: 0.6436071430390706
-	      score on  test data: 0.633004345987046
+	    <pre class="example" id="orgbc303ca">
+	      Split 1: ElasticNet(alpha=0.1, l1_ratio=0.6)
+	      train score: 0.64088
+	      test  score: 0.62964
 
 
-	      Split 2
-	      best model: ElasticNet(alpha=0.1)
-	      score on train data: 0.6402988481425598
-	      score on  test data: 0.622296835875207
+	      Split 2: ElasticNet(alpha=0.1, l1_ratio=0.8)
+	      train score: 0.64558
+	      test  score: 0.62885
 
 
-	      Split 3
-	      best model: ElasticNet(alpha=0.1, l1_ratio=0.6)
-	      score on train data: 0.6355977558341441
-	      score on  test data: 0.6497844454393378
+	      Split 3: ElasticNet(alpha=0.1, l1_ratio=0.6)
+	      train score: 0.6356
+	      test  score: 0.64978
 
 
-	      Split 4
-	      best model: ElasticNet(alpha=0.1, l1_ratio=0.6)
-	      score on train data: 0.634865882126991
-	      score on  test data: 0.6562623592518328
+	      Split 4: ElasticNet(alpha=0.1, l1_ratio=0.6)
+	      train score: 0.63487
+	      test  score: 0.65626
 
 
-	      Split 5
-	      best model: ElasticNet(alpha=0.1, l1_ratio=0.7)
-	      score on train data: 0.6413754147844668
-	      score on  test data: 0.6381065460045829
+	      Split 5: ElasticNet(alpha=0.1)
+	      train score: 0.63759
+	      test  score: 0.6341
 
 
-	      Execution time: 30.460s
+	      Execution time: 26.945s
 	    </pre>
 	  </div>
 	</div>
 
-	<div id="outline-container-orga2597c8" class="outline-3">
-	  <h3 id="orga2597c8"><span class="todo TODO">TODO</span> Bericht</h3>
-	  <div class="outline-text-3" id="text-orga2597c8">
+	<div id="outline-container-org3787d07" class="outline-3">
+	  <h3 id="org3787d07"><span class="todo TODO">TODO</span> Bericht</h3>
+	  <div class="outline-text-3" id="text-org3787d07">
 	    <p><span class="timestamp-wrapper"><span class="timestamp-kwd">DEADLINE:</span> <span class="timestamp">&lt;2022-04-30 Sat&gt;</span></span></p>
 	  </div>
 
-	  <div id="outline-container-orgad3fa25" class="outline-4">
-	    <h4 id="orgad3fa25">Woche 1</h4>
-	    <div class="outline-text-4" id="text-orgad3fa25">
+	  <div id="outline-container-org679afed" class="outline-4">
+	    <h4 id="org679afed">Woche 1</h4>
+	    <div class="outline-text-4" id="text-org679afed">
 	      <p>
 		Einführung, Data preprocessing &amp; cross-validation, Scikit-learn-Dokumentation,
 		Regularisierte lineare Modelle (Ridge, Lasso etc.)
 	      </p>
 	    </div>
 	  </div>
-	  <div id="outline-container-orgc5e7edf" class="outline-4">
-	    <h4 id="orgc5e7edf">Woche 2</h4>
-	    <div class="outline-text-4" id="text-orgc5e7edf">
+	  <div id="outline-container-org62426f0" class="outline-4">
+	    <h4 id="org62426f0">Woche 2</h4>
+	    <div class="outline-text-4" id="text-org62426f0">
 	      <p>
 		Literatur, Fortsetzung Script
 	      </p>
 	    </div>
 	  </div>
-	  <div id="outline-container-org36cfed1" class="outline-4">
-	    <h4 id="org36cfed1">Wochen 3&#x2013;8</h4>
+	  <div id="outline-container-orgadfffac" class="outline-4">
+	    <h4 id="orgadfffac">Wochen 3&#x2013;8</h4>
 	  </div>
 	</div>
       </div>
 
-      <div id="outline-container-org2ca56dd" class="outline-2">
-	<h2 id="org2ca56dd">Meetings</h2>
-	<div class="outline-text-2" id="text-org2ca56dd">
+      <div id="outline-container-org96e1f41" class="outline-2">
+	<h2 id="org96e1f41">Meetings</h2>
+	<div class="outline-text-2" id="text-org96e1f41">
 	</div>
-	<div id="outline-container-org05a0d7a" class="outline-3">
-	  <h3 id="org05a0d7a"><span class="todo TODO">TODO</span> 2. Meeting mit Steyrl-Gruppe via Skype</h3>
-	  <div class="outline-text-3" id="text-org05a0d7a">
+	<div id="outline-container-org3b110ee" class="outline-3">
+	  <h3 id="org3b110ee"><span class="todo TODO">TODO</span> 2. Meeting mit Steyrl-Gruppe via Skype</h3>
+	  <div class="outline-text-3" id="text-org3b110ee">
 	    <p><span class="timestamp-wrapper"><span class="timestamp-kwd">SCHEDULED:</span> <span class="timestamp">&lt;2022-03-15 Tue 11:00&gt;</span></span></p>
 	  </div>
 	</div>
-	<div id="outline-container-org1f119c9" class="outline-3">
-	  <h3 id="org1f119c9"><span class="done DONE">DONE</span> 2. Meeting mit David</h3>
-	  <div class="outline-text-3" id="text-org1f119c9">
+	<div id="outline-container-org05a3435" class="outline-3">
+	  <h3 id="org05a3435"><span class="done DONE">DONE</span> 2. Meeting mit David</h3>
+	  <div class="outline-text-3" id="text-org05a3435">
 	    <p><span class="timestamp-wrapper"><span class="timestamp-kwd">CLOSED:</span> <span class="timestamp">[2022-03-08 Tue 22:05] </span> <span class="timestamp-kwd">SCHEDULED:</span> <span class="timestamp">&lt;2022-03-08 Tue 10:00&gt;</span></span></p>
 	    <ol class="org-ol">
 	      <li>Fortschritt beim Script</li>
@@ -3109,9 +3105,9 @@
 	  </div>
 	</div>
 
-	<div id="outline-container-orgcfebedb" class="outline-3">
-	  <h3 id="orgcfebedb"><span class="done DONE">DONE</span> 1. Meeting mit Steyrl-Gruppe via Skype</h3>
-	  <div class="outline-text-3" id="text-orgcfebedb">
+	<div id="outline-container-orgbc2d3f9" class="outline-3">
+	  <h3 id="orgbc2d3f9"><span class="done DONE">DONE</span> 1. Meeting mit Steyrl-Gruppe via Skype</h3>
+	  <div class="outline-text-3" id="text-orgbc2d3f9">
 	    <p><span class="timestamp-wrapper"><span class="timestamp-kwd">CLOSED:</span> <span class="timestamp">[2022-03-02 Wed 11:35] </span> <span class="timestamp-kwd">SCHEDULED:</span> <span class="timestamp">&lt;2022-03-02 Wed 11:00&gt;</span></span></p>
 	    <ul class="org-ul">
 	      <li>Vorstellung Gruppe und Masterarbeiten</li>
@@ -3119,9 +3115,9 @@
 	  </div>
 	</div>
 
-	<div id="outline-container-org2238606" class="outline-3">
-	  <h3 id="org2238606"><span class="done DONE">DONE</span> 1. Meeting mit David via Zoom</h3>
-	  <div class="outline-text-3" id="text-org2238606">
+	<div id="outline-container-org84dc949" class="outline-3">
+	  <h3 id="org84dc949"><span class="done DONE">DONE</span> 1. Meeting mit David via Zoom</h3>
+	  <div class="outline-text-3" id="text-org84dc949">
 	    <p><span class="timestamp-wrapper"><span class="timestamp-kwd">CLOSED:</span> <span class="timestamp">[2022-02-28 Mon 10:55] </span> <span class="timestamp-kwd">SCHEDULED:</span> <span class="timestamp">&lt;2022-02-28 Mon 10:00&gt;</span></span></p>
 	    <p>
 	      Folgendes wurde besprochen:
@@ -3152,9 +3148,9 @@
 	</div>
       </div>
 
-      <div id="outline-container-org4a27d2c" class="outline-2">
-	<h2 id="org4a27d2c">Literatur</h2>
-	<div class="outline-text-2" id="text-org4a27d2c">
+      <div id="outline-container-org2610ebf" class="outline-2">
+	<h2 id="org2610ebf">Literatur</h2>
+	<div class="outline-text-2" id="text-org2610ebf">
 	  <ul class="org-ul">
 	    <li>Géron, A. (2019). Hands-On Machine Learning with Scikit-Learn, Keras,
 	      and TensorFlow, 2nd Edition. O'Reilly. <a href="https://www.oreilly.com/library/view/hands-on-machine-learning/9781492032632">https://www.oreilly.com/library/view/hands-on-machine-learning/9781492032632</a></li>
@@ -3167,7 +3163,7 @@
     <div id="postamble" class="status">
       <p class="author">Autor: Dominik PEGLER</p>
       <p class="email">Email: <a href="mailto:dominikpegler@posteo.org">dominikpegler@posteo.org</a></p>
-      <p class="date">Created: 2022-03-09 Wed 20:41</p>
+      <p class="date">Created: 2022-03-09 Wed 20:59</p>
       <p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
     </div>
   </body>
