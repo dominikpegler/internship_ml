@@ -1,6 +1,6 @@
 from sklearn.model_selection import GroupShuffleSplit
 from sklearn.model_selection import RandomizedSearchCV
-from sklearn.linear_model import Ridge
+from sklearn.linear_model import ElasticNet
 from get_data import get_housing_data
 from utils import split_train_test
 import time
@@ -12,10 +12,11 @@ def main():
 
     X, y = get_housing_data()
 
-    hyperparams_grid = {"alpha": [0, 1, 10, 50, 100, 150, 175,
-                                  200, 225, 250, 275, 300, 325, 350, 375, 400, 450, 500, 700]}
+    hyperparams_grid = {"alpha": [1, 10, 50, 100, 150, 175,
+                                  200, 225, 250, 275, 300, 325, 350, 375, 400, 450, 500, 700],
+                        "l1_ratio": [0.1, 0.2, 0.5, 0.8, 0.9]}
 
-    reg = Ridge()
+    reg = ElasticNet()
 
     # Outer CV
     outer_cv = GroupShuffleSplit(

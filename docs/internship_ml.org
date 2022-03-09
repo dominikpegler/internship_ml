@@ -47,7 +47,7 @@ DEADLINE: <2022-03-13 Sun>
 
 from sklearn.model_selection import GroupShuffleSplit
 from sklearn.model_selection import RandomizedSearchCV
-from sklearn.linear_model import Ridge
+from sklearn.linear_model import ElasticNet
 from get_data import get_housing_data
 from utils import split_train_test
 import time
@@ -56,40 +56,40 @@ import time
 def main():
 
     start = time.time()
-    
+
     X, y = get_housing_data()
-    
-    hyperparams_grid = {"alpha": [0, 1, 10, 50, 100, 150, 175, 200, 225, 250, 275, 300, 325, 350, 375, 400, 450, 500, 700]}
-    
-    reg = Ridge()
-    
+
+    hyperparams_grid = {"alpha": [1, 10, 50, 100, 150, 175,
+                                  200, 225, 250, 275, 300, 325, 350, 375, 400, 450, 500, 700],
+                        "l1_ratio": [0.1, 0.2, 0.5, 0.8, 0.9]}
+
+    reg = ElasticNet()
+
     # Outer CV
     outer_cv = GroupShuffleSplit(
         n_splits=5,
         test_size=0.2,
         random_state=0)
-    
-    
+
     # Iterate over main splitter
     for i_cv, (i_train, i_test) in enumerate(outer_cv.split(X, y, groups=X.index), start=1):
-    
+
         y_train, y_test = split_train_test(y, i_train, i_test)
         X_train, X_test = split_train_test(X, i_train, i_test)
-    
-    
+
         print(f"Split {i_cv}")
-    
+
         # Nested CV with parameter optimization
-        search_reg = RandomizedSearchCV(estimator=reg, n_iter=10, param_distributions=hyperparams_grid, cv=5)
-        result = search_reg.fit(X_train,y_train)
-        
-        print("best model:",result.best_estimator_)
-        print("score on train data:",result.score(X_train,y_train))
-        print("score on  test data:",result.score(X_test,y_test))
-        
-    
+        search_reg = RandomizedSearchCV(
+            estimator=reg, n_iter=10, param_distributions=hyperparams_grid, cv=5)
+        result = search_reg.fit(X_train, y_train)
+
+        print("best model:", result.best_estimator_)
+        print("score on train data:", result.score(X_train, y_train))
+        print("score on  test data:", result.score(X_test, y_test))
+
         print("\n")
-    
+
     print(f"Execution time: {(time.time()-start):.3f}s")
 
 
@@ -101,42 +101,36 @@ if __name__ == "__main__":
    #+RESULTS:
    #+begin_example
    Split 1
-   best model: Ridge(alpha=700)
-   score on train data: 0.640429750632078
-   score on  test data: 0.629093367098714
+   best model: ElasticNet(alpha=50, l1_ratio=0.9)
+   score on train data: 0.18441269202736688
+   score on  test data: 0.17918716797658552
 
 
    Split 2
-   /home/user/miniconda3/envs/py39/lib/python3.9/site-packages/sklearn/linear_model/_ridge.py:157: LinAlgWarning: Ill-conditioned matrix (rcond=2.97077e-18): result may not be accurate.
-     return linalg.solve(A, Xy, sym_pos=True, overwrite_a=True).T
-   /home/user/miniconda3/envs/py39/lib/python3.9/site-packages/sklearn/linear_model/_ridge.py:157: LinAlgWarning: Ill-conditioned matrix (rcond=1.8442e-17): result may not be accurate.
-     return linalg.solve(A, Xy, sym_pos=True, overwrite_a=True).T
-   /home/user/miniconda3/envs/py39/lib/python3.9/site-packages/sklearn/linear_model/_ridge.py:157: LinAlgWarning: Ill-conditioned matrix (rcond=1.5574e-17): result may not be accurate.
-     return linalg.solve(A, Xy, sym_pos=True, overwrite_a=True).T
-   best model: Ridge(alpha=450)
-   score on train data: 0.6444045662458875
-   score on  test data: 0.6272407519286938
+   best model: ElasticNet(alpha=1, l1_ratio=0.2)
+   score on train data: 0.4851575981391737
+   score on  test data: 0.4738602553394592
 
 
    Split 3
-   best model: Ridge(alpha=500)
-   score on train data: 0.6373896961524828
-   score on  test data: 0.6520620247666246
+   best model: ElasticNet(alpha=10, l1_ratio=0.9)
+   score on train data: 0.44619914967408625
+   score on  test data: 0.4488238150912305
 
 
    Split 4
-   best model: Ridge(alpha=500)
-   score on train data: 0.6367353259630151
-   score on  test data: 0.6580102522201935
+   best model: ElasticNet(alpha=1)
+   score on train data: 0.5350036161890235
+   score on  test data: 0.5514294212291815
 
 
    Split 5
-   best model: Ridge(alpha=700)
-   score on train data: 0.639076264611163
-   score on  test data: 0.6356444771306535
+   best model: ElasticNet(alpha=175, l1_ratio=0.9)
+   score on train data: 0.0628506366743743
+   score on  test data: 0.06228349013990775
 
 
-   Execution time: 2.259s
+   Execution time: 2.600s
    #+end_example
 
 ** TODO Bericht
