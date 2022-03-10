@@ -50,84 +50,84 @@ Vorhersage von problematischem Alkoholkonsum anhand von Trait Mindfulness (FFMQ)
    
 #+begin_src python :session *py* :exports both :results output :dir /home/user/data/psy_misc/internship_ml
 
-from sklearn.model_selection import GroupShuffleSplit
-from sklearn.model_selection import RandomizedSearchCV
-from sklearn.linear_model import ElasticNet
-from scipy.stats import uniform, loguniform
-from get_data import get_mindfulness
-from utils import split_train_test
-import time
+  from sklearn.model_selection import GroupShuffleSplit
+  from sklearn.model_selection import RandomizedSearchCV
+  from sklearn.linear_model import ElasticNet
+  from scipy.stats import uniform, loguniform
+  from get_data import get_mindfulness
+  from utils import split_train_test
+  import time
 
 
-def main():
+  def main():
 
-    start = time.time()
+      start = time.time()
 
-    X, y = get_mindfulness()
+      X, y = get_mindfulness()
 
-    hyperparams_dist = {
-        "alpha": loguniform(1e-4,1e3),
-        "l1_ratio": uniform(0,1)}
+      hyperparams_dist = {
+          "alpha": loguniform(1e-4,1e3),
+          "l1_ratio": uniform(0,1)}
 
-    reg = ElasticNet()
+      reg = ElasticNet()
 
-    outer_cv = GroupShuffleSplit(
-        n_splits=5,
-        test_size=0.2,
-        random_state=0)
+      outer_cv = GroupShuffleSplit(
+          n_splits=5,
+          test_size=0.2,
+          random_state=0)
 
-    # iterate over outer CV splitter
-    for i_cv, (i_train, i_test) in enumerate(outer_cv.split(X, y, groups=X.index), start=1):
+      # iterate over outer CV splitter
+      for i_cv, (i_train, i_test) in enumerate(outer_cv.split(X, y, groups=X.index), start=1):
 
-        y_train, y_test = split_train_test(y, i_train, i_test)
-        X_train, X_test = split_train_test(X, i_train, i_test)
+          y_train, y_test = split_train_test(y, i_train, i_test)
+          X_train, X_test = split_train_test(X, i_train, i_test)
 
-        # nested CV with parameter optimization
-        search_reg = RandomizedSearchCV(
-            estimator=reg, n_iter=1000, param_distributions=hyperparams_dist, cv=5)
-        result = search_reg.fit(X_train, y_train)
+          # nested CV with parameter optimization
+          search_reg = RandomizedSearchCV(
+              estimator=reg, n_iter=1000, param_distributions=hyperparams_dist, cv=5)
+          result = search_reg.fit(X_train, y_train)
 
-        print(f"Split {i_cv}:", result.best_estimator_)
-        print("train score:", round(result.score(X_train, y_train), 5))
-        print("test  score:", round(result.score(X_test, y_test), 5))
-        print("\n")
+          print(f"Split {i_cv}:", result.best_estimator_)
+          print("train score:", round(result.score(X_train, y_train), 5))
+          print("test  score:", round(result.score(X_test, y_test), 5))
+          print("\n")
 
-    print(f"Execution time: {(time.time()-start):.3f}s")
+      print(f"Execution time: {(time.time()-start):.3f}s")
 
 
-if __name__ == "__main__":
-    main()
+  if __name__ == "__main__":
+      main()
 
 #+end_src
 
    #+RESULTS:
    #+begin_example
-   Split 1: ElasticNet(alpha=0.22353045036583108, l1_ratio=0.921710009401984)
-   train score: 0.39843
-   test  score: 0.35452
+     Split 1: ElasticNet(alpha=0.22353045036583108, l1_ratio=0.921710009401984)
+     train score: 0.39843
+     test  score: 0.35452
 
 
-   Split 2: ElasticNet(alpha=0.38670990511510717, l1_ratio=0.5496084445311907)
-   train score: 0.35856
-   test  score: 0.3375
+     Split 2: ElasticNet(alpha=0.38670990511510717, l1_ratio=0.5496084445311907)
+     train score: 0.35856
+     test  score: 0.3375
 
 
-   Split 3: ElasticNet(alpha=0.23670822716772796, l1_ratio=0.9640748041622479)
-   train score: 0.39367
-   test  score: 0.32558
+     Split 3: ElasticNet(alpha=0.23670822716772796, l1_ratio=0.9640748041622479)
+     train score: 0.39367
+     test  score: 0.32558
 
 
-   Split 4: ElasticNet(alpha=0.16004253247739003, l1_ratio=0.9670520803504764)
-   train score: 0.40839
-   test  score: 0.39424
+     Split 4: ElasticNet(alpha=0.16004253247739003, l1_ratio=0.9670520803504764)
+     train score: 0.40839
+     test  score: 0.39424
 
 
-   Split 5: ElasticNet(alpha=0.19681489242009514, l1_ratio=0.9419440864149886)
-   train score: 0.43669
-   test  score: 0.25164
+     Split 5: ElasticNet(alpha=0.19681489242009514, l1_ratio=0.9419440864149886)
+     train score: 0.43669
+     test  score: 0.25164
 
 
-   Execution time: 222.611s
+     Execution time: 222.611s
    #+end_example
 
 ** TODO Bericht

@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="de" xml:lang="de">
 <head>
-<!-- 2022-03-10 Thu 11:43 -->
+<!-- 2022-03-10 Thu 11:50 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>ML Internship 2022</title>
@@ -2924,7 +2924,7 @@ p.verse {
 </h1>
 <center>
 
-<div id="org9f86e10" class="figure">
+<div id="org2dc5e81" class="figure">
 <p><img src="./img/mlicon2.png" alt="mlicon2.png" width="75px" />
 </p>
 </div>
@@ -2933,32 +2933,32 @@ p.verse {
 <h2>Inhaltsverzeichnis</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org5680365">Tasks</a>
+<li><a href="#org33e093d">Tasks</a>
 <ul>
-<li><a href="#org1ec4627"><span class="todo TODO">TODO</span> Standard-ML-Script erstellen</a></li>
-<li><a href="#org3bf96cf"><span class="todo TODO">TODO</span> Bericht</a></li>
+<li><a href="#org3dcaad1"><span class="todo TODO">TODO</span> Standard-ML-Script erstellen</a></li>
+<li><a href="#org7ee07d6"><span class="todo TODO">TODO</span> Bericht</a></li>
 </ul>
 </li>
-<li><a href="#orgab34d91">Meetings</a>
+<li><a href="#orgdf0b718">Meetings</a>
 <ul>
-<li><a href="#org85748b3"><span class="todo TODO">TODO</span> 2. Meeting mit Steyrl-Gruppe via Skype</a></li>
-<li><a href="#org76e2379"><span class="done DONE">DONE</span> 2. Meeting mit David</a></li>
-<li><a href="#orgec7a367"><span class="done DONE">DONE</span> 1. Meeting mit Steyrl-Gruppe via Skype</a></li>
-<li><a href="#org1deb907"><span class="done DONE">DONE</span> 1. Meeting mit David via Zoom</a></li>
+<li><a href="#org3298b3f"><span class="todo TODO">TODO</span> 2. Meeting mit Steyrl-Gruppe via Skype</a></li>
+<li><a href="#orga9cc471"><span class="done DONE">DONE</span> 2. Meeting mit David</a></li>
+<li><a href="#org3a81fb2"><span class="done DONE">DONE</span> 1. Meeting mit Steyrl-Gruppe via Skype</a></li>
+<li><a href="#org9f3da93"><span class="done DONE">DONE</span> 1. Meeting mit David via Zoom</a></li>
 </ul>
 </li>
-<li><a href="#org58303f3">Literatur</a></li>
+<li><a href="#org0cec1b7">Literatur</a></li>
 </ul>
 </div>
 </div>
 
-<div id="outline-container-org5680365" class="outline-2">
-<h2 id="org5680365">Tasks</h2>
-<div class="outline-text-2" id="text-org5680365">
+<div id="outline-container-org33e093d" class="outline-2">
+<h2 id="org33e093d">Tasks</h2>
+<div class="outline-text-2" id="text-org33e093d">
 </div>
-<div id="outline-container-org1ec4627" class="outline-3">
-<h3 id="org1ec4627"><span class="todo TODO">TODO</span> Standard-ML-Script erstellen</h3>
-<div class="outline-text-3" id="text-org1ec4627">
+<div id="outline-container-org3dcaad1" class="outline-3">
+<h3 id="org3dcaad1"><span class="todo TODO">TODO</span> Standard-ML-Script erstellen</h3>
+<div class="outline-text-3" id="text-org3dcaad1">
 <p><span class="timestamp-wrapper"><span class="timestamp-kwd">DEADLINE:</span> <span class="timestamp">&lt;2022-03-13 Sun&gt;</span></span></p>
 <p>
 Vorhersage von problematischem Alkoholkonsum anhand von Trait Mindfulness (FFMQ)
@@ -2977,28 +2977,28 @@ Vorhersage von problematischem Alkoholkonsum anhand von Trait Mindfulness (FFMQ)
 
 <span style="color: #4f97d7; font-weight: bold;">def</span> <span style="color: #bc6ec5; font-weight: bold;">main</span>():
 
-<span style="background-color: #292e34;"> </span>   <span style="color: #7590db;">start</span> = time.time()
+<span style="background-color: #efefef;"> </span>   <span style="color: #7590db;">start</span> = time.time()
 
-<span style="background-color: #292e34;"> </span>   <span style="color: #7590db;">X</span>, <span style="color: #7590db;">y</span> = get_mindfulness()
+<span style="background-color: #efefef;"> </span>   <span style="color: #7590db;">X</span>, <span style="color: #7590db;">y</span> = get_mindfulness()
 
-<span style="background-color: #292e34;"> </span>   <span style="color: #7590db;">hyperparams_dist</span> = {
+<span style="background-color: #efefef;"> </span>   <span style="color: #7590db;">hyperparams_dist</span> = {
         <span style="color: #2d9574;">"alpha"</span>: loguniform(1e-4,1e3),
         <span style="color: #2d9574;">"l1_ratio"</span>: uniform(0,1)}
 
-<span style="background-color: #292e34;"> </span>   <span style="color: #7590db;">reg</span> = ElasticNet()
+<span style="background-color: #efefef;"> </span>   <span style="color: #7590db;">reg</span> = ElasticNet()
 
-<span style="background-color: #292e34;"> </span>   <span style="color: #7590db;">outer_cv</span> = GroupShuffleSplit(
+<span style="background-color: #efefef;"> </span>   <span style="color: #7590db;">outer_cv</span> = GroupShuffleSplit(
         n_splits=5,
         test_size=0.2,
         random_state=0)
 
-<span style="background-color: #292e34;"> </span>   <span style="color: #2aa1ae; background-color: #292e34;"># </span><span style="color: #2aa1ae; background-color: #292e34;">iterate over outer CV splitter</span>
-<span style="background-color: #292e34;"> </span>   <span style="color: #4f97d7; font-weight: bold;">for</span> i_cv, (i_train, i_test) <span style="color: #4f97d7; font-weight: bold;">in</span> <span style="color: #4f97d7;">enumerate</span>(outer_cv.split(X, y, groups=X.index), start=1):
+<span style="background-color: #efefef;"> </span>   <span style="color: #2aa1ae; background-color: #efefef;"># </span><span style="color: #2aa1ae; background-color: #efefef;">iterate over outer CV splitter</span>
+<span style="background-color: #efefef;"> </span>   <span style="color: #4f97d7; font-weight: bold;">for</span> i_cv, (i_train, i_test) <span style="color: #4f97d7; font-weight: bold;">in</span> <span style="color: #4f97d7;">enumerate</span>(outer_cv.split(X, y, groups=X.index), start=1):
 
         <span style="color: #7590db;">y_train</span>, <span style="color: #7590db;">y_test</span> = split_train_test(y, i_train, i_test)
         <span style="color: #7590db;">X_train</span>, <span style="color: #7590db;">X_test</span> = split_train_test(X, i_train, i_test)
 
-        <span style="color: #2aa1ae; background-color: #292e34;"># </span><span style="color: #2aa1ae; background-color: #292e34;">nested CV with parameter optimization</span>
+        <span style="color: #2aa1ae; background-color: #efefef;"># </span><span style="color: #2aa1ae; background-color: #efefef;">nested CV with parameter optimization</span>
         <span style="color: #7590db;">search_reg</span> = RandomizedSearchCV(
             estimator=reg, n_iter=1000, param_distributions=hyperparams_dist, cv=5)
         <span style="color: #7590db;">result</span> = search_reg.fit(X_train, y_train)
@@ -3008,88 +3008,88 @@ Vorhersage von problematischem Alkoholkonsum anhand von Trait Mindfulness (FFMQ)
         <span style="color: #4f97d7; font-weight: bold;">print</span>(<span style="color: #2d9574;">"test  score:"</span>, <span style="color: #4f97d7;">round</span>(result.score(X_test, y_test), 5))
         <span style="color: #4f97d7; font-weight: bold;">print</span>(<span style="color: #2d9574;">"\n"</span>)
 
-<span style="background-color: #292e34;"> </span>   <span style="color: #4f97d7; font-weight: bold;">print</span>(f<span style="color: #2d9574;">"Execution time: {(time.time()-start):.3f}s"</span>)
+<span style="background-color: #efefef;"> </span>   <span style="color: #4f97d7; font-weight: bold;">print</span>(f<span style="color: #2d9574;">"Execution time: {(time.time()-start):.3f}s"</span>)
 
 
 <span style="color: #4f97d7; font-weight: bold;">if</span> <span style="color: #4f97d7;">__name__</span> == <span style="color: #2d9574;">"__main__"</span>:
-<span style="background-color: #292e34;"> </span>   main()
+<span style="background-color: #efefef;"> </span>   main()
 
 </pre>
 </div>
 
-<pre class="example" id="org1dbe02d">
-Split 1: ElasticNet(alpha=0.1767717383989693, l1_ratio=0.9657901051189091)
-train score: 0.40914
-test  score: 0.36192
+<pre class="example" id="org1bd90e0">
+Split 1: ElasticNet(alpha=0.15687539268438183, l1_ratio=0.934830437801984)
+train score: 0.41498
+test  score: 0.36449
 
 
-Split 2: ElasticNet(alpha=0.5221476726791728, l1_ratio=0.359138063948661)
-train score: 0.3551
-test  score: 0.33091
+Split 2: ElasticNet(alpha=0.4915496197671438, l1_ratio=0.3970191802038082)
+train score: 0.35542
+test  score: 0.33194
 
 
-Split 3: ElasticNet(alpha=0.22240360668450382, l1_ratio=0.9188018114451983)
-train score: 0.39906
-test  score: 0.32697
+Split 3: ElasticNet(alpha=0.21595098178871394, l1_ratio=0.9907050788894506)
+train score: 0.39838
+test  score: 0.3287
 
 
-Split 4: ElasticNet(alpha=0.15291859955246587, l1_ratio=0.9858106660537787)
-train score: 0.41021
-test  score: 0.39472
+Split 4: ElasticNet(alpha=0.15643972115593033, l1_ratio=0.9544053283511261)
+train score: 0.41007
+test  score: 0.39374
 
 
-Split 5: ElasticNet(alpha=0.1872574188710347, l1_ratio=0.9804401953312301)
-train score: 0.43794
-test  score: 0.25212
+Split 5: ElasticNet(alpha=0.18723752424828471, l1_ratio=0.8979180982617905)
+train score: 0.43943
+test  score: 0.25245
 
 
-Execution time: 184.302s
+Execution time: 181.519s
 </pre>
 </div>
 </div>
 
-<div id="outline-container-org3bf96cf" class="outline-3">
-<h3 id="org3bf96cf"><span class="todo TODO">TODO</span> Bericht</h3>
-<div class="outline-text-3" id="text-org3bf96cf">
+<div id="outline-container-org7ee07d6" class="outline-3">
+<h3 id="org7ee07d6"><span class="todo TODO">TODO</span> Bericht</h3>
+<div class="outline-text-3" id="text-org7ee07d6">
 <p><span class="timestamp-wrapper"><span class="timestamp-kwd">DEADLINE:</span> <span class="timestamp">&lt;2022-04-30 Sat&gt;</span></span></p>
 </div>
 
-<div id="outline-container-org9781f1e" class="outline-4">
-<h4 id="org9781f1e">Woche 1</h4>
-<div class="outline-text-4" id="text-org9781f1e">
+<div id="outline-container-org5027130" class="outline-4">
+<h4 id="org5027130">Woche 1</h4>
+<div class="outline-text-4" id="text-org5027130">
 <p>
 Einführung, Data preprocessing &amp; cross-validation, Scikit-learn-Dokumentation,
 Regularisierte lineare Modelle (Ridge, Lasso etc.)
 </p>
 </div>
 </div>
-<div id="outline-container-org33d9490" class="outline-4">
-<h4 id="org33d9490">Woche 2</h4>
-<div class="outline-text-4" id="text-org33d9490">
+<div id="outline-container-org7435778" class="outline-4">
+<h4 id="org7435778">Woche 2</h4>
+<div class="outline-text-4" id="text-org7435778">
 <p>
 Literatur, Fortsetzung Script
 </p>
 </div>
 </div>
-<div id="outline-container-orgff0147a" class="outline-4">
-<h4 id="orgff0147a">Wochen 3&#x2013;8</h4>
+<div id="outline-container-org8428a02" class="outline-4">
+<h4 id="org8428a02">Wochen 3&#x2013;8</h4>
 </div>
 </div>
 </div>
 
-<div id="outline-container-orgab34d91" class="outline-2">
-<h2 id="orgab34d91">Meetings</h2>
-<div class="outline-text-2" id="text-orgab34d91">
+<div id="outline-container-orgdf0b718" class="outline-2">
+<h2 id="orgdf0b718">Meetings</h2>
+<div class="outline-text-2" id="text-orgdf0b718">
 </div>
-<div id="outline-container-org85748b3" class="outline-3">
-<h3 id="org85748b3"><span class="todo TODO">TODO</span> 2. Meeting mit Steyrl-Gruppe via Skype</h3>
-<div class="outline-text-3" id="text-org85748b3">
+<div id="outline-container-org3298b3f" class="outline-3">
+<h3 id="org3298b3f"><span class="todo TODO">TODO</span> 2. Meeting mit Steyrl-Gruppe via Skype</h3>
+<div class="outline-text-3" id="text-org3298b3f">
 <p><span class="timestamp-wrapper"><span class="timestamp-kwd">SCHEDULED:</span> <span class="timestamp">&lt;2022-03-15 Tue 11:00&gt;</span></span></p>
 </div>
 </div>
-<div id="outline-container-org76e2379" class="outline-3">
-<h3 id="org76e2379"><span class="done DONE">DONE</span> 2. Meeting mit David</h3>
-<div class="outline-text-3" id="text-org76e2379">
+<div id="outline-container-orga9cc471" class="outline-3">
+<h3 id="orga9cc471"><span class="done DONE">DONE</span> 2. Meeting mit David</h3>
+<div class="outline-text-3" id="text-orga9cc471">
 <p><span class="timestamp-wrapper"><span class="timestamp-kwd">CLOSED:</span> <span class="timestamp">[2022-03-08 Tue 22:05] </span> <span class="timestamp-kwd">SCHEDULED:</span> <span class="timestamp">&lt;2022-03-08 Tue 10:00&gt;</span></span></p>
 <ol class="org-ol">
 <li>Fortschritt beim Script</li>
@@ -3098,9 +3098,9 @@ Literatur, Fortsetzung Script
 </div>
 </div>
 
-<div id="outline-container-orgec7a367" class="outline-3">
-<h3 id="orgec7a367"><span class="done DONE">DONE</span> 1. Meeting mit Steyrl-Gruppe via Skype</h3>
-<div class="outline-text-3" id="text-orgec7a367">
+<div id="outline-container-org3a81fb2" class="outline-3">
+<h3 id="org3a81fb2"><span class="done DONE">DONE</span> 1. Meeting mit Steyrl-Gruppe via Skype</h3>
+<div class="outline-text-3" id="text-org3a81fb2">
 <p><span class="timestamp-wrapper"><span class="timestamp-kwd">CLOSED:</span> <span class="timestamp">[2022-03-02 Wed 11:35] </span> <span class="timestamp-kwd">SCHEDULED:</span> <span class="timestamp">&lt;2022-03-02 Wed 11:00&gt;</span></span></p>
 <ul class="org-ul">
 <li>Vorstellung Gruppe und Masterarbeiten</li>
@@ -3108,9 +3108,9 @@ Literatur, Fortsetzung Script
 </div>
 </div>
 
-<div id="outline-container-org1deb907" class="outline-3">
-<h3 id="org1deb907"><span class="done DONE">DONE</span> 1. Meeting mit David via Zoom</h3>
-<div class="outline-text-3" id="text-org1deb907">
+<div id="outline-container-org9f3da93" class="outline-3">
+<h3 id="org9f3da93"><span class="done DONE">DONE</span> 1. Meeting mit David via Zoom</h3>
+<div class="outline-text-3" id="text-org9f3da93">
 <p><span class="timestamp-wrapper"><span class="timestamp-kwd">CLOSED:</span> <span class="timestamp">[2022-02-28 Mon 10:55] </span> <span class="timestamp-kwd">SCHEDULED:</span> <span class="timestamp">&lt;2022-02-28 Mon 10:00&gt;</span></span></p>
 <p>
 Folgendes wurde besprochen:
@@ -3141,9 +3141,9 @@ Masterbetreuungen)</li>
 </div>
 </div>
 
-<div id="outline-container-org58303f3" class="outline-2">
-<h2 id="org58303f3">Literatur</h2>
-<div class="outline-text-2" id="text-org58303f3">
+<div id="outline-container-org0cec1b7" class="outline-2">
+<h2 id="org0cec1b7">Literatur</h2>
+<div class="outline-text-2" id="text-org0cec1b7">
 <ul class="org-ul">
 <li>Géron, A. (2019). Hands-On Machine Learning with Scikit-Learn, Keras,
 and TensorFlow, 2nd Edition. O'Reilly. <a href="https://www.oreilly.com/library/view/hands-on-machine-learning/9781492032632">https://www.oreilly.com/library/view/hands-on-machine-learning/9781492032632</a></li>
@@ -3156,7 +3156,7 @@ and TensorFlow, 2nd Edition. O'Reilly. <a href="https://www.oreilly.com/library/
 <div id="postamble" class="status">
 <p class="author">Autor: Dominik PEGLER</p>
 <p class="email">Email: <a href="mailto:dominikpegler@posteo.org">dominikpegler@posteo.org</a></p>
-<p class="date">Created: 2022-03-10 Thu 11:43</p>
+<p class="date">Created: 2022-03-10 Thu 11:50</p>
 <p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>
