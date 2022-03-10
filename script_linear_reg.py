@@ -2,7 +2,7 @@ from sklearn.model_selection import GroupShuffleSplit
 from sklearn.model_selection import RandomizedSearchCV
 from sklearn.linear_model import ElasticNet
 from scipy.stats import uniform, loguniform
-from get_data import get_mindfulness
+from get_data import get_mindfulness as get_data
 from utils import split_train_test
 import time
 
@@ -11,7 +11,7 @@ def main():
 
     start = time.time()
 
-    X, y = get_mindfulness()
+    X, y = get_data("ffmq-overall")
 
     hyperparams_dist = {
         "alpha": loguniform(1e-4,1e3),

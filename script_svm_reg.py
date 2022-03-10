@@ -1,9 +1,9 @@
 from sklearn.model_selection import GroupShuffleSplit
 from sklearn.model_selection import RandomizedSearchCV
-from sklearn.ensemble import RandomForestRegressor
+from sklearn.svm import SVR
+from scipy.stats import loguniform
 from get_data import get_mindfulness as get_data
 from utils import split_train_test
-import numpy as np
 import time
 
 
@@ -13,23 +13,22 @@ def main():
 
     X, y = get_data()
 
-    n_estimators = [int(x) for x in np.linspace(start=200, stop=2000, num=10)]
-    max_features = ['auto', 'sqrt']
-    max_depth = [int(x) for x in np.linspace(10, 110, num=11)]
-    max_depth.append(None)
-    min_samples_split = [2, 5, 10]
-    min_samples_leaf = [1, 2, 4]
-    bootstrap = [True, False]
+    kernel = ["rbf"]#, "poly", "rbf", "sigmoid"]
+    degree = [1]
+    gamma = ["auto","scale"] # loguniform(1e-6,1e0)
+    C = loguniform(1e0,1e3)
+    epsilon = loguniform(1e-3,1e1)
+    shrinking = [True, False]
 
     hyperparams_grid = {
-        'n_estimators': n_estimators,
-        'max_features': max_features,
-        'max_depth': max_depth,
-        'min_samples_split': min_samples_split,
-        'min_samples_leaf': min_samples_leaf,
-        'bootstrap': bootstrap}
+        'kernel': kernel,
+        'degree': degree,
+        'gamma': gamma,
+        'C': C,
+        'epsilon': epsilon,
+        'shrinking': shrinking}
 
-    reg = RandomForestRegressor(random_state=0)
+    reg = SVR()
 
     # outer CV
     outer_cv = GroupShuffleSplit(
@@ -45,7 +44,7 @@ def main():
 
         # Nested CV with parameter optimization
         search_reg = RandomizedSearchCV(
-            estimator=reg, n_iter=20, param_distributions=hyperparams_grid, cv=5)
+            estimator=reg, n_iter=100, param_distributions=hyperparams_grid, cv=5)
         result = search_reg.fit(X_train, y_train.values.ravel())
 
         print(f"Split {i_cv}:", result.best_estimator_)
