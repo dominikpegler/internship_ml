@@ -1,7 +1,7 @@
 from sklearn.model_selection import GroupShuffleSplit
 from sklearn.model_selection import RandomizedSearchCV
 from sklearn.ensemble import RandomForestRegressor
-from get_data import get_data
+from get_data import get_mindfulness
 from utils import split_train_test
 import numpy as np
 import time
@@ -11,7 +11,7 @@ def main():
 
     start = time.time()
 
-    X, y = get_data()
+    X, y = get_mindfulness()
 
     n_estimators = [int(x) for x in np.linspace(start=200, stop=2000, num=10)]
     max_features = ['auto', 'sqrt']

@@ -3,7 +3,7 @@ from sklearn.preprocessing import StandardScaler
 from sklearn.impute import SimpleImputer
 
 
-def get_data():
+def get_mindfulness():
     """
     loads tab-separated file and returns pandas dataframes for X and y
     """
@@ -66,7 +66,7 @@ def get_data():
     return X, y
 
 
-def get_housing_data():
+def get_housing():
 
     df = pd.read_csv("./data/housing.csv")
     y_label = "median_house_value"
