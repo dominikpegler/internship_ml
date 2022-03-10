@@ -10,7 +10,7 @@
 #+STARTUP: overview indent
 #+OPTIONS: ^:nil toc:nil email:nil num:nil todo:t email:t tags:t broken-links:mark p:t html-style:nil
 # +INFOJS_OPT: view:overview toc:nil mouse:#efefef buttons:t sdepth:nil
-#+EXPORT_FILE_NAME: ~/Dropbox/org/internship_ml/docs/index.html
+#+EXPORT_FILE_NAME: ./index.html
 #+html: <center>
 #+ATTR_HTML: :width 75px
 file:./img/mlicon2.png
@@ -53,7 +53,8 @@ Vorhersage von problematischem Alkoholkonsum anhand von Trait Mindfulness (FFMQ)
 from sklearn.model_selection import GroupShuffleSplit
 from sklearn.model_selection import RandomizedSearchCV
 from sklearn.linear_model import ElasticNet
-from get_data import get_data
+from scipy.stats import uniform, loguniform
+from get_data import get_mindfulness
 from utils import split_train_test
 import time
 
@@ -62,33 +63,28 @@ def main():
 
     start = time.time()
 
-    X, y = get_data()
+    X, y = get_mindfulness()
 
-    hyperparams_grid = {
-        "alpha":
-            [0.1, 0.5, 1, 10, 50, 100, 150, 175, 200, 225, 250,
-             275, 300, 325, 350, 375, 400, 450, 500, 700],
-        "l1_ratio":
-            [0.01, 0.05, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 0.95,
-             0.99]}
+    hyperparams_dist = {
+        "alpha": loguniform(1e-4,1e3),
+        "l1_ratio": uniform(0,1)}
 
     reg = ElasticNet()
 
-    # outer CV
     outer_cv = GroupShuffleSplit(
         n_splits=5,
         test_size=0.2,
         random_state=0)
 
-    # Iterate over outer CV splitter
+    # iterate over outer CV splitter
     for i_cv, (i_train, i_test) in enumerate(outer_cv.split(X, y, groups=X.index), start=1):
 
         y_train, y_test = split_train_test(y, i_train, i_test)
         X_train, X_test = split_train_test(X, i_train, i_test)
 
-        # Nested CV with parameter optimization
+        # nested CV with parameter optimization
         search_reg = RandomizedSearchCV(
-            estimator=reg, n_iter=100, param_distributions=hyperparams_grid, cv=5)
+            estimator=reg, n_iter=1000, param_distributions=hyperparams_dist, cv=5)
         result = search_reg.fit(X_train, y_train)
 
         print(f"Split {i_cv}:", result.best_estimator_)
@@ -106,32 +102,32 @@ if __name__ == "__main__":
 
    #+RESULTS:
    #+begin_example
-   Split 1: ElasticNet(alpha=0.1, l1_ratio=0.6)
-   train score: 0.64088
-   test  score: 0.62964
+   Split 1: ElasticNet(alpha=0.22353045036583108, l1_ratio=0.921710009401984)
+   train score: 0.39843
+   test  score: 0.35452
 
 
-   Split 2: ElasticNet(alpha=0.5, l1_ratio=0.9)
-   train score: 0.6403
-   test  score: 0.62229
+   Split 2: ElasticNet(alpha=0.38670990511510717, l1_ratio=0.5496084445311907)
+   train score: 0.35856
+   test  score: 0.3375
 
 
-   Split 3: ElasticNet(alpha=0.1, l1_ratio=0.6)
-   train score: 0.6356
-   test  score: 0.64978
+   Split 3: ElasticNet(alpha=0.23670822716772796, l1_ratio=0.9640748041622479)
+   train score: 0.39367
+   test  score: 0.32558
 
 
-   Split 4: ElasticNet(alpha=0.1, l1_ratio=0.6)
-   train score: 0.63487
-   test  score: 0.65626
+   Split 4: ElasticNet(alpha=0.16004253247739003, l1_ratio=0.9670520803504764)
+   train score: 0.40839
+   test  score: 0.39424
 
 
-   Split 5: ElasticNet(alpha=0.1)
-   train score: 0.63759
-   test  score: 0.6341
+   Split 5: ElasticNet(alpha=0.19681489242009514, l1_ratio=0.9419440864149886)
+   train score: 0.43669
+   test  score: 0.25164
 
 
-   Execution time: 45.699s
+   Execution time: 222.611s
    #+end_example
 
 ** TODO Bericht
