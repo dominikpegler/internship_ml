@@ -25,8 +25,9 @@ file:./img/mlicon2.png
 * Tasks
 
 ** TODO Standard-ML-Script erstellen
-DEADLINE: <2022-03-13 Sun>
+DEADLINE: <2022-03-15 Tue>
    :LOGBOOK:
+   CLOCK: [2022-03-11 Fri 09:45]--[2022-03-11 Fri 12:10] =>  2:25
    CLOCK: [2022-03-09 Wed 19:02]--[2022-03-09 Wed 21:13] =>  2:11
    CLOCK: [2022-03-09 Wed 17:15]--[2022-03-09 Wed 18:15] =>  1:00
    CLOCK: [2022-03-09 Wed 13:00]--[2022-03-09 Wed 15:15] =>  2:15
@@ -137,7 +138,8 @@ DEADLINE: <2022-04-30 Sat>
 Einführung, Data preprocessing & cross-validation, Scikit-learn-Dokumentation,
 Regularisierte lineare Modelle (Ridge, Lasso etc.)
 *** Woche 2
-Literatur, Fortsetzung Script
+Literatur, Fortsetzung Script (RansomSearchCV, BayesCV), Gradienten
+für OR- und XOR-Netzwerke manuell rechnen
 *** Wochen 3--8
 
 * Meetings
@@ -183,6 +185,8 @@ CLOCK: [2022-03-08 Tue 10:00]--[2022-03-08 Tue 10:50] =>  0:50
    
 * Literatur
 :LOGBOOK:
+CLOCK: [2022-03-11 Fri 18:54]--[2022-03-11 Fri 21:54] =>  3:00
+CLOCK: [2022-03-10 Thu 20:00]--[2022-03-10 Thu 22:30] =>  2:30
 CLOCK: [2022-03-07 Mon 19:20]--[2022-03-07 Mon 23:55] =>  4:35
 CLOCK: [2022-03-06 Sun 18:45]--[2022-03-06 Sun 20:10] =>  1:25
 CLOCK: [2022-03-05 Sat 19:05]--[2022-03-05 Sat 22:35] =>  3:30
