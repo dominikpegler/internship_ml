@@ -1,5 +1,9 @@
 #+TITLE: ML Internship 2022
 #+SUBTITLE: Department for Cognition, Emotion & Research Methods \\
+#+html: <center>
+#+ATTR_HTML: :width 66px
+file:./img/mlicon2.png
+#+html: </center>
 #+SUBTITLE: [[https://www.github.com/dominikpegler/internship_ml][code repo]]
 #+AUTHOR: Dominik PEGLER
 #+EMAIL: dominikpegler@posteo.org
@@ -11,10 +15,6 @@
 #+OPTIONS: ^:nil toc:nil email:nil num:nil todo:t email:t tags:t broken-links:mark p:t html-style:nil
 # +INFOJS_OPT: view:overview toc:nil mouse:#efefef buttons:t sdepth:nil
 #+EXPORT_FILE_NAME: ~/Dropbox/org/internship_ml/docs/index.html
-#+html: <center>
-#+ATTR_HTML: :width 50px
-file:./img/mlicon2.png
-#+html: </center>
 #+TOC: headlines 2
 
 
@@ -145,7 +145,7 @@ Here a brief overview of what was going on each week ...
 Intro, Data preprocessing & cross-validation, scikit-learn-documentation,
 regularized linear models (Ridge, Lasso etc.)
 *** Week 2
-Literature, continuation script (implementing RandomSearchCV, BayesSearchCV), manually computing gradients
+Literature, continuation script (implementing ElasticNet, RandomSearchCV, BayesSearchCV), manually computing gradients
 for simple OR- und XOR-networks
 *** Weeks 3--8
 
