@@ -6,7 +6,7 @@ file:./img/mlicon2.png
 #+html: </center>
 #+SUBTITLE: [[https://www.github.com/dominikpegler/internship_ml][code repo]]
 #+AUTHOR: Dominik PEGLER
-#+EMAIL: dominikpegler@posteo.org
+#+EMAIL: a01468373@unet.univie.ac.at
 # +SETUPFILE: setupfile_article_fls_en.org
 #+FILETAGS: ml
 #+CATEGORY: machine-learning
