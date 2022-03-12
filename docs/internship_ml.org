@@ -6,11 +6,11 @@
 # +SETUPFILE: setupfile_article_fls_en.org
 #+FILETAGS: ml
 #+CATEGORY: machine-learning
-#+LANGUAGE: de
+#+LANGUAGE: en
 #+STARTUP: overview indent
 #+OPTIONS: ^:nil toc:nil email:nil num:nil todo:t email:t tags:t broken-links:mark p:t html-style:nil
 # +INFOJS_OPT: view:overview toc:nil mouse:#efefef buttons:t sdepth:nil
-#+EXPORT_FILE_NAME: ./index.html
+#+EXPORT_FILE_NAME: ~/Dropbox/org/internship_ml/docs/index.html
 #+html: <center>
 #+ATTR_HTML: :width 75px
 file:./img/mlicon2.png
@@ -24,7 +24,7 @@ file:./img/mlicon2.png
 
 * Tasks
 
-** TODO Standard-ML-Script erstellen
+** TODO Create a standard ML Script
 DEADLINE: <2022-03-15 Tue>
    :LOGBOOK:
    CLOCK: [2022-03-11 Fri 09:45]--[2022-03-11 Fri 12:10] =>  2:25
@@ -47,13 +47,11 @@ DEADLINE: <2022-03-15 Tue>
    CLOCK: [2022-02-28 Mon 19:45]--[2022-02-28 Mon 23:43] =>  3:58
    :END:
 
-Vorhersage von problematischem Alkoholkonsum anhand von Trait
-Mindfulness (FFMQ), Impulsivität (UPPS-P), Coping-Motiven
-(DMQ-R-Cope), männlichem Geschlecht und Erwerbstätigkeit
-(Anzahl Wochenstunden).
+Predicting problematic alcohol consumpion by trait
+mindfulness (FFMQ), impulsiveness (UPPS-P), drinking-to-cope motives
+(DMQ-R-Cope), sex and weekly working hours.
 
-#+begin_src python :session *py* :exports both :results output :dir /home/user/data/psy_misc/internship_ml
-
+#+begin_src python -n :eval never-export :session *py* :exports both :results output :dir /home/user/data/psy_misc/internship_ml
 from sklearn.model_selection import GroupShuffleSplit
 from skopt import BayesSearchCV 
 from sklearn.linear_model import ElasticNet
@@ -106,7 +104,6 @@ def main():
 
 if __name__ == "__main__":
     main()
-
 #+end_src
 
    #+RESULTS:
@@ -139,59 +136,58 @@ if __name__ == "__main__":
    Execution time: 217.066s
    #+end_example
 
-** TODO Bericht
+** TODO Writing the report
 DEADLINE: <2022-04-30 Sat>
 
-*** Woche 1
-Einführung, Data preprocessing & cross-validation, Scikit-learn-Dokumentation,
-Regularisierte lineare Modelle (Ridge, Lasso etc.)
-*** Woche 2
-Literatur, Fortsetzung Script (RansomSearchCV, BayesSearchCV), Gradienten
-für OR- und XOR-Netzwerke manuell rechnen
-*** Wochen 3--8
+Here a brief overview of what was going on each week ...
+
+*** Week 1
+Intro, Data preprocessing & cross-validation, scikit-learn-documentation,
+regularized linear models (Ridge, Lasso etc.)
+*** Week 2
+Literature, continuation script (implementing RandomSearchCV, BayesSearchCV), manually computing gradients
+for simple OR- und XOR-networks
+*** Weeks 3--8
 
 * Meetings
 
-** TODO 2. Meeting mit Steyrl-Gruppe via Skype
+** TODO 2. Meeting with Steyrl-Group via Skype
 SCHEDULED: <2022-03-15 Tue 11:00>
-** DONE 2. Meeting mit David
+** DONE 2. Meeting with David
 CLOSED: [2022-03-08 Tue 22:05] SCHEDULED: <2022-03-08 Tue 10:00>
 :LOGBOOK:
 CLOCK: [2022-03-08 Tue 10:00]--[2022-03-08 Tue 10:50] =>  0:50
 :END:
-     1. Fortschritt beim Script
-     2. Besprechen der Regressoren und Hyperparameter
+     1. Progress of standard script creation
+     2. Discussing regressors and their hyperparameters
      
-** DONE 1. Meeting mit Steyrl-Gruppe via Skype
+** DONE 1. Meeting with Steyrl-Group via Skype
     CLOSED: [2022-03-02 Wed 11:35] SCHEDULED: <2022-03-02 Wed 11:00>
     :LOGBOOK:
     CLOCK: [2022-03-02 Wed 11:00]--[2022-03-02 Wed 11:35] =>  0:35
     :END:
-- Vorstellung Gruppe und Masterarbeiten
+- Introducing group and master thesis topics
 
-** DONE 1. Meeting mit David via Zoom
+** DONE 1. Meeting with David via Zoom
     CLOSED: [2022-02-28 Mon 10:55] SCHEDULED: <2022-02-28 Mon 10:00>
     :LOGBOOK:
     CLOCK: [2022-02-28 Mon 10:00]--[2022-02-28 Mon 10:55] =>  0:55
     :END:
 
-    Folgendes wurde besprochen:
-
-    1. Thema des Praktikums
-       1. Daten aus Bachelorarbeit mit ML-Methoden bearbeiten
-          (regularisierte lineare Modelle & Random Forests)
-       2. Weitere Themen sehen wir dann im weiteren Verlauf
-    2. Allgemeines zu den Python Libraries und Arbeitsweise
-    3. Erstes Ziel definiert: Standard-ML-Script erstellen, das vorerst nur
-       1. Daten einliest,
-       2. Daten in X und y, sowie in Trainings- und Testdaten teilt,
-       3. Kreuzvalidierung (GroupShuffleSplit) vornimmt
-	  1. Äußere Schleife (zur Vermeidung von Overfitting)
-	  2. Innere Schleife (zum Finden der optimalen Hyperparameter)
-    4. Nächster Termin vereinbart in zwei Tagen (zusammen mit seinen
-       Masterbetreuungen)
+    1. Topic of internship
+       1. Analyze my bachelor thesis data with ML methods
+          (regularisierte linear models & random forests)
+       2. Further topics and tasks we may discuss at a later stage
+    2. General concepts about python libraries and workflow
+    3. First goal: Creating a standard ML script that does the following
+       1. Reads in the data,
+       2. Splits data into X and y, into train and test sets,
+       3. carries out cross validation (GroupShuffleSplit) 
+	      1. Outer loop (to prevent overfitting)
+	      2. Inner loop (for finding optimal hyperparameters)
+    4. Agreed to meet next in two Tagen (together with the master thesis students)
    
-* Literatur
+* Reading
 :LOGBOOK:
 CLOCK: [2022-03-11 Fri 18:54]--[2022-03-11 Fri 21:54] =>  3:00
 CLOCK: [2022-03-10 Thu 20:00]--[2022-03-10 Thu 22:30] =>  2:30

@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" lang="de" xml:lang="de">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2022-03-12 Sat 10:14 -->
+<!-- 2022-03-12 Sat 10:52 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>ML Internship 2022</title>
@@ -2572,14 +2572,14 @@ ul {
 }
 
 a {
-    color: #ff4d79;
+    color: #0066ff;
     //border-bottom: 1px dotted
-    text-decoration: none
 }
 
 a:hover {
-    color: #0066ff;
+    color: #ff4d79;
     //border-bottom: 1px dotted
+    text-decoration: none
 }
 
 figure {
@@ -2931,108 +2931,105 @@ p.verse {
 </h1>
 <center>
 
-<div id="orga490f73" class="figure">
+<div id="orgea2e108" class="figure">
 <p><img src="./img/mlicon2.png" alt="mlicon2.png" width="75px" />
 </p>
 </div>
 </center>
 <div id="table-of-contents">
-<h2>Inhaltsverzeichnis</h2>
+<h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org3475e1b">Tasks</a>
+<li><a href="#org0ed1ec0">Tasks</a>
 <ul>
-<li><a href="#org9271d88"><span class="todo TODO">TODO</span> Standard-ML-Script erstellen</a></li>
-<li><a href="#org13b9834"><span class="todo TODO">TODO</span> Bericht</a></li>
+<li><a href="#orgb45443c"><span class="todo TODO">TODO</span> Create a standard ML Script</a></li>
+<li><a href="#org70080e2"><span class="todo TODO">TODO</span> Writing the report</a></li>
 </ul>
 </li>
-<li><a href="#org780589b">Meetings</a>
+<li><a href="#orgc2953db">Meetings</a>
 <ul>
-<li><a href="#org90d7b8e"><span class="todo TODO">TODO</span> 2. Meeting mit Steyrl-Gruppe via Skype</a></li>
-<li><a href="#org3d4790f"><span class="done DONE">DONE</span> 2. Meeting mit David</a></li>
-<li><a href="#org4f01ad7"><span class="done DONE">DONE</span> 1. Meeting mit Steyrl-Gruppe via Skype</a></li>
-<li><a href="#org4965c6d"><span class="done DONE">DONE</span> 1. Meeting mit David via Zoom</a></li>
+<li><a href="#org8220f41"><span class="todo TODO">TODO</span> 2. Meeting with Steyrl-Group via Skype</a></li>
+<li><a href="#orge3faa1e"><span class="done DONE">DONE</span> 2. Meeting with David</a></li>
+<li><a href="#org59a7b0f"><span class="done DONE">DONE</span> 1. Meeting with Steyrl-Group via Skype</a></li>
+<li><a href="#orge01cc48"><span class="done DONE">DONE</span> 1. Meeting with David via Zoom</a></li>
 </ul>
 </li>
-<li><a href="#orgc3b4e7e">Literatur</a></li>
+<li><a href="#org86bf7a2">Reading</a></li>
 </ul>
 </div>
 </div>
 
-<div id="outline-container-org3475e1b" class="outline-2">
-<h2 id="org3475e1b">Tasks</h2>
-<div class="outline-text-2" id="text-org3475e1b">
+<div id="outline-container-org0ed1ec0" class="outline-2">
+<h2 id="org0ed1ec0">Tasks</h2>
+<div class="outline-text-2" id="text-org0ed1ec0">
 </div>
-<div id="outline-container-org9271d88" class="outline-3">
-<h3 id="org9271d88"><span class="todo TODO">TODO</span> Standard-ML-Script erstellen</h3>
-<div class="outline-text-3" id="text-org9271d88">
+<div id="outline-container-orgb45443c" class="outline-3">
+<h3 id="orgb45443c"><span class="todo TODO">TODO</span> Create a standard ML Script</h3>
+<div class="outline-text-3" id="text-orgb45443c">
 <p><span class="timestamp-wrapper"><span class="timestamp-kwd">DEADLINE:</span> <span class="timestamp">&lt;2022-03-15 Tue&gt;</span></span></p>
 <p>
-Vorhersage von problematischem Alkoholkonsum anhand von Trait
-Mindfulness (FFMQ), Impulsivität (UPPS-P), Coping-Motiven
-(DMQ-R-Cope), männlichem Geschlecht und Erwerbstätigkeit
-(Anzahl Wochenstunden).
+Predicting problematic alcohol consumpion by trait
+mindfulness (FFMQ), impulsiveness (UPPS-P), drinking-to-cope motives
+(DMQ-R-Cope), sex and weekly working hours.
 </p>
 
 <div class="org-src-container">
-<pre class="src src-python">
-<span style="color: #4f97d7; font-weight: bold;">from</span> sklearn.model_selection <span style="color: #4f97d7; font-weight: bold;">import</span> GroupShuffleSplit
-<span style="color: #4f97d7; font-weight: bold;">from</span> skopt <span style="color: #4f97d7; font-weight: bold;">import</span> BayesSearchCV 
-<span style="color: #4f97d7; font-weight: bold;">from</span> sklearn.linear_model <span style="color: #4f97d7; font-weight: bold;">import</span> ElasticNet
-<span style="color: #4f97d7; font-weight: bold;">from</span> get_data <span style="color: #4f97d7; font-weight: bold;">import</span> get_mindfulness <span style="color: #4f97d7; font-weight: bold;">as</span> get_data
-<span style="color: #4f97d7; font-weight: bold;">from</span> utils <span style="color: #4f97d7; font-weight: bold;">import</span> split_train_test
-<span style="color: #4f97d7; font-weight: bold;">import</span> time
-
-
-<span style="color: #4f97d7; font-weight: bold;">def</span> <span style="color: #bc6ec5; font-weight: bold;">main</span>():
-
-<span style="background-color: #fff;"> </span>   <span style="color: #7590db;">start</span> = time.time()
-<span style="background-color: #fff;"> </span>   
-<span style="background-color: #fff;"> </span>   <span style="color: #7590db;">X</span>, <span style="color: #7590db;">y</span> = get_data()
-<span style="background-color: #fff;"> </span>   
-<span style="background-color: #fff;"> </span>   <span style="color: #7590db;">hyperparams_dist</span> = {
-<span style="background-color: #fff;"> </span>   <span style="background-color: #fff;"> </span>   <span style="color: #2d9574;">"alpha"</span>: (1e-4,1e3,<span style="color: #2d9574;">"log-uniform"</span>),
-<span style="background-color: #fff;"> </span>   <span style="background-color: #fff;"> </span>   <span style="color: #2d9574;">"l1_ratio"</span>: (1e-3,1.0,<span style="color: #2d9574;">"uniform"</span>)
-<span style="background-color: #fff;"> </span>   }
-<span style="background-color: #fff;"> </span>   
-<span style="background-color: #fff;"> </span>   <span style="color: #7590db;">reg</span> = ElasticNet()
-<span style="background-color: #fff;"> </span>   
-<span style="background-color: #fff;"> </span>   <span style="color: #7590db;">outer_cv</span> = GroupShuffleSplit(
-<span style="background-color: #fff;"> </span>   <span style="background-color: #fff;"> </span>   n_splits=5,
-<span style="background-color: #fff;"> </span>   <span style="background-color: #fff;"> </span>   test_size=0.2,
-<span style="background-color: #fff;"> </span>   <span style="background-color: #fff;"> </span>   random_state=0)
-<span style="background-color: #fff;"> </span>   
-<span style="background-color: #fff;"> </span>   <span style="color: #2aa1ae; background-color: #fff;"># </span><span style="color: #2aa1ae; background-color: #fff;">iterate over outer CV splitter</span>
-<span style="background-color: #fff;"> </span>   <span style="color: #4f97d7; font-weight: bold;">for</span> i_cv, (i_train, i_test) <span style="color: #4f97d7; font-weight: bold;">in</span> <span style="color: #4f97d7;">enumerate</span>(outer_cv.split(X, y, groups=X.index), start=1):
-<span style="background-color: #fff;"> </span>   
-<span style="background-color: #fff;"> </span>   <span style="background-color: #fff;"> </span>   <span style="color: #7590db;">y_train</span>, <span style="color: #7590db;">y_test</span> = split_train_test(y, i_train, i_test)
-<span style="background-color: #fff;"> </span>   <span style="background-color: #fff;"> </span>   <span style="color: #7590db;">X_train</span>, <span style="color: #7590db;">X_test</span> = split_train_test(X, i_train, i_test)
-<span style="background-color: #fff;"> </span>   
-<span style="background-color: #fff;"> </span>   <span style="background-color: #fff;"> </span>   <span style="color: #2aa1ae; background-color: #fff;"># </span><span style="color: #2aa1ae; background-color: #fff;">nested CV with parameter optimization</span>
-<span style="background-color: #fff;"> </span>   <span style="background-color: #fff;"> </span>   <span style="color: #7590db;">search_reg</span> = BayesSearchCV(
-<span style="background-color: #fff;"> </span>   <span style="background-color: #fff;"> </span>   <span style="background-color: #fff;"> </span>   estimator=reg,
-<span style="background-color: #fff;"> </span>   <span style="background-color: #fff;"> </span>   <span style="background-color: #fff;"> </span>   search_spaces=hyperparams_dist,
-<span style="background-color: #fff;"> </span>   <span style="background-color: #fff;"> </span>   <span style="background-color: #fff;"> </span>   n_iter=50,
-<span style="background-color: #fff;"> </span>   <span style="background-color: #fff;"> </span>   <span style="background-color: #fff;"> </span>   cv=5,
-<span style="background-color: #fff;"> </span>   <span style="background-color: #fff;"> </span>   <span style="background-color: #fff;"> </span>   n_jobs=8,
-<span style="background-color: #fff;"> </span>   <span style="background-color: #fff;"> </span>   <span style="background-color: #fff;"> </span>   random_state=0)
-<span style="background-color: #fff;"> </span>   <span style="background-color: #fff;"> </span>   <span style="color: #7590db;">result</span> = search_reg.fit(X_train, y_train)
-<span style="background-color: #fff;"> </span>   
-<span style="background-color: #fff;"> </span>   <span style="background-color: #fff;"> </span>   <span style="color: #4f97d7; font-weight: bold;">print</span>(f<span style="color: #2d9574;">"Split {i_cv}:"</span>, result.best_estimator_)
-<span style="background-color: #fff;"> </span>   <span style="background-color: #fff;"> </span>   <span style="color: #4f97d7; font-weight: bold;">print</span>(<span style="color: #2d9574;">"train score:"</span>, <span style="color: #4f97d7;">round</span>(result.score(X_train, y_train), 5))
-<span style="background-color: #fff;"> </span>   <span style="background-color: #fff;"> </span>   <span style="color: #4f97d7; font-weight: bold;">print</span>(<span style="color: #2d9574;">"test  score:"</span>, <span style="color: #4f97d7;">round</span>(result.score(X_test, y_test), 5))
-<span style="background-color: #fff;"> </span>   <span style="background-color: #fff;"> </span>   <span style="color: #4f97d7; font-weight: bold;">print</span>(<span style="color: #2d9574;">"\n"</span>)
-<span style="background-color: #fff;"> </span>   
-<span style="background-color: #fff;"> </span>   <span style="color: #4f97d7; font-weight: bold;">print</span>(f<span style="color: #2d9574;">"Execution time: {(time.time()-start):.3f}s"</span>)
-
-
-<span style="color: #4f97d7; font-weight: bold;">if</span> <span style="color: #4f97d7;">__name__</span> == <span style="color: #2d9574;">"__main__"</span>:
-<span style="background-color: #fff;"> </span>   main()
-
+<pre class="src src-python"><span class="linenr"> 1: </span><span style="color: #4f97d7; font-weight: bold;">from</span> sklearn.model_selection <span style="color: #4f97d7; font-weight: bold;">import</span> GroupShuffleSplit
+<span class="linenr"> 2: </span><span style="color: #4f97d7; font-weight: bold;">from</span> skopt <span style="color: #4f97d7; font-weight: bold;">import</span> BayesSearchCV 
+<span class="linenr"> 3: </span><span style="color: #4f97d7; font-weight: bold;">from</span> sklearn.linear_model <span style="color: #4f97d7; font-weight: bold;">import</span> ElasticNet
+<span class="linenr"> 4: </span><span style="color: #4f97d7; font-weight: bold;">from</span> get_data <span style="color: #4f97d7; font-weight: bold;">import</span> get_mindfulness <span style="color: #4f97d7; font-weight: bold;">as</span> get_data
+<span class="linenr"> 5: </span><span style="color: #4f97d7; font-weight: bold;">from</span> utils <span style="color: #4f97d7; font-weight: bold;">import</span> split_train_test
+<span class="linenr"> 6: </span><span style="color: #4f97d7; font-weight: bold;">import</span> time
+<span class="linenr"> 7: </span>
+<span class="linenr"> 8: </span>
+<span class="linenr"> 9: </span><span style="color: #4f97d7; font-weight: bold;">def</span> <span style="color: #bc6ec5; font-weight: bold;">main</span>():
+<span class="linenr">10: </span>
+<span class="linenr">11: </span><span style="background-color: #fff;"> </span>   <span style="color: #7590db;">start</span> = time.time()
+<span class="linenr">12: </span><span style="background-color: #fff;"> </span>   
+<span class="linenr">13: </span><span style="background-color: #fff;"> </span>   <span style="color: #7590db;">X</span>, <span style="color: #7590db;">y</span> = get_data()
+<span class="linenr">14: </span><span style="background-color: #fff;"> </span>   
+<span class="linenr">15: </span><span style="background-color: #fff;"> </span>   <span style="color: #7590db;">hyperparams_dist</span> = {
+<span class="linenr">16: </span><span style="background-color: #fff;"> </span>   <span style="background-color: #fff;"> </span>   <span style="color: #2d9574;">"alpha"</span>: (1e-4,1e3,<span style="color: #2d9574;">"log-uniform"</span>),
+<span class="linenr">17: </span><span style="background-color: #fff;"> </span>   <span style="background-color: #fff;"> </span>   <span style="color: #2d9574;">"l1_ratio"</span>: (1e-3,1.0,<span style="color: #2d9574;">"uniform"</span>)
+<span class="linenr">18: </span><span style="background-color: #fff;"> </span>   }
+<span class="linenr">19: </span><span style="background-color: #fff;"> </span>   
+<span class="linenr">20: </span><span style="background-color: #fff;"> </span>   <span style="color: #7590db;">reg</span> = ElasticNet()
+<span class="linenr">21: </span><span style="background-color: #fff;"> </span>   
+<span class="linenr">22: </span><span style="background-color: #fff;"> </span>   <span style="color: #7590db;">outer_cv</span> = GroupShuffleSplit(
+<span class="linenr">23: </span><span style="background-color: #fff;"> </span>   <span style="background-color: #fff;"> </span>   n_splits=5,
+<span class="linenr">24: </span><span style="background-color: #fff;"> </span>   <span style="background-color: #fff;"> </span>   test_size=0.2,
+<span class="linenr">25: </span><span style="background-color: #fff;"> </span>   <span style="background-color: #fff;"> </span>   random_state=0)
+<span class="linenr">26: </span><span style="background-color: #fff;"> </span>   
+<span class="linenr">27: </span><span style="background-color: #fff;"> </span>   <span style="color: #2aa1ae; background-color: #fff;"># </span><span style="color: #2aa1ae; background-color: #fff;">iterate over outer CV splitter</span>
+<span class="linenr">28: </span><span style="background-color: #fff;"> </span>   <span style="color: #4f97d7; font-weight: bold;">for</span> i_cv, (i_train, i_test) <span style="color: #4f97d7; font-weight: bold;">in</span> <span style="color: #4f97d7;">enumerate</span>(outer_cv.split(X, y, groups=X.index), start=1):
+<span class="linenr">29: </span><span style="background-color: #fff;"> </span>   
+<span class="linenr">30: </span><span style="background-color: #fff;"> </span>   <span style="background-color: #fff;"> </span>   <span style="color: #7590db;">y_train</span>, <span style="color: #7590db;">y_test</span> = split_train_test(y, i_train, i_test)
+<span class="linenr">31: </span><span style="background-color: #fff;"> </span>   <span style="background-color: #fff;"> </span>   <span style="color: #7590db;">X_train</span>, <span style="color: #7590db;">X_test</span> = split_train_test(X, i_train, i_test)
+<span class="linenr">32: </span><span style="background-color: #fff;"> </span>   
+<span class="linenr">33: </span><span style="background-color: #fff;"> </span>   <span style="background-color: #fff;"> </span>   <span style="color: #2aa1ae; background-color: #fff;"># </span><span style="color: #2aa1ae; background-color: #fff;">nested CV with parameter optimization</span>
+<span class="linenr">34: </span><span style="background-color: #fff;"> </span>   <span style="background-color: #fff;"> </span>   <span style="color: #7590db;">search_reg</span> = BayesSearchCV(
+<span class="linenr">35: </span><span style="background-color: #fff;"> </span>   <span style="background-color: #fff;"> </span>   <span style="background-color: #fff;"> </span>   estimator=reg,
+<span class="linenr">36: </span><span style="background-color: #fff;"> </span>   <span style="background-color: #fff;"> </span>   <span style="background-color: #fff;"> </span>   search_spaces=hyperparams_dist,
+<span class="linenr">37: </span><span style="background-color: #fff;"> </span>   <span style="background-color: #fff;"> </span>   <span style="background-color: #fff;"> </span>   n_iter=50,
+<span class="linenr">38: </span><span style="background-color: #fff;"> </span>   <span style="background-color: #fff;"> </span>   <span style="background-color: #fff;"> </span>   cv=5,
+<span class="linenr">39: </span><span style="background-color: #fff;"> </span>   <span style="background-color: #fff;"> </span>   <span style="background-color: #fff;"> </span>   n_jobs=8,
+<span class="linenr">40: </span><span style="background-color: #fff;"> </span>   <span style="background-color: #fff;"> </span>   <span style="background-color: #fff;"> </span>   random_state=0)
+<span class="linenr">41: </span><span style="background-color: #fff;"> </span>   <span style="background-color: #fff;"> </span>   <span style="color: #7590db;">result</span> = search_reg.fit(X_train, y_train)
+<span class="linenr">42: </span><span style="background-color: #fff;"> </span>   
+<span class="linenr">43: </span><span style="background-color: #fff;"> </span>   <span style="background-color: #fff;"> </span>   <span style="color: #4f97d7; font-weight: bold;">print</span>(f<span style="color: #2d9574;">"Split {i_cv}:"</span>, result.best_estimator_)
+<span class="linenr">44: </span><span style="background-color: #fff;"> </span>   <span style="background-color: #fff;"> </span>   <span style="color: #4f97d7; font-weight: bold;">print</span>(<span style="color: #2d9574;">"train score:"</span>, <span style="color: #4f97d7;">round</span>(result.score(X_train, y_train), 5))
+<span class="linenr">45: </span><span style="background-color: #fff;"> </span>   <span style="background-color: #fff;"> </span>   <span style="color: #4f97d7; font-weight: bold;">print</span>(<span style="color: #2d9574;">"test  score:"</span>, <span style="color: #4f97d7;">round</span>(result.score(X_test, y_test), 5))
+<span class="linenr">46: </span><span style="background-color: #fff;"> </span>   <span style="background-color: #fff;"> </span>   <span style="color: #4f97d7; font-weight: bold;">print</span>(<span style="color: #2d9574;">"\n"</span>)
+<span class="linenr">47: </span><span style="background-color: #fff;"> </span>   
+<span class="linenr">48: </span><span style="background-color: #fff;"> </span>   <span style="color: #4f97d7; font-weight: bold;">print</span>(f<span style="color: #2d9574;">"Execution time: {(time.time()-start):.3f}s"</span>)
+<span class="linenr">49: </span>
+<span class="linenr">50: </span>
+<span class="linenr">51: </span><span style="color: #4f97d7; font-weight: bold;">if</span> <span style="color: #4f97d7;">__name__</span> == <span style="color: #2d9574;">"__main__"</span>:
+<span class="linenr">52: </span><span style="background-color: #fff;"> </span>   main()
 </pre>
 </div>
 
-<pre class="example" id="orgca9d19e">
+<pre class="example" id="orgcd4790f">
    Split 1: ElasticNet(alpha=0.18719219516699595, l1_ratio=1.0)
    train score: 0.40553
    test  score: 0.36028
@@ -3058,108 +3055,107 @@ Mindfulness (FFMQ), Impulsivität (UPPS-P), Coping-Motiven
    test  score: 0.25232
 
 
-   Execution time: 221.651s
+   Execution time: 217.066s
 </pre>
 </div>
 </div>
 
-<div id="outline-container-org13b9834" class="outline-3">
-<h3 id="org13b9834"><span class="todo TODO">TODO</span> Bericht</h3>
-<div class="outline-text-3" id="text-org13b9834">
+<div id="outline-container-org70080e2" class="outline-3">
+<h3 id="org70080e2"><span class="todo TODO">TODO</span> Writing the report</h3>
+<div class="outline-text-3" id="text-org70080e2">
 <p><span class="timestamp-wrapper"><span class="timestamp-kwd">DEADLINE:</span> <span class="timestamp">&lt;2022-04-30 Sat&gt;</span></span></p>
+
+<p>
+Here a brief overview of what was going on each week &#x2026;
+</p>
 </div>
 
-<div id="outline-container-orga674f40" class="outline-4">
-<h4 id="orga674f40">Woche 1</h4>
-<div class="outline-text-4" id="text-orga674f40">
+<div id="outline-container-orgde21940" class="outline-4">
+<h4 id="orgde21940">Week 1</h4>
+<div class="outline-text-4" id="text-orgde21940">
 <p>
-Einführung, Data preprocessing &amp; cross-validation, Scikit-learn-Dokumentation,
-Regularisierte lineare Modelle (Ridge, Lasso etc.)
+Intro, Data preprocessing &amp; cross-validation, scikit-learn-documentation,
+regularized linear models (Ridge, Lasso etc.)
 </p>
 </div>
 </div>
-<div id="outline-container-orga93c194" class="outline-4">
-<h4 id="orga93c194">Woche 2</h4>
-<div class="outline-text-4" id="text-orga93c194">
+<div id="outline-container-org12de082" class="outline-4">
+<h4 id="org12de082">Week 2</h4>
+<div class="outline-text-4" id="text-org12de082">
 <p>
-Literatur, Fortsetzung Script (RansomSearchCV, BayesSearchCV), Gradienten
-für OR- und XOR-Netzwerke manuell rechnen
+Literature, continuation script (implementing RandomSearchCV, BayesSearchCV), manually computing gradients
+for simple OR- und XOR-networks
 </p>
 </div>
 </div>
-<div id="outline-container-org19f59c5" class="outline-4">
-<h4 id="org19f59c5">Wochen 3&#x2013;8</h4>
+<div id="outline-container-org2d176fa" class="outline-4">
+<h4 id="org2d176fa">Weeks 3&#x2013;8</h4>
 </div>
 </div>
 </div>
 
-<div id="outline-container-org780589b" class="outline-2">
-<h2 id="org780589b">Meetings</h2>
-<div class="outline-text-2" id="text-org780589b">
+<div id="outline-container-orgc2953db" class="outline-2">
+<h2 id="orgc2953db">Meetings</h2>
+<div class="outline-text-2" id="text-orgc2953db">
 </div>
-<div id="outline-container-org90d7b8e" class="outline-3">
-<h3 id="org90d7b8e"><span class="todo TODO">TODO</span> 2. Meeting mit Steyrl-Gruppe via Skype</h3>
-<div class="outline-text-3" id="text-org90d7b8e">
+<div id="outline-container-org8220f41" class="outline-3">
+<h3 id="org8220f41"><span class="todo TODO">TODO</span> 2. Meeting with Steyrl-Group via Skype</h3>
+<div class="outline-text-3" id="text-org8220f41">
 <p><span class="timestamp-wrapper"><span class="timestamp-kwd">SCHEDULED:</span> <span class="timestamp">&lt;2022-03-15 Tue 11:00&gt;</span></span></p>
 </div>
 </div>
-<div id="outline-container-org3d4790f" class="outline-3">
-<h3 id="org3d4790f"><span class="done DONE">DONE</span> 2. Meeting mit David</h3>
-<div class="outline-text-3" id="text-org3d4790f">
+<div id="outline-container-orge3faa1e" class="outline-3">
+<h3 id="orge3faa1e"><span class="done DONE">DONE</span> 2. Meeting with David</h3>
+<div class="outline-text-3" id="text-orge3faa1e">
 <p><span class="timestamp-wrapper"><span class="timestamp-kwd">CLOSED:</span> <span class="timestamp">[2022-03-08 Tue 22:05] </span> <span class="timestamp-kwd">SCHEDULED:</span> <span class="timestamp">&lt;2022-03-08 Tue 10:00&gt;</span></span></p>
 <ol class="org-ol">
-<li>Fortschritt beim Script</li>
-<li>Besprechen der Regressoren und Hyperparameter</li>
+<li>Progress of standard script creation</li>
+<li>Discussing regressors and their hyperparameters</li>
 </ol>
 </div>
 </div>
 
-<div id="outline-container-org4f01ad7" class="outline-3">
-<h3 id="org4f01ad7"><span class="done DONE">DONE</span> 1. Meeting mit Steyrl-Gruppe via Skype</h3>
-<div class="outline-text-3" id="text-org4f01ad7">
+<div id="outline-container-org59a7b0f" class="outline-3">
+<h3 id="org59a7b0f"><span class="done DONE">DONE</span> 1. Meeting with Steyrl-Group via Skype</h3>
+<div class="outline-text-3" id="text-org59a7b0f">
 <p><span class="timestamp-wrapper"><span class="timestamp-kwd">CLOSED:</span> <span class="timestamp">[2022-03-02 Wed 11:35] </span> <span class="timestamp-kwd">SCHEDULED:</span> <span class="timestamp">&lt;2022-03-02 Wed 11:00&gt;</span></span></p>
 <ul class="org-ul">
-<li>Vorstellung Gruppe und Masterarbeiten</li>
+<li>Introducing group and master thesis topics</li>
 </ul>
 </div>
 </div>
 
-<div id="outline-container-org4965c6d" class="outline-3">
-<h3 id="org4965c6d"><span class="done DONE">DONE</span> 1. Meeting mit David via Zoom</h3>
-<div class="outline-text-3" id="text-org4965c6d">
+<div id="outline-container-orge01cc48" class="outline-3">
+<h3 id="orge01cc48"><span class="done DONE">DONE</span> 1. Meeting with David via Zoom</h3>
+<div class="outline-text-3" id="text-orge01cc48">
 <p><span class="timestamp-wrapper"><span class="timestamp-kwd">CLOSED:</span> <span class="timestamp">[2022-02-28 Mon 10:55] </span> <span class="timestamp-kwd">SCHEDULED:</span> <span class="timestamp">&lt;2022-02-28 Mon 10:00&gt;</span></span></p>
-<p>
-Folgendes wurde besprochen:
-</p>
-
 <ol class="org-ol">
-<li>Thema des Praktikums
+<li>Topic of internship
 <ol class="org-ol">
-<li>Daten aus Bachelorarbeit mit ML-Methoden bearbeiten
-(regularisierte lineare Modelle &amp; Random Forests)</li>
-<li>Weitere Themen sehen wir dann im weiteren Verlauf</li>
+<li>Analyze my bachelor thesis data with ML methods
+(regularisierte linear models &amp; random forests)</li>
+<li>Further topics and tasks we may discuss at a later stage</li>
 </ol></li>
-<li>Allgemeines zu den Python Libraries und Arbeitsweise</li>
-<li>Erstes Ziel definiert: Standard-ML-Script erstellen, das vorerst nur
+<li>General concepts about python libraries and workflow</li>
+<li>First goal: Creating a standard ML script that does the following
 <ol class="org-ol">
-<li>Daten einliest,</li>
-<li>Daten in X und y, sowie in Trainings- und Testdaten teilt,</li>
-<li>Kreuzvalidierung (GroupShuffleSplit) vornimmt
+<li>Reads in the data,</li>
+<li>Splits data into X and y, into train and test sets,</li>
+<li>carries out cross validation (GroupShuffleSplit) 
 <ol class="org-ol">
-<li>Äußere Schleife (zur Vermeidung von Overfitting)</li>
-<li>Innere Schleife (zum Finden der optimalen Hyperparameter)</li>
+<li>Outer loop (to prevent overfitting)</li>
+<li>Inner loop (for finding optimal hyperparameters)</li>
 </ol></li>
 </ol></li>
-<li>Nächster Termin vereinbart in zwei Tagen (zusammen mit seinen
-Masterbetreuungen)</li>
+<li>Agreed to meet next in two Tagen (together with the master thesis students)</li>
 </ol>
 </div>
 </div>
 </div>
 
-<div id="outline-container-orgc3b4e7e" class="outline-2">
-<h2 id="orgc3b4e7e">Literatur</h2>
-<div class="outline-text-2" id="text-orgc3b4e7e">
+<div id="outline-container-org86bf7a2" class="outline-2">
+<h2 id="org86bf7a2">Reading</h2>
+<div class="outline-text-2" id="text-org86bf7a2">
 <ul class="org-ul">
 <li>Géron, A. (2019). Hands-On Machine Learning with Scikit-Learn, Keras,
 and TensorFlow, 2nd Edition. O'Reilly. <a href="https://www.oreilly.com/library/view/hands-on-machine-learning/9781492032632">https://www.oreilly.com/library/view/hands-on-machine-learning/9781492032632</a></li>
@@ -3170,9 +3166,9 @@ and TensorFlow, 2nd Edition. O'Reilly. <a href="https://www.oreilly.com/library/
 </div>
 </div>
 <div id="postamble" class="status">
-<p class="author">Autor: Dominik PEGLER</p>
+<p class="author">Author: Dominik PEGLER</p>
 <p class="email">Email: <a href="mailto:dominikpegler@posteo.org">dominikpegler@posteo.org</a></p>
-<p class="date">Created: 2022-03-12 Sat 10:14</p>
+<p class="date">Created: 2022-03-12 Sat 10:52</p>
 <p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>
