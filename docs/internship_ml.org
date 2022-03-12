@@ -53,6 +53,7 @@ Mindfulness (FFMQ), Impulsivität (UPPS-P), Coping-Motiven
 (Anzahl Wochenstunden).
 
 #+begin_src python :session *py* :exports both :results output :dir /home/user/data/psy_misc/internship_ml
+
 from sklearn.model_selection import GroupShuffleSplit
 from skopt import BayesSearchCV 
 from sklearn.linear_model import ElasticNet
@@ -110,32 +111,32 @@ if __name__ == "__main__":
 
    #+RESULTS:
    #+begin_example
-     Split 1: ElasticNet(alpha=0.22353045036583108, l1_ratio=0.921710009401984)
-     train score: 0.39843
-     test  score: 0.35452
+   Split 1: ElasticNet(alpha=0.18719219516699595, l1_ratio=1.0)
+   train score: 0.40553
+   test  score: 0.36028
 
 
-     Split 2: ElasticNet(alpha=0.38670990511510717, l1_ratio=0.5496084445311907)
-     train score: 0.35856
-     test  score: 0.3375
+   Split 2: ElasticNet(alpha=0.47323207415464175, l1_ratio=0.4289707228514357)
+   train score: 0.35507
+   test  score: 0.33208
 
 
-     Split 3: ElasticNet(alpha=0.23670822716772796, l1_ratio=0.9640748041622479)
-     train score: 0.39367
-     test  score: 0.32558
+   Split 3: ElasticNet(alpha=0.21108453310560205, l1_ratio=1.0)
+   train score: 0.39937
+   test  score: 0.32944
 
 
-     Split 4: ElasticNet(alpha=0.16004253247739003, l1_ratio=0.9670520803504764)
-     train score: 0.40839
-     test  score: 0.39424
+   Split 4: ElasticNet(alpha=0.14144276806413866, l1_ratio=1.0)
+   train score: 0.4173
+   test  score: 0.38794
 
 
-     Split 5: ElasticNet(alpha=0.19681489242009514, l1_ratio=0.9419440864149886)
-     train score: 0.43669
-     test  score: 0.25164
+   Split 5: ElasticNet(alpha=0.18333780804975994, l1_ratio=1.0)
+   train score: 0.43841
+   test  score: 0.25232
 
 
-     Execution time: 222.611s
+   Execution time: 217.066s
    #+end_example
 
 ** TODO Bericht

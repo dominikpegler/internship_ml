@@ -3,7 +3,7 @@
  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="de" xml:lang="de">
   <head>
-    <!-- 2022-03-12 Sat 08:29 -->
+    <!-- 2022-03-12 Sat 08:36 -->
     <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>ML Internship 2022</title>
@@ -2931,7 +2931,7 @@
       </h1>
       <center>
 
-	<div id="orgc0ba8f7" class="figure">
+	<div id="orgbb5166e" class="figure">
 	  <p><img src="./img/mlicon2.png" alt="mlicon2.png" width="75px" />
 	  </p>
 	</div>
@@ -2940,32 +2940,32 @@
 	<h2>Inhaltsverzeichnis</h2>
 	<div id="text-table-of-contents">
 	  <ul>
-	    <li><a href="#org616f010">Tasks</a>
+	    <li><a href="#org2b7b53d">Tasks</a>
 	      <ul>
-		<li><a href="#org3e20208"><span class="todo TODO">TODO</span> Standard-ML-Script erstellen</a></li>
-		<li><a href="#orge517d92"><span class="todo TODO">TODO</span> Bericht</a></li>
+		<li><a href="#orgf8ec9fb"><span class="todo TODO">TODO</span> Standard-ML-Script erstellen</a></li>
+		<li><a href="#org9cb76b4"><span class="todo TODO">TODO</span> Bericht</a></li>
 	      </ul>
 	    </li>
-	    <li><a href="#org01ddbc5">Meetings</a>
+	    <li><a href="#orga3066b8">Meetings</a>
 	      <ul>
-		<li><a href="#org65ca0c3"><span class="todo TODO">TODO</span> 2. Meeting mit Steyrl-Gruppe via Skype</a></li>
-		<li><a href="#org96094a9"><span class="done DONE">DONE</span> 2. Meeting mit David</a></li>
-		<li><a href="#orgc9efb2c"><span class="done DONE">DONE</span> 1. Meeting mit Steyrl-Gruppe via Skype</a></li>
-		<li><a href="#orga89ef48"><span class="done DONE">DONE</span> 1. Meeting mit David via Zoom</a></li>
+		<li><a href="#orgfbb6415"><span class="todo TODO">TODO</span> 2. Meeting mit Steyrl-Gruppe via Skype</a></li>
+		<li><a href="#org23fcc3d"><span class="done DONE">DONE</span> 2. Meeting mit David</a></li>
+		<li><a href="#orgc6ac6ba"><span class="done DONE">DONE</span> 1. Meeting mit Steyrl-Gruppe via Skype</a></li>
+		<li><a href="#org77f171e"><span class="done DONE">DONE</span> 1. Meeting mit David via Zoom</a></li>
 	      </ul>
 	    </li>
-	    <li><a href="#orgc323f50">Literatur</a></li>
+	    <li><a href="#org49876fa">Literatur</a></li>
 	  </ul>
 	</div>
       </div>
 
-      <div id="outline-container-org616f010" class="outline-2">
-	<h2 id="org616f010">Tasks</h2>
-	<div class="outline-text-2" id="text-org616f010">
+      <div id="outline-container-org2b7b53d" class="outline-2">
+	<h2 id="org2b7b53d">Tasks</h2>
+	<div class="outline-text-2" id="text-org2b7b53d">
 	</div>
-	<div id="outline-container-org3e20208" class="outline-3">
-	  <h3 id="org3e20208"><span class="todo TODO">TODO</span> Standard-ML-Script erstellen</h3>
-	  <div class="outline-text-3" id="text-org3e20208">
+	<div id="outline-container-orgf8ec9fb" class="outline-3">
+	  <h3 id="orgf8ec9fb"><span class="todo TODO">TODO</span> Standard-ML-Script erstellen</h3>
+	  <div class="outline-text-3" id="text-orgf8ec9fb">
 	    <p><span class="timestamp-wrapper"><span class="timestamp-kwd">DEADLINE:</span> <span class="timestamp">&lt;2022-03-15 Tue&gt;</span></span></p>
 	    <p>
 	      Vorhersage von problematischem Alkoholkonsum anhand von Trait
@@ -2975,7 +2975,8 @@
 	    </p>
 
 	    <div class="org-src-container">
-	      <pre class="src src-python"><span style="color: #4f97d7; font-weight: bold;">from</span> sklearn.model_selection <span style="color: #4f97d7; font-weight: bold;">import</span> GroupShuffleSplit
+	      <pre class="src src-python">
+		<span style="color: #4f97d7; font-weight: bold;">from</span> sklearn.model_selection <span style="color: #4f97d7; font-weight: bold;">import</span> GroupShuffleSplit
 		<span style="color: #4f97d7; font-weight: bold;">from</span> skopt <span style="color: #4f97d7; font-weight: bold;">import</span> BayesSearchCV 
 		<span style="color: #4f97d7; font-weight: bold;">from</span> sklearn.linear_model <span style="color: #4f97d7; font-weight: bold;">import</span> ElasticNet
 		<span style="color: #4f97d7; font-weight: bold;">from</span> get_data <span style="color: #4f97d7; font-weight: bold;">import</span> get_mindfulness <span style="color: #4f97d7; font-weight: bold;">as</span> get_data
@@ -3030,52 +3031,81 @@
 
 	      </pre>
 	    </div>
+
+	    <pre class="example" id="orgc857381">
+	      Split 1: ElasticNet(alpha=0.18719219516699595, l1_ratio=1.0)
+	      train score: 0.40553
+	      test  score: 0.36028
+
+
+	      Split 2: ElasticNet(alpha=0.47323207415464175, l1_ratio=0.4289707228514357)
+	      train score: 0.35507
+	      test  score: 0.33208
+
+
+	      Split 3: ElasticNet(alpha=0.21108453310560205, l1_ratio=1.0)
+	      train score: 0.39937
+	      test  score: 0.32944
+
+
+	      Split 4: ElasticNet(alpha=0.14144276806413866, l1_ratio=1.0)
+	      train score: 0.4173
+	      test  score: 0.38794
+
+
+	      Split 5: ElasticNet(alpha=0.18333780804975994, l1_ratio=1.0)
+	      train score: 0.43841
+	      test  score: 0.25232
+
+
+	      Execution time: 220.747s
+	    </pre>
 	  </div>
 	</div>
 
-	<div id="outline-container-orge517d92" class="outline-3">
-	  <h3 id="orge517d92"><span class="todo TODO">TODO</span> Bericht</h3>
-	  <div class="outline-text-3" id="text-orge517d92">
+	<div id="outline-container-org9cb76b4" class="outline-3">
+	  <h3 id="org9cb76b4"><span class="todo TODO">TODO</span> Bericht</h3>
+	  <div class="outline-text-3" id="text-org9cb76b4">
 	    <p><span class="timestamp-wrapper"><span class="timestamp-kwd">DEADLINE:</span> <span class="timestamp">&lt;2022-04-30 Sat&gt;</span></span></p>
 	  </div>
 
-	  <div id="outline-container-orgf5271cb" class="outline-4">
-	    <h4 id="orgf5271cb">Woche 1</h4>
-	    <div class="outline-text-4" id="text-orgf5271cb">
+	  <div id="outline-container-org2c992f7" class="outline-4">
+	    <h4 id="org2c992f7">Woche 1</h4>
+	    <div class="outline-text-4" id="text-org2c992f7">
 	      <p>
 		Einführung, Data preprocessing &amp; cross-validation, Scikit-learn-Dokumentation,
 		Regularisierte lineare Modelle (Ridge, Lasso etc.)
 	      </p>
 	    </div>
 	  </div>
-	  <div id="outline-container-orgb1337c7" class="outline-4">
-	    <h4 id="orgb1337c7">Woche 2</h4>
-	    <div class="outline-text-4" id="text-orgb1337c7">
+	  <div id="outline-container-org4748519" class="outline-4">
+	    <h4 id="org4748519">Woche 2</h4>
+	    <div class="outline-text-4" id="text-org4748519">
 	      <p>
 		Literatur, Fortsetzung Script (RansomSearchCV, BayesSearchCV), Gradienten
 		für OR- und XOR-Netzwerke manuell rechnen
 	      </p>
 	    </div>
 	  </div>
-	  <div id="outline-container-org3f617fa" class="outline-4">
-	    <h4 id="org3f617fa">Wochen 3&#x2013;8</h4>
+	  <div id="outline-container-orgd01583e" class="outline-4">
+	    <h4 id="orgd01583e">Wochen 3&#x2013;8</h4>
 	  </div>
 	</div>
       </div>
 
-      <div id="outline-container-org01ddbc5" class="outline-2">
-	<h2 id="org01ddbc5">Meetings</h2>
-	<div class="outline-text-2" id="text-org01ddbc5">
+      <div id="outline-container-orga3066b8" class="outline-2">
+	<h2 id="orga3066b8">Meetings</h2>
+	<div class="outline-text-2" id="text-orga3066b8">
 	</div>
-	<div id="outline-container-org65ca0c3" class="outline-3">
-	  <h3 id="org65ca0c3"><span class="todo TODO">TODO</span> 2. Meeting mit Steyrl-Gruppe via Skype</h3>
-	  <div class="outline-text-3" id="text-org65ca0c3">
+	<div id="outline-container-orgfbb6415" class="outline-3">
+	  <h3 id="orgfbb6415"><span class="todo TODO">TODO</span> 2. Meeting mit Steyrl-Gruppe via Skype</h3>
+	  <div class="outline-text-3" id="text-orgfbb6415">
 	    <p><span class="timestamp-wrapper"><span class="timestamp-kwd">SCHEDULED:</span> <span class="timestamp">&lt;2022-03-15 Tue 11:00&gt;</span></span></p>
 	  </div>
 	</div>
-	<div id="outline-container-org96094a9" class="outline-3">
-	  <h3 id="org96094a9"><span class="done DONE">DONE</span> 2. Meeting mit David</h3>
-	  <div class="outline-text-3" id="text-org96094a9">
+	<div id="outline-container-org23fcc3d" class="outline-3">
+	  <h3 id="org23fcc3d"><span class="done DONE">DONE</span> 2. Meeting mit David</h3>
+	  <div class="outline-text-3" id="text-org23fcc3d">
 	    <p><span class="timestamp-wrapper"><span class="timestamp-kwd">CLOSED:</span> <span class="timestamp">[2022-03-08 Tue 22:05] </span> <span class="timestamp-kwd">SCHEDULED:</span> <span class="timestamp">&lt;2022-03-08 Tue 10:00&gt;</span></span></p>
 	    <ol class="org-ol">
 	      <li>Fortschritt beim Script</li>
@@ -3084,9 +3114,9 @@
 	  </div>
 	</div>
 
-	<div id="outline-container-orgc9efb2c" class="outline-3">
-	  <h3 id="orgc9efb2c"><span class="done DONE">DONE</span> 1. Meeting mit Steyrl-Gruppe via Skype</h3>
-	  <div class="outline-text-3" id="text-orgc9efb2c">
+	<div id="outline-container-orgc6ac6ba" class="outline-3">
+	  <h3 id="orgc6ac6ba"><span class="done DONE">DONE</span> 1. Meeting mit Steyrl-Gruppe via Skype</h3>
+	  <div class="outline-text-3" id="text-orgc6ac6ba">
 	    <p><span class="timestamp-wrapper"><span class="timestamp-kwd">CLOSED:</span> <span class="timestamp">[2022-03-02 Wed 11:35] </span> <span class="timestamp-kwd">SCHEDULED:</span> <span class="timestamp">&lt;2022-03-02 Wed 11:00&gt;</span></span></p>
 	    <ul class="org-ul">
 	      <li>Vorstellung Gruppe und Masterarbeiten</li>
@@ -3094,9 +3124,9 @@
 	  </div>
 	</div>
 
-	<div id="outline-container-orga89ef48" class="outline-3">
-	  <h3 id="orga89ef48"><span class="done DONE">DONE</span> 1. Meeting mit David via Zoom</h3>
-	  <div class="outline-text-3" id="text-orga89ef48">
+	<div id="outline-container-org77f171e" class="outline-3">
+	  <h3 id="org77f171e"><span class="done DONE">DONE</span> 1. Meeting mit David via Zoom</h3>
+	  <div class="outline-text-3" id="text-org77f171e">
 	    <p><span class="timestamp-wrapper"><span class="timestamp-kwd">CLOSED:</span> <span class="timestamp">[2022-02-28 Mon 10:55] </span> <span class="timestamp-kwd">SCHEDULED:</span> <span class="timestamp">&lt;2022-02-28 Mon 10:00&gt;</span></span></p>
 	    <p>
 	      Folgendes wurde besprochen:
@@ -3127,9 +3157,9 @@
 	</div>
       </div>
 
-      <div id="outline-container-orgc323f50" class="outline-2">
-	<h2 id="orgc323f50">Literatur</h2>
-	<div class="outline-text-2" id="text-orgc323f50">
+      <div id="outline-container-org49876fa" class="outline-2">
+	<h2 id="org49876fa">Literatur</h2>
+	<div class="outline-text-2" id="text-org49876fa">
 	  <ul class="org-ul">
 	    <li>Géron, A. (2019). Hands-On Machine Learning with Scikit-Learn, Keras,
 	      and TensorFlow, 2nd Edition. O'Reilly. <a href="https://www.oreilly.com/library/view/hands-on-machine-learning/9781492032632">https://www.oreilly.com/library/view/hands-on-machine-learning/9781492032632</a></li>
@@ -3142,7 +3172,7 @@
     <div id="postamble" class="status">
       <p class="author">Autor: Dominik PEGLER</p>
       <p class="email">Email: <a href="mailto:dominikpegler@posteo.org">dominikpegler@posteo.org</a></p>
-      <p class="date">Created: 2022-03-12 Sat 08:29</p>
+      <p class="date">Created: 2022-03-12 Sat 08:36</p>
       <p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
     </div>
   </body>
