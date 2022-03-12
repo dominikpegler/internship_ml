@@ -176,7 +176,7 @@ CLOCK: [2022-03-08 Tue 10:00]--[2022-03-08 Tue 10:50] =>  0:50
 
     1. Topic of internship
        1. Analyze my bachelor thesis data with ML methods
-          (regularisierte linear models & random forests)
+          (regularized linear models & random forests)
        2. Further topics and tasks we may discuss at a later stage
     2. General concepts about python libraries and workflow
     3. First goal: Creating a standard ML script that does the following
