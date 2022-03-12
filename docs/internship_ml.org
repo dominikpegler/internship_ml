@@ -180,11 +180,11 @@ CLOCK: [2022-03-08 Tue 10:00]--[2022-03-08 Tue 10:50] =>  0:50
        2. Further topics and tasks we may discuss at a later stage
     2. General concepts about python libraries and workflow
     3. First goal: Creating a standard ML script that does the following
-       1. Reads in the data,
-       2. Splits data into X and y, into train and test sets,
+       1. reads the data,
+       2. splits data into X and y, into train and test sets,
        3. carries out cross validation (GroupShuffleSplit) 
-	      1. Outer loop (to prevent overfitting)
-	      2. Inner loop (for finding optimal hyperparameters)
+	      1. outer loop (to prevent overfitting)
+	      2. inner loop (for finding optimal hyperparameters)
     4. Agreed to meet next in two Tagen (together with the master thesis students)
    
 * Reading
