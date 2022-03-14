@@ -186,7 +186,7 @@ CLOCK: [2022-03-08 Tue 10:00]--[2022-03-08 Tue 10:50] =>  0:50
        3. carries out cross validation (GroupShuffleSplit) 
 	      1. outer loop (to prevent overfitting)
 	      2. inner loop (for finding optimal hyperparameters)
-    4. Agreed to meet next in two Tagen (together with the master thesis students)
+    4. Agreed to meet next in two days (together with the master thesis students)
    
 * Reading
 :LOGBOOK:
