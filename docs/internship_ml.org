@@ -27,6 +27,7 @@ file:./img/mlicon2.png
 ** TODO Create a standard ML Script
 DEADLINE: <2022-03-15 Tue>
    :LOGBOOK:
+   CLOCK: [2022-03-15 Tue 16:34]--[2022-03-15 Tue 19:34] =>  3:00
    CLOCK: [2022-03-12 Sat 08:35]--[2022-03-12 Sat 11:05] =>  2:30
    CLOCK: [2022-03-11 Fri 09:45]--[2022-03-11 Fri 12:10] =>  2:25
    CLOCK: [2022-03-09 Wed 19:02]--[2022-03-09 Wed 21:13] =>  2:11
@@ -318,14 +319,9 @@ def main():
     
 
     X, y = get_data()
-
-
     reg_type = "rf"
     #for reg_type in ["elasticnet", "rf", "extratrees", "gradientboost"]:
-
     reg,hyperparams_dist = get_regressor(reg_type) # "elasticnet", "rf", "extratrees", "gradientboost"
-
-
     outer_cv = GroupShuffleSplit(n_splits=5,
                                  test_size=0.2,
                                  random_state=0
@@ -384,8 +380,15 @@ for simple OR- und XOR-networks
 
 * Meetings
 
-** TODO 2. Meeting with Steyrl-Group via Skype
-SCHEDULED: <2022-03-15 Tue 11:00>
+** TODO 3. Meeting with David
+SCHEDULED: <2022-03-10 Thu 10:00>
+** TODO 3. Meeting with Steyrl-Group via Skype
+SCHEDULED: <2022-03-22 Tue 11:00>
+** DONE 2. Meeting with Steyrl-Group via Skype
+CLOSED: [2022-03-15 Tue 11:50] SCHEDULED: <2022-03-15 Tue 11:00>
+:LOGBOOK:
+CLOCK: [2022-03-15 Tue 11:00]--[2022-03-15 Tue 11:55] =>  0:55
+:END:
 ** DONE 2. Meeting with David
 CLOSED: [2022-03-08 Tue 22:05] SCHEDULED: <2022-03-08 Tue 10:00>
 :LOGBOOK:
@@ -422,6 +425,8 @@ CLOCK: [2022-03-08 Tue 10:00]--[2022-03-08 Tue 10:50] =>  0:50
    
 * Reading
 :LOGBOOK:
+CLOCK: [2022-03-14 Mon 20:00]--[2022-03-14 Mon 23:33] =>  3:33
+CLOCK: [2022-03-13 Sun 14:00]--[2022-03-13 Sun 18:30] =>  4:30
 CLOCK: [2022-03-11 Fri 18:54]--[2022-03-11 Fri 21:54] =>  3:00
 CLOCK: [2022-03-10 Thu 20:00]--[2022-03-10 Thu 22:30] =>  2:30
 CLOCK: [2022-03-07 Mon 19:20]--[2022-03-07 Mon 23:55] =>  4:35

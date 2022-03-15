@@ -22,7 +22,7 @@ def get_regressor(reg_type="elasticnet"):
     
         Parameters
         ----------
-        reg_type : {'elasticnet', 'rf', 'extratrees', 'gradienboost'} default='elasticnet'
+        reg_type : {'elasticnet', 'rf', 'extratrees', 'gradientboost'} default='elasticnet'
     
     """
     
