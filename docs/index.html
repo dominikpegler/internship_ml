@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2022-03-12 Sat 11:07 -->
+<!-- 2022-03-15 Tue 19:25 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>ML Internship 2022</title>
@@ -2927,7 +2927,7 @@ p.verse {
 </h1>
 <center>
 
-<div id="org96bca2e" class="figure">
+<div id="orge42b4ef" class="figure">
 <p><img src="./img/mlicon2.png" alt="mlicon2.png" width="66px" />
 </p>
 </div>
@@ -2936,32 +2936,32 @@ p.verse {
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org617dfd1">Tasks</a>
+<li><a href="#org13bd65d">Tasks</a>
 <ul>
-<li><a href="#org0f3347d"><span class="todo TODO">TODO</span> Create a standard ML Script</a></li>
-<li><a href="#org9a94a60"><span class="todo TODO">TODO</span> Writing the report</a></li>
+<li><a href="#org70b207c"><span class="todo TODO">TODO</span> Create a standard ML Script</a></li>
+<li><a href="#org7d29bef"><span class="todo TODO">TODO</span> Writing the report</a></li>
 </ul>
 </li>
-<li><a href="#orgd801892">Meetings</a>
+<li><a href="#org11369a5">Meetings</a>
 <ul>
-<li><a href="#orgcda4caa"><span class="todo TODO">TODO</span> 2. Meeting with Steyrl-Group via Skype</a></li>
-<li><a href="#org22e65ee"><span class="done DONE">DONE</span> 2. Meeting with David</a></li>
-<li><a href="#org57d5103"><span class="done DONE">DONE</span> 1. Meeting with Steyrl-Group via Skype</a></li>
-<li><a href="#org7e72d85"><span class="done DONE">DONE</span> 1. Meeting with David via Zoom</a></li>
+<li><a href="#orged11824"><span class="todo TODO">TODO</span> 2. Meeting with Steyrl-Group via Skype</a></li>
+<li><a href="#orgd16e5ce"><span class="done DONE">DONE</span> 2. Meeting with David</a></li>
+<li><a href="#orgb5dbe9e"><span class="done DONE">DONE</span> 1. Meeting with Steyrl-Group via Skype</a></li>
+<li><a href="#org771060b"><span class="done DONE">DONE</span> 1. Meeting with David via Zoom</a></li>
 </ul>
 </li>
-<li><a href="#orga84c8cb">Reading</a></li>
+<li><a href="#orgfe81f2d">Reading</a></li>
 </ul>
 </div>
 </div>
 
-<div id="outline-container-org617dfd1" class="outline-2">
-<h2 id="org617dfd1">Tasks</h2>
-<div class="outline-text-2" id="text-org617dfd1">
+<div id="outline-container-org13bd65d" class="outline-2">
+<h2 id="org13bd65d">Tasks</h2>
+<div class="outline-text-2" id="text-org13bd65d">
 </div>
-<div id="outline-container-org0f3347d" class="outline-3">
-<h3 id="org0f3347d"><span class="todo TODO">TODO</span> Create a standard ML Script</h3>
-<div class="outline-text-3" id="text-org0f3347d">
+<div id="outline-container-org70b207c" class="outline-3">
+<h3 id="org70b207c"><span class="todo TODO">TODO</span> Create a standard ML Script</h3>
+<div class="outline-text-3" id="text-org70b207c">
 <p><span class="timestamp-wrapper"><span class="timestamp-kwd">DEADLINE:</span> <span class="timestamp">&lt;2022-03-15 Tue&gt;</span></span></p>
 <p>
 Predicting problematic alcohol consumpion by trait
@@ -2970,95 +2970,327 @@ mindfulness (FFMQ), impulsiveness (UPPS-P), drinking-to-cope motives
 </p>
 
 <div class="org-src-container">
+<pre class="src src-python"><span class="linenr">  1: </span><span style="color: #2aa1ae; background-color: #fff;"># </span><span style="color: #2aa1ae; background-color: #fff;">regressors.py</span>
+<span class="linenr">  2: </span><span style="color: #4f97d7; font-weight: bold;">import</span> numpy <span style="color: #4f97d7; font-weight: bold;">as</span> np
+<span class="linenr">  3: </span><span style="color: #4f97d7; font-weight: bold;">from</span> sklearn.linear_model <span style="color: #4f97d7; font-weight: bold;">import</span> ElasticNet
+<span class="linenr">  4: </span><span style="color: #4f97d7; font-weight: bold;">from</span> sklearn.ensemble <span style="color: #4f97d7; font-weight: bold;">import</span> RandomForestRegressor
+<span class="linenr">  5: </span><span style="color: #4f97d7; font-weight: bold;">from</span> sklearn.ensemble <span style="color: #4f97d7; font-weight: bold;">import</span> ExtraTreesRegressor
+<span class="linenr">  6: </span><span style="color: #4f97d7; font-weight: bold;">from</span> sklearn.ensemble <span style="color: #4f97d7; font-weight: bold;">import</span> GradientBoostingRegressor
+<span class="linenr">  7: </span>
+<span class="linenr">  8: </span>
+<span class="linenr">  9: </span><span style="color: #7590db;">n_estimators</span> = [<span style="color: #4f97d7;">int</span>(x) <span style="color: #4f97d7; font-weight: bold;">for</span> x <span style="color: #4f97d7; font-weight: bold;">in</span> np.linspace(start = 200, stop = 2000, num = 10)]
+<span class="linenr"> 10: </span><span style="color: #7590db;">max_features</span> = [<span style="color: #2d9574;">'auto'</span>, <span style="color: #2d9574;">'sqrt'</span>]
+<span class="linenr"> 11: </span><span style="color: #7590db;">max_depth</span> = [<span style="color: #4f97d7;">int</span>(x) <span style="color: #4f97d7; font-weight: bold;">for</span> x <span style="color: #4f97d7; font-weight: bold;">in</span> np.linspace(10, 110, num = 11)]
+<span class="linenr"> 12: </span>max_depth.append(<span style="color: #a45bad;">None</span>)
+<span class="linenr"> 13: </span><span style="color: #7590db;">min_samples_split</span> = [2, 5, 10]
+<span class="linenr"> 14: </span><span style="color: #7590db;">min_samples_leaf</span> = [1, 2, 4]
+<span class="linenr"> 15: </span><span style="color: #7590db;">bootstrap</span> = [<span style="color: #a45bad;">True</span>, <span style="color: #a45bad;">False</span>]
+<span class="linenr"> 16: </span>
+<span class="linenr"> 17: </span>
+<span class="linenr"> 18: </span><span style="color: #4f97d7; font-weight: bold;">def</span> <span style="color: #bc6ec5; font-weight: bold;">get_regressor</span>(reg_type=<span style="color: #2d9574;">"elasticnet"</span>):
+<span class="linenr"> 19: </span><span style="background-color: #fff;"> </span>   <span style="color: #9f8766;">"""</span>
+<span class="linenr"> 20: </span><span style="color: #9f8766; background-color: #fff;"> </span><span style="color: #9f8766;">   scikit-learn regressors ready to use for bayesCV</span>
+<span class="linenr"> 21: </span><span style="color: #9f8766; background-color: #fff;"> </span><span style="color: #9f8766;">   </span><span style="color: #9f8766; background-color: #fff;"> </span><span style="color: #9f8766;">   </span>
+<span class="linenr"> 22: </span><span style="color: #9f8766; background-color: #fff;"> </span><span style="color: #9f8766;">   </span><span style="color: #9f8766; background-color: #fff;"> </span><span style="color: #9f8766;">   returns regressor model and dictionary for possible hyperparameter distributions</span>
+<span class="linenr"> 23: </span><span style="color: #9f8766; background-color: #fff;"> </span><span style="color: #9f8766;">   </span>
+<span class="linenr"> 24: </span><span style="color: #9f8766; background-color: #fff;"> </span><span style="color: #9f8766;">   </span><span style="color: #9f8766; background-color: #fff;"> </span><span style="color: #9f8766;">   Parameters</span>
+<span class="linenr"> 25: </span><span style="color: #9f8766; background-color: #fff;"> </span><span style="color: #9f8766;">   </span><span style="color: #9f8766; background-color: #fff;"> </span><span style="color: #9f8766;">   ----------</span>
+<span class="linenr"> 26: </span><span style="color: #9f8766; background-color: #fff;"> </span><span style="color: #9f8766;">   </span><span style="color: #9f8766; background-color: #fff;"> </span><span style="color: #9f8766;">   reg_type : {'elasticnet', 'rf', 'extratrees', 'gradienboost'} default='elasticnet'</span>
+<span class="linenr"> 27: </span><span style="color: #9f8766; background-color: #fff;"> </span><span style="color: #9f8766;">   </span>
+<span class="linenr"> 28: </span><span style="color: #9f8766; background-color: #fff;"> </span><span style="color: #9f8766;">   """</span>
+<span class="linenr"> 29: </span><span style="background-color: #fff;"> </span>   
+<span class="linenr"> 30: </span><span style="background-color: #fff;"> </span>   <span style="color: #4f97d7; font-weight: bold;">if</span> reg_type == <span style="color: #2d9574;">"elasticnet"</span>:
+<span class="linenr"> 31: </span><span style="background-color: #fff;"> </span>   <span style="background-color: #fff;"> </span>   <span style="color: #7590db;">reg</span> = ElasticNet()
+<span class="linenr"> 32: </span><span style="background-color: #fff;"> </span>   <span style="background-color: #fff;"> </span>   <span style="color: #7590db;">hyperparams_dist</span> = {
+<span class="linenr"> 33: </span><span style="background-color: #fff;"> </span>   <span style="background-color: #fff;"> </span>   <span style="background-color: #fff;"> </span>   <span style="color: #2d9574;">"alpha"</span>: (1e-4,1e3,<span style="color: #2d9574;">"log-uniform"</span>),
+<span class="linenr"> 34: </span><span style="background-color: #fff;"> </span>   <span style="background-color: #fff;"> </span>   <span style="background-color: #fff;"> </span>   <span style="color: #2d9574;">"l1_ratio"</span>: (1e-3,1.0,<span style="color: #2d9574;">"uniform"</span>)
+<span class="linenr"> 35: </span><span style="background-color: #fff;"> </span>   <span style="background-color: #fff;"> </span>   <span style="background-color: #fff;"> </span>   }
+<span class="linenr"> 36: </span>
+<span class="linenr"> 37: </span><span style="background-color: #fff;"> </span>   <span style="color: #4f97d7; font-weight: bold;">elif</span> reg_type == <span style="color: #2d9574;">"rf"</span>:
+<span class="linenr"> 38: </span><span style="background-color: #fff;"> </span>   <span style="background-color: #fff;"> </span>   <span style="color: #7590db;">reg</span> = RandomForestRegressor(random_state = 0)
+<span class="linenr"> 39: </span><span style="background-color: #fff;"> </span>   <span style="background-color: #fff;"> </span>   <span style="color: #7590db;">hyperparams_dist</span> = {
+<span class="linenr"> 40: </span><span style="background-color: #fff;"> </span>   <span style="background-color: #fff;"> </span>   <span style="background-color: #fff;"> </span>   <span style="color: #2d9574;">'n_estimators'</span>: n_estimators,
+<span class="linenr"> 41: </span><span style="background-color: #fff;"> </span>   <span style="background-color: #fff;"> </span>   <span style="background-color: #fff;"> </span>   <span style="color: #2d9574;">'max_features'</span>: max_features,
+<span class="linenr"> 42: </span><span style="background-color: #fff;"> </span>   <span style="background-color: #fff;"> </span>   <span style="background-color: #fff;"> </span>   <span style="color: #2d9574;">'max_depth'</span>: max_depth,
+<span class="linenr"> 43: </span><span style="background-color: #fff;"> </span>   <span style="background-color: #fff;"> </span>   <span style="background-color: #fff;"> </span>   <span style="color: #2d9574;">'min_samples_split'</span>: min_samples_split,
+<span class="linenr"> 44: </span><span style="background-color: #fff;"> </span>   <span style="background-color: #fff;"> </span>   <span style="background-color: #fff;"> </span>   <span style="color: #2d9574;">'min_samples_leaf'</span>: min_samples_leaf,
+<span class="linenr"> 45: </span><span style="background-color: #fff;"> </span>   <span style="background-color: #fff;"> </span>   <span style="background-color: #fff;"> </span>   <span style="color: #2d9574;">'bootstrap'</span>: bootstrap
+<span class="linenr"> 46: </span><span style="background-color: #fff;"> </span>   <span style="background-color: #fff;"> </span>   }
+<span class="linenr"> 47: </span>
+<span class="linenr"> 48: </span><span style="background-color: #fff;"> </span>   <span style="color: #4f97d7; font-weight: bold;">elif</span> reg_type == <span style="color: #2d9574;">"extratrees"</span>:
+<span class="linenr"> 49: </span><span style="background-color: #fff;"> </span>   <span style="background-color: #fff;"> </span>   <span style="color: #7590db;">reg</span> = ExtraTreesRegressor(random_state = 0)
+<span class="linenr"> 50: </span><span style="background-color: #fff;"> </span>   <span style="background-color: #fff;"> </span>   <span style="color: #7590db;">hyperparams_dist</span> = {
+<span class="linenr"> 51: </span><span style="background-color: #fff;"> </span>   <span style="background-color: #fff;"> </span>   <span style="background-color: #fff;"> </span>   <span style="color: #2d9574;">'n_estimators'</span>: n_estimators,
+<span class="linenr"> 52: </span><span style="background-color: #fff;"> </span>   <span style="background-color: #fff;"> </span>   <span style="background-color: #fff;"> </span>   <span style="color: #2d9574;">'max_features'</span>: max_features,
+<span class="linenr"> 53: </span><span style="background-color: #fff;"> </span>   <span style="background-color: #fff;"> </span>   <span style="background-color: #fff;"> </span>   <span style="color: #2d9574;">'max_depth'</span>: max_depth,
+<span class="linenr"> 54: </span><span style="background-color: #fff;"> </span>   <span style="background-color: #fff;"> </span>   <span style="background-color: #fff;"> </span>   <span style="color: #2d9574;">'min_samples_split'</span>: min_samples_split,
+<span class="linenr"> 55: </span><span style="background-color: #fff;"> </span>   <span style="background-color: #fff;"> </span>   <span style="background-color: #fff;"> </span>   <span style="color: #2d9574;">'min_samples_leaf'</span>: min_samples_leaf,
+<span class="linenr"> 56: </span><span style="background-color: #fff;"> </span>   <span style="background-color: #fff;"> </span>   <span style="background-color: #fff;"> </span>   <span style="color: #2d9574;">'bootstrap'</span>: bootstrap
+<span class="linenr"> 57: </span><span style="background-color: #fff;"> </span>   <span style="background-color: #fff;"> </span>   }
+<span class="linenr"> 58: </span><span style="background-color: #fff;"> </span>   <span style="background-color: #fff;"> </span>   
+<span class="linenr"> 59: </span><span style="background-color: #fff;"> </span>   <span style="color: #4f97d7; font-weight: bold;">elif</span> reg_type == <span style="color: #2d9574;">"gradientboost"</span>:
+<span class="linenr"> 60: </span><span style="background-color: #fff;"> </span>   <span style="background-color: #fff;"> </span>   <span style="color: #7590db;">reg</span> = GradientBoostingRegressor(random_state=0)
+<span class="linenr"> 61: </span><span style="background-color: #fff;"> </span>   <span style="background-color: #fff;"> </span>   <span style="color: #7590db;">hyperparams_dist</span> = {
+<span class="linenr"> 62: </span><span style="background-color: #fff;"> </span>   <span style="background-color: #fff;"> </span>   <span style="background-color: #fff;"> </span>   <span style="color: #2d9574;">'n_estimators'</span>: n_estimators,
+<span class="linenr"> 63: </span><span style="background-color: #fff;"> </span>   <span style="background-color: #fff;"> </span>   <span style="background-color: #fff;"> </span>   <span style="color: #2d9574;">'max_features'</span>: max_features,
+<span class="linenr"> 64: </span><span style="background-color: #fff;"> </span>   <span style="background-color: #fff;"> </span>   <span style="background-color: #fff;"> </span>   <span style="color: #2d9574;">'max_depth'</span>: max_depth,
+<span class="linenr"> 65: </span><span style="background-color: #fff;"> </span>   <span style="background-color: #fff;"> </span>   <span style="background-color: #fff;"> </span>   <span style="color: #2d9574;">'min_samples_split'</span>: min_samples_split,
+<span class="linenr"> 66: </span><span style="background-color: #fff;"> </span>   <span style="background-color: #fff;"> </span>   <span style="background-color: #fff;"> </span>   <span style="color: #2d9574;">'min_samples_leaf'</span>: min_samples_leaf,
+<span class="linenr"> 67: </span><span style="background-color: #fff;"> </span>   <span style="background-color: #fff;"> </span>   }        
+<span class="linenr"> 68: </span><span style="background-color: #fff;"> </span>   <span style="color: #4f97d7; font-weight: bold;">else</span>:
+<span class="linenr"> 69: </span><span style="background-color: #fff;"> </span>   <span style="background-color: #fff;"> </span>   <span style="color: #4f97d7; font-weight: bold;">raise</span> <span style="color: #ce537a; font-weight: bold;">Exception</span>(<span style="color: #2d9574;">"No valid regressor defined!"</span>)
+<span class="linenr"> 70: </span><span style="background-color: #fff;"> </span>   <span style="background-color: #fff;"> </span>   
+<span class="linenr"> 71: </span><span style="background-color: #fff;"> </span>   <span style="color: #4f97d7; font-weight: bold;">return</span> reg,hyperparams_dist
+<span class="linenr"> 72: </span>
+<span class="linenr"> 73: </span><span style="color: #2aa1ae; background-color: #fff;"># </span><span style="color: #2aa1ae; background-color: #fff;">utils.py</span>
+<span class="linenr"> 74: </span>
+<span class="linenr"> 75: </span><span style="color: #4f97d7; font-weight: bold;">def</span> <span style="color: #bc6ec5; font-weight: bold;">split_train_test</span>(data, i_train, i_test):
+<span class="linenr"> 76: </span><span style="background-color: #fff;"> </span>   <span style="color: #7590db;">train</span> = data.iloc[i_train, :]
+<span class="linenr"> 77: </span><span style="background-color: #fff;"> </span>   <span style="color: #7590db;">test</span> = data.iloc[i_test, :]
+<span class="linenr"> 78: </span><span style="background-color: #fff;"> </span>   <span style="color: #4f97d7; font-weight: bold;">return</span> train, test
+<span class="linenr"> 79: </span>
+<span class="linenr"> 80: </span><span style="color: #2aa1ae; background-color: #fff;"># </span><span style="color: #2aa1ae; background-color: #fff;">get_data.py</span>
+<span class="linenr"> 81: </span>
+<span class="linenr"> 82: </span><span style="color: #4f97d7; font-weight: bold;">import</span> pandas <span style="color: #4f97d7; font-weight: bold;">as</span> pd
+<span class="linenr"> 83: </span><span style="color: #4f97d7; font-weight: bold;">from</span> sklearn.preprocessing <span style="color: #4f97d7; font-weight: bold;">import</span> StandardScaler
+<span class="linenr"> 84: </span><span style="color: #4f97d7; font-weight: bold;">from</span> sklearn.impute <span style="color: #4f97d7; font-weight: bold;">import</span> SimpleImputer
+<span class="linenr"> 85: </span>
+<span class="linenr"> 86: </span>
+<span class="linenr"> 87: </span><span style="color: #4f97d7; font-weight: bold;">def</span> <span style="color: #bc6ec5; font-weight: bold;">get_mindfulness</span>(variant=<span style="color: #2d9574;">"complete"</span>):
+<span class="linenr"> 88: </span><span style="background-color: #fff;"> </span>   <span style="color: #9f8766;">"""</span>
+<span class="linenr"> 89: </span><span style="color: #9f8766; background-color: #fff;"> </span><span style="color: #9f8766;">   Mindfulness dataset from bachelor survey</span>
+<span class="linenr"> 90: </span><span style="color: #9f8766; background-color: #fff;"> </span><span style="color: #9f8766;">   </span><span style="color: #9f8766; background-color: #fff;"> </span><span style="color: #9f8766;">   </span>
+<span class="linenr"> 91: </span><span style="color: #9f8766; background-color: #fff;"> </span><span style="color: #9f8766;">   </span><span style="color: #9f8766; background-color: #fff;"> </span><span style="color: #9f8766;">   loads tab-separated file and returns pandas dataframes for X and y</span>
+<span class="linenr"> 92: </span><span style="color: #9f8766; background-color: #fff;"> </span><span style="color: #9f8766;">   </span>
+<span class="linenr"> 93: </span><span style="color: #9f8766; background-color: #fff;"> </span><span style="color: #9f8766;">   </span><span style="color: #9f8766; background-color: #fff;"> </span><span style="color: #9f8766;">   Parameters</span>
+<span class="linenr"> 94: </span><span style="color: #9f8766; background-color: #fff;"> </span><span style="color: #9f8766;">   </span><span style="color: #9f8766; background-color: #fff;"> </span><span style="color: #9f8766;">   ----------</span>
+<span class="linenr"> 95: </span><span style="color: #9f8766; background-color: #fff;"> </span><span style="color: #9f8766;">   </span><span style="color: #9f8766; background-color: #fff;"> </span><span style="color: #9f8766;">   variant : {'complete', 'ffmq', 'ffmq-overall', 'ffmq-factors'} default='complete'</span>
+<span class="linenr"> 96: </span><span style="color: #9f8766; background-color: #fff;"> </span><span style="color: #9f8766;">   </span><span style="color: #9f8766; background-color: #fff;"> </span><span style="color: #9f8766;">   </span>
+<span class="linenr"> 97: </span><span style="color: #9f8766; background-color: #fff;"> </span><span style="color: #9f8766;">   """</span>
+<span class="linenr"> 98: </span>
+<span class="linenr"> 99: </span><span style="background-color: #fff;"> </span>   <span style="color: #7590db;">ffmq_items</span> = [
+<span class="linenr">100: </span><span style="background-color: #fff;"> </span>   <span style="background-color: #fff;"> </span>   <span style="color: #2d9574;">"ffmq_ds1"</span>,
+<span class="linenr">101: </span><span style="background-color: #fff;"> </span>   <span style="background-color: #fff;"> </span>   <span style="color: #2d9574;">"ffmq_aa1"</span>,
+<span class="linenr">102: </span><span style="background-color: #fff;"> </span>   <span style="background-color: #fff;"> </span>   <span style="color: #2d9574;">"ffmq_ds2"</span>,
+<span class="linenr">103: </span><span style="background-color: #fff;"> </span>   <span style="background-color: #fff;"> </span>   <span style="color: #2d9574;">"ffmq_aa2"</span>,
+<span class="linenr">104: </span><span style="background-color: #fff;"> </span>   <span style="background-color: #fff;"> </span>   <span style="color: #2d9574;">"ffmq_nr1"</span>,
+<span class="linenr">105: </span><span style="background-color: #fff;"> </span>   <span style="background-color: #fff;"> </span>   <span style="color: #2d9574;">"ffmq_nr2"</span>,
+<span class="linenr">106: </span><span style="background-color: #fff;"> </span>   <span style="background-color: #fff;"> </span>   <span style="color: #2d9574;">"ffmq_aa3"</span>,
+<span class="linenr">107: </span><span style="background-color: #fff;"> </span>   <span style="background-color: #fff;"> </span>   <span style="color: #2d9574;">"ffmq_nj1"</span>,
+<span class="linenr">108: </span><span style="background-color: #fff;"> </span>   <span style="background-color: #fff;"> </span>   <span style="color: #2d9574;">"ffmq_ob1"</span>,
+<span class="linenr">109: </span><span style="background-color: #fff;"> </span>   <span style="background-color: #fff;"> </span>   <span style="color: #2d9574;">"ffmq_aa4"</span>,
+<span class="linenr">110: </span><span style="background-color: #fff;"> </span>   <span style="background-color: #fff;"> </span>   <span style="color: #2d9574;">"ffmq_nr3"</span>,
+<span class="linenr">111: </span><span style="background-color: #fff;"> </span>   <span style="background-color: #fff;"> </span>   <span style="color: #2d9574;">"ffmq_ob2"</span>,
+<span class="linenr">112: </span><span style="background-color: #fff;"> </span>   <span style="background-color: #fff;"> </span>   <span style="color: #2d9574;">"ffmq_nr4"</span>,
+<span class="linenr">113: </span><span style="background-color: #fff;"> </span>   <span style="background-color: #fff;"> </span>   <span style="color: #2d9574;">"ffmq_nr5"</span>,
+<span class="linenr">114: </span><span style="background-color: #fff;"> </span>   <span style="background-color: #fff;"> </span>   <span style="color: #2d9574;">"ffmq_nj2"</span>,
+<span class="linenr">115: </span><span style="background-color: #fff;"> </span>   <span style="background-color: #fff;"> </span>   <span style="color: #2d9574;">"ffmq_ob3"</span>,
+<span class="linenr">116: </span><span style="background-color: #fff;"> </span>   <span style="background-color: #fff;"> </span>   <span style="color: #2d9574;">"ffmq_ds3"</span>,
+<span class="linenr">117: </span><span style="background-color: #fff;"> </span>   <span style="background-color: #fff;"> </span>   <span style="color: #2d9574;">"ffmq_nr6"</span>,
+<span class="linenr">118: </span><span style="background-color: #fff;"> </span>   <span style="background-color: #fff;"> </span>   <span style="color: #2d9574;">"ffmq_nj3"</span>,
+<span class="linenr">119: </span><span style="background-color: #fff;"> </span>   <span style="background-color: #fff;"> </span>   <span style="color: #2d9574;">"ffmq_ob4"</span>,
+<span class="linenr">120: </span><span style="background-color: #fff;"> </span>   <span style="background-color: #fff;"> </span>   <span style="color: #2d9574;">"ffmq_ds4"</span>,
+<span class="linenr">121: </span><span style="background-color: #fff;"> </span>   <span style="background-color: #fff;"> </span>   <span style="color: #2d9574;">"ffmq_nr7"</span>,
+<span class="linenr">122: </span><span style="background-color: #fff;"> </span>   <span style="background-color: #fff;"> </span>   <span style="color: #2d9574;">"ffmq_nj4"</span>
+<span class="linenr">123: </span><span style="background-color: #fff;"> </span>   ]
+<span class="linenr">124: </span>
+<span class="linenr">125: </span><span style="background-color: #fff;"> </span>   <span style="color: #7590db;">df</span> = pd.read_csv(<span style="color: #2d9574;">"./data/mindfulness.csv"</span>, sep=<span style="color: #2d9574;">'\t'</span>, index_col=0)
+<span class="linenr">126: </span><span style="background-color: #fff;"> </span>   
+<span class="linenr">127: </span><span style="background-color: #fff;"> </span>   <span style="color: #4f97d7; font-weight: bold;">if</span> variant == <span style="color: #2d9574;">"complete"</span>:
+<span class="linenr">128: </span><span style="background-color: #fff;"> </span>   <span style="background-color: #fff;"> </span>   <span style="color: #7590db;">X</span> = df[[
+<span class="linenr">129: </span><span style="background-color: #fff;"> </span>   <span style="background-color: #fff;"> </span>   <span style="background-color: #fff;"> </span>   <span style="color: #2d9574;">"ffmq_ds1"</span>,
+<span class="linenr">130: </span><span style="background-color: #fff;"> </span>   <span style="background-color: #fff;"> </span>   <span style="background-color: #fff;"> </span>   <span style="color: #2d9574;">"ffmq_aa1"</span>,
+<span class="linenr">131: </span><span style="background-color: #fff;"> </span>   <span style="background-color: #fff;"> </span>   <span style="background-color: #fff;"> </span>   <span style="color: #2d9574;">"ffmq_ds2"</span>,
+<span class="linenr">132: </span><span style="background-color: #fff;"> </span>   <span style="background-color: #fff;"> </span>   <span style="background-color: #fff;"> </span>   <span style="color: #2d9574;">"ffmq_aa2"</span>,
+<span class="linenr">133: </span><span style="background-color: #fff;"> </span>   <span style="background-color: #fff;"> </span>   <span style="background-color: #fff;"> </span>   <span style="color: #2d9574;">"ffmq_nr1"</span>,
+<span class="linenr">134: </span><span style="background-color: #fff;"> </span>   <span style="background-color: #fff;"> </span>   <span style="background-color: #fff;"> </span>   <span style="color: #2d9574;">"ffmq_nr2"</span>,
+<span class="linenr">135: </span><span style="background-color: #fff;"> </span>   <span style="background-color: #fff;"> </span>   <span style="background-color: #fff;"> </span>   <span style="color: #2d9574;">"ffmq_aa3"</span>,
+<span class="linenr">136: </span><span style="background-color: #fff;"> </span>   <span style="background-color: #fff;"> </span>   <span style="background-color: #fff;"> </span>   <span style="color: #2d9574;">"ffmq_nj1"</span>,
+<span class="linenr">137: </span><span style="background-color: #fff;"> </span>   <span style="background-color: #fff;"> </span>   <span style="background-color: #fff;"> </span>   <span style="color: #2d9574;">"ffmq_ob1"</span>,
+<span class="linenr">138: </span><span style="background-color: #fff;"> </span>   <span style="background-color: #fff;"> </span>   <span style="background-color: #fff;"> </span>   <span style="color: #2d9574;">"ffmq_aa4"</span>,
+<span class="linenr">139: </span><span style="background-color: #fff;"> </span>   <span style="background-color: #fff;"> </span>   <span style="background-color: #fff;"> </span>   <span style="color: #2d9574;">"ffmq_nr3"</span>,
+<span class="linenr">140: </span><span style="background-color: #fff;"> </span>   <span style="background-color: #fff;"> </span>   <span style="background-color: #fff;"> </span>   <span style="color: #2d9574;">"ffmq_ob2"</span>,
+<span class="linenr">141: </span><span style="background-color: #fff;"> </span>   <span style="background-color: #fff;"> </span>   <span style="background-color: #fff;"> </span>   <span style="color: #2d9574;">"ffmq_nr4"</span>,
+<span class="linenr">142: </span><span style="background-color: #fff;"> </span>   <span style="background-color: #fff;"> </span>   <span style="background-color: #fff;"> </span>   <span style="color: #2d9574;">"ffmq_nr5"</span>,
+<span class="linenr">143: </span><span style="background-color: #fff;"> </span>   <span style="background-color: #fff;"> </span>   <span style="background-color: #fff;"> </span>   <span style="color: #2d9574;">"ffmq_nj2"</span>,
+<span class="linenr">144: </span><span style="background-color: #fff;"> </span>   <span style="background-color: #fff;"> </span>   <span style="background-color: #fff;"> </span>   <span style="color: #2d9574;">"ffmq_ob3"</span>,
+<span class="linenr">145: </span><span style="background-color: #fff;"> </span>   <span style="background-color: #fff;"> </span>   <span style="background-color: #fff;"> </span>   <span style="color: #2d9574;">"ffmq_ds3"</span>,
+<span class="linenr">146: </span><span style="background-color: #fff;"> </span>   <span style="background-color: #fff;"> </span>   <span style="background-color: #fff;"> </span>   <span style="color: #2d9574;">"ffmq_nr6"</span>,
+<span class="linenr">147: </span><span style="background-color: #fff;"> </span>   <span style="background-color: #fff;"> </span>   <span style="background-color: #fff;"> </span>   <span style="color: #2d9574;">"ffmq_nj3"</span>,
+<span class="linenr">148: </span><span style="background-color: #fff;"> </span>   <span style="background-color: #fff;"> </span>   <span style="background-color: #fff;"> </span>   <span style="color: #2d9574;">"ffmq_ob4"</span>,
+<span class="linenr">149: </span><span style="background-color: #fff;"> </span>   <span style="background-color: #fff;"> </span>   <span style="background-color: #fff;"> </span>   <span style="color: #2d9574;">"ffmq_ds4"</span>,
+<span class="linenr">150: </span><span style="background-color: #fff;"> </span>   <span style="background-color: #fff;"> </span>   <span style="background-color: #fff;"> </span>   <span style="color: #2d9574;">"ffmq_nr7"</span>,
+<span class="linenr">151: </span><span style="background-color: #fff;"> </span>   <span style="background-color: #fff;"> </span>   <span style="background-color: #fff;"> </span>   <span style="color: #2d9574;">"ffmq_nj4"</span>,
+<span class="linenr">152: </span><span style="background-color: #fff;"> </span>   <span style="background-color: #fff;"> </span>   <span style="background-color: #fff;"> </span>   <span style="color: #2d9574;">"upps_ur_1"</span>,
+<span class="linenr">153: </span><span style="background-color: #fff;"> </span>   <span style="background-color: #fff;"> </span>   <span style="background-color: #fff;"> </span>   <span style="color: #2d9574;">"upps_ur_2"</span>,
+<span class="linenr">154: </span><span style="background-color: #fff;"> </span>   <span style="background-color: #fff;"> </span>   <span style="background-color: #fff;"> </span>   <span style="color: #2d9574;">"upps_ur_3"</span>,
+<span class="linenr">155: </span><span style="background-color: #fff;"> </span>   <span style="background-color: #fff;"> </span>   <span style="background-color: #fff;"> </span>   <span style="color: #2d9574;">"upps_ur_4"</span>,
+<span class="linenr">156: </span><span style="background-color: #fff;"> </span>   <span style="background-color: #fff;"> </span>   <span style="background-color: #fff;"> </span>   <span style="color: #2d9574;">"upps_ur_5"</span>,
+<span class="linenr">157: </span><span style="background-color: #fff;"> </span>   <span style="background-color: #fff;"> </span>   <span style="background-color: #fff;"> </span>   <span style="color: #2d9574;">"upps_pm_1"</span>,
+<span class="linenr">158: </span><span style="background-color: #fff;"> </span>   <span style="background-color: #fff;"> </span>   <span style="background-color: #fff;"> </span>   <span style="color: #2d9574;">"upps_pm_2"</span>,
+<span class="linenr">159: </span><span style="background-color: #fff;"> </span>   <span style="background-color: #fff;"> </span>   <span style="background-color: #fff;"> </span>   <span style="color: #2d9574;">"upps_pm_3"</span>,
+<span class="linenr">160: </span><span style="background-color: #fff;"> </span>   <span style="background-color: #fff;"> </span>   <span style="background-color: #fff;"> </span>   <span style="color: #2d9574;">"upps_pm_4"</span>,
+<span class="linenr">161: </span><span style="background-color: #fff;"> </span>   <span style="background-color: #fff;"> </span>   <span style="background-color: #fff;"> </span>   <span style="color: #2d9574;">"upps_pm_5"</span>,
+<span class="linenr">162: </span><span style="background-color: #fff;"> </span>   <span style="background-color: #fff;"> </span>   <span style="background-color: #fff;"> </span>   <span style="color: #2d9574;">"upps_pe_1"</span>,
+<span class="linenr">163: </span><span style="background-color: #fff;"> </span>   <span style="background-color: #fff;"> </span>   <span style="background-color: #fff;"> </span>   <span style="color: #2d9574;">"upps_pe_2"</span>,
+<span class="linenr">164: </span><span style="background-color: #fff;"> </span>   <span style="background-color: #fff;"> </span>   <span style="background-color: #fff;"> </span>   <span style="color: #2d9574;">"upps_pe_3"</span>,
+<span class="linenr">165: </span><span style="background-color: #fff;"> </span>   <span style="background-color: #fff;"> </span>   <span style="background-color: #fff;"> </span>   <span style="color: #2d9574;">"upps_pe_4"</span>,
+<span class="linenr">166: </span><span style="background-color: #fff;"> </span>   <span style="background-color: #fff;"> </span>   <span style="background-color: #fff;"> </span>   <span style="color: #2d9574;">"upps_pe_5"</span>,
+<span class="linenr">167: </span><span style="background-color: #fff;"> </span>   <span style="background-color: #fff;"> </span>   <span style="background-color: #fff;"> </span>   <span style="color: #2d9574;">"upps_ss_1"</span>,
+<span class="linenr">168: </span><span style="background-color: #fff;"> </span>   <span style="background-color: #fff;"> </span>   <span style="background-color: #fff;"> </span>   <span style="color: #2d9574;">"upps_ss_2"</span>,
+<span class="linenr">169: </span><span style="background-color: #fff;"> </span>   <span style="background-color: #fff;"> </span>   <span style="background-color: #fff;"> </span>   <span style="color: #2d9574;">"upps_ss_3"</span>,
+<span class="linenr">170: </span><span style="background-color: #fff;"> </span>   <span style="background-color: #fff;"> </span>   <span style="background-color: #fff;"> </span>   <span style="color: #2d9574;">"upps_ss_4"</span>,
+<span class="linenr">171: </span><span style="background-color: #fff;"> </span>   <span style="background-color: #fff;"> </span>   <span style="background-color: #fff;"> </span>   <span style="color: #2d9574;">"upps_ss_5"</span>,
+<span class="linenr">172: </span><span style="background-color: #fff;"> </span>   <span style="background-color: #fff;"> </span>   <span style="background-color: #fff;"> </span>   <span style="color: #2d9574;">"dmq_cope_1"</span>,
+<span class="linenr">173: </span><span style="background-color: #fff;"> </span>   <span style="background-color: #fff;"> </span>   <span style="background-color: #fff;"> </span>   <span style="color: #2d9574;">"dmq_cope_2"</span>,
+<span class="linenr">174: </span><span style="background-color: #fff;"> </span>   <span style="background-color: #fff;"> </span>   <span style="background-color: #fff;"> </span>   <span style="color: #2d9574;">"dmq_cope_3"</span>,
+<span class="linenr">175: </span><span style="background-color: #fff;"> </span>   <span style="background-color: #fff;"> </span>   <span style="background-color: #fff;"> </span>   <span style="color: #2d9574;">"dmq_cope_4"</span>,
+<span class="linenr">176: </span><span style="background-color: #fff;"> </span>   <span style="background-color: #fff;"> </span>   <span style="background-color: #fff;"> </span>   <span style="color: #2d9574;">"dmq_cope_5"</span>,
+<span class="linenr">177: </span><span style="background-color: #fff;"> </span>   <span style="background-color: #fff;"> </span>   <span style="background-color: #fff;"> </span>   <span style="color: #2d9574;">"geschlecht_kod_male"</span>,
+<span class="linenr">178: </span><span style="background-color: #fff;"> </span>   <span style="background-color: #fff;"> </span>   <span style="background-color: #fff;"> </span>   <span style="color: #2d9574;">"erwerbstaetig_sub"</span>
+<span class="linenr">179: </span><span style="background-color: #fff;"> </span>   <span style="background-color: #fff;"> </span>   ]]
+<span class="linenr">180: </span><span style="background-color: #fff;"> </span>   
+<span class="linenr">181: </span><span style="background-color: #fff;"> </span>   <span style="color: #4f97d7; font-weight: bold;">elif</span> variant == <span style="color: #2d9574;">"ffmq"</span>:
+<span class="linenr">182: </span><span style="background-color: #fff;"> </span>   <span style="background-color: #fff;"> </span>   
+<span class="linenr">183: </span><span style="background-color: #fff;"> </span>   <span style="background-color: #fff;"> </span>   <span style="color: #7590db;">X</span> = df[ffmq_items]
+<span class="linenr">184: </span><span style="background-color: #fff;"> </span>   <span style="background-color: #fff;"> </span>   
+<span class="linenr">185: </span><span style="background-color: #fff;"> </span>   <span style="color: #4f97d7; font-weight: bold;">elif</span> variant == <span style="color: #2d9574;">"ffmq-factors"</span>:
+<span class="linenr">186: </span><span style="background-color: #fff;"> </span>   <span style="background-color: #fff;"> </span>   
+<span class="linenr">187: </span><span style="background-color: #fff;"> </span>   <span style="background-color: #fff;"> </span>   <span style="color: #7590db;">df</span>[<span style="color: #2d9574;">"ffmq_ob"</span>] = df[[<span style="color: #2d9574;">"ffmq_ob1"</span>,<span style="color: #2d9574;">"ffmq_ob2"</span>,<span style="color: #2d9574;">"ffmq_ob3"</span>,<span style="color: #2d9574;">"ffmq_ob4"</span>]].mean(axis=1)
+<span class="linenr">188: </span><span style="background-color: #fff;"> </span>   <span style="background-color: #fff;"> </span>   <span style="color: #7590db;">df</span>[<span style="color: #2d9574;">"ffmq_ds"</span>] = df[[<span style="color: #2d9574;">"ffmq_ds1"</span>,<span style="color: #2d9574;">"ffmq_ds2"</span>,<span style="color: #2d9574;">"ffmq_ds3"</span>,<span style="color: #2d9574;">"ffmq_ds4"</span>]].mean(axis=1)
+<span class="linenr">189: </span><span style="background-color: #fff;"> </span>   <span style="background-color: #fff;"> </span>   <span style="color: #7590db;">df</span>[<span style="color: #2d9574;">"ffmq_aa"</span>] = df[[<span style="color: #2d9574;">"ffmq_aa1"</span>,<span style="color: #2d9574;">"ffmq_aa2"</span>,<span style="color: #2d9574;">"ffmq_aa3"</span>,<span style="color: #2d9574;">"ffmq_aa4"</span>]].mean(axis=1)
+<span class="linenr">190: </span><span style="background-color: #fff;"> </span>   <span style="background-color: #fff;"> </span>   <span style="color: #7590db;">df</span>[<span style="color: #2d9574;">"ffmq_nj"</span>] = df[[<span style="color: #2d9574;">"ffmq_nj1"</span>,<span style="color: #2d9574;">"ffmq_nj2"</span>,<span style="color: #2d9574;">"ffmq_nj3"</span>,<span style="color: #2d9574;">"ffmq_nj4"</span>]].mean(axis=1)
+<span class="linenr">191: </span><span style="background-color: #fff;"> </span>   <span style="background-color: #fff;"> </span>   <span style="color: #7590db;">df</span>[<span style="color: #2d9574;">"ffmq_nr"</span>] = df[[<span style="color: #2d9574;">"ffmq_nr1"</span>,<span style="color: #2d9574;">"ffmq_nr2"</span>,<span style="color: #2d9574;">"ffmq_nr3"</span>,<span style="color: #2d9574;">"ffmq_nr4"</span>,<span style="color: #2d9574;">"ffmq_nr5"</span>,<span style="color: #2d9574;">"ffmq_nr6"</span>,<span style="color: #2d9574;">"ffmq_nr7"</span>]].mean(axis=1)
+<span class="linenr">192: </span><span style="background-color: #fff;"> </span>   <span style="background-color: #fff;"> </span>   
+<span class="linenr">193: </span><span style="background-color: #fff;"> </span>   <span style="background-color: #fff;"> </span>   <span style="color: #7590db;">X</span> = df[[
+<span class="linenr">194: </span><span style="background-color: #fff;"> </span>   <span style="background-color: #fff;"> </span>   <span style="background-color: #fff;"> </span>   <span style="color: #2d9574;">"ffmq_ob"</span>,
+<span class="linenr">195: </span><span style="background-color: #fff;"> </span>   <span style="background-color: #fff;"> </span>   <span style="background-color: #fff;"> </span>   <span style="color: #2d9574;">"ffmq_ds"</span>,
+<span class="linenr">196: </span><span style="background-color: #fff;"> </span>   <span style="background-color: #fff;"> </span>   <span style="background-color: #fff;"> </span>   <span style="color: #2d9574;">"ffmq_aa"</span>,
+<span class="linenr">197: </span><span style="background-color: #fff;"> </span>   <span style="background-color: #fff;"> </span>   <span style="background-color: #fff;"> </span>   <span style="color: #2d9574;">"ffmq_nj"</span>,
+<span class="linenr">198: </span><span style="background-color: #fff;"> </span>   <span style="background-color: #fff;"> </span>   <span style="background-color: #fff;"> </span>   <span style="color: #2d9574;">"ffmq_nr"</span>
+<span class="linenr">199: </span><span style="background-color: #fff;"> </span>   <span style="background-color: #fff;"> </span>   ]]
+<span class="linenr">200: </span>
+<span class="linenr">201: </span><span style="background-color: #fff;"> </span>   <span style="color: #4f97d7; font-weight: bold;">elif</span> variant == <span style="color: #2d9574;">"ffmq-overall"</span>:
+<span class="linenr">202: </span><span style="background-color: #fff;"> </span>   <span style="background-color: #fff;"> </span>   
+<span class="linenr">203: </span><span style="background-color: #fff;"> </span>   <span style="background-color: #fff;"> </span>   <span style="color: #7590db;">df</span>[<span style="color: #2d9574;">"ffmq_ob"</span>] = df[[<span style="color: #2d9574;">"ffmq_ob1"</span>,<span style="color: #2d9574;">"ffmq_ob2"</span>,<span style="color: #2d9574;">"ffmq_ob3"</span>,<span style="color: #2d9574;">"ffmq_ob4"</span>]].mean(axis=1)
+<span class="linenr">204: </span><span style="background-color: #fff;"> </span>   <span style="background-color: #fff;"> </span>   <span style="color: #7590db;">df</span>[<span style="color: #2d9574;">"ffmq_ds"</span>] = df[[<span style="color: #2d9574;">"ffmq_ds1"</span>,<span style="color: #2d9574;">"ffmq_ds2"</span>,<span style="color: #2d9574;">"ffmq_ds3"</span>,<span style="color: #2d9574;">"ffmq_ds4"</span>]].mean(axis=1)
+<span class="linenr">205: </span><span style="background-color: #fff;"> </span>   <span style="background-color: #fff;"> </span>   <span style="color: #7590db;">df</span>[<span style="color: #2d9574;">"ffmq_aa"</span>] = df[[<span style="color: #2d9574;">"ffmq_aa1"</span>,<span style="color: #2d9574;">"ffmq_aa2"</span>,<span style="color: #2d9574;">"ffmq_aa3"</span>,<span style="color: #2d9574;">"ffmq_aa4"</span>]].mean(axis=1)
+<span class="linenr">206: </span><span style="background-color: #fff;"> </span>   <span style="background-color: #fff;"> </span>   <span style="color: #7590db;">df</span>[<span style="color: #2d9574;">"ffmq_nj"</span>] = df[[<span style="color: #2d9574;">"ffmq_nj1"</span>,<span style="color: #2d9574;">"ffmq_nj2"</span>,<span style="color: #2d9574;">"ffmq_nj3"</span>,<span style="color: #2d9574;">"ffmq_nj4"</span>]].mean(axis=1)
+<span class="linenr">207: </span><span style="background-color: #fff;"> </span>   <span style="background-color: #fff;"> </span>   <span style="color: #7590db;">df</span>[<span style="color: #2d9574;">"ffmq_nr"</span>] = df[[<span style="color: #2d9574;">"ffmq_nr1"</span>,<span style="color: #2d9574;">"ffmq_nr2"</span>,<span style="color: #2d9574;">"ffmq_nr3"</span>,<span style="color: #2d9574;">"ffmq_nr4"</span>,<span style="color: #2d9574;">"ffmq_nr5"</span>,<span style="color: #2d9574;">"ffmq_nr6"</span>,<span style="color: #2d9574;">"ffmq_nr7"</span>]].mean(axis=1)
+<span class="linenr">208: </span><span style="background-color: #fff;"> </span>   <span style="background-color: #fff;"> </span>   <span style="color: #7590db;">df</span>[<span style="color: #2d9574;">"ffmq"</span>] = df[[<span style="color: #2d9574;">"ffmq_ob"</span>,<span style="color: #2d9574;">"ffmq_ds"</span>,<span style="color: #2d9574;">"ffmq_aa"</span>,<span style="color: #2d9574;">"ffmq_nj"</span>,<span style="color: #2d9574;">"ffmq_nr"</span>]].mean(axis=1)
+<span class="linenr">209: </span><span style="background-color: #fff;"> </span>   <span style="background-color: #fff;"> </span>   <span style="color: #7590db;">X</span> = df[[<span style="color: #2d9574;">"ffmq"</span>]]
+<span class="linenr">210: </span><span style="background-color: #fff;"> </span>   <span style="background-color: #fff;"> </span>   
+<span class="linenr">211: </span><span style="background-color: #fff;"> </span>   <span style="color: #4f97d7; font-weight: bold;">else</span>:
+<span class="linenr">212: </span><span style="background-color: #fff;"> </span>   <span style="background-color: #fff;"> </span>   <span style="color: #4f97d7; font-weight: bold;">raise</span> <span style="color: #ce537a; font-weight: bold;">Exception</span>(<span style="color: #2d9574;">"Invalid variant of dataset!"</span>)
+<span class="linenr">213: </span>
+<span class="linenr">214: </span><span style="background-color: #fff;"> </span>   <span style="color: #7590db;">y</span> = df[[<span style="color: #2d9574;">"audit"</span>]]
+<span class="linenr">215: </span>
+<span class="linenr">216: </span><span style="background-color: #fff;"> </span>   <span style="color: #4f97d7; font-weight: bold;">return</span> X, y
+<span class="linenr">217: </span>
+<span class="linenr">218: </span>
+<span class="linenr">219: </span><span style="color: #4f97d7; font-weight: bold;">def</span> <span style="color: #bc6ec5; font-weight: bold;">get_housing</span>():
+<span class="linenr">220: </span>
+<span class="linenr">221: </span><span style="background-color: #fff;"> </span>   <span style="color: #7590db;">df</span> = pd.read_csv(<span style="color: #2d9574;">"./data/housing.csv"</span>)
+<span class="linenr">222: </span><span style="background-color: #fff;"> </span>   <span style="color: #7590db;">y_label</span> = <span style="color: #2d9574;">"median_house_value"</span>
+<span class="linenr">223: </span>
+<span class="linenr">224: </span><span style="background-color: #fff;"> </span>   <span style="color: #2aa1ae; background-color: #fff;"># </span><span style="color: #2aa1ae; background-color: #fff;">convert categorial variables to bool</span>
+<span class="linenr">225: </span><span style="background-color: #fff;"> </span>   <span style="color: #7590db;">df</span> = pd.get_dummies(df, prefix=<span style="color: #2d9574;">""</span>, prefix_sep=<span style="color: #2d9574;">""</span>)
+<span class="linenr">226: </span>
+<span class="linenr">227: </span><span style="background-color: #fff;"> </span>   <span style="color: #2aa1ae; background-color: #fff;"># </span><span style="color: #2aa1ae; background-color: #fff;">impute missing values</span>
+<span class="linenr">228: </span><span style="background-color: #fff;"> </span>   <span style="color: #7590db;">imputer</span> = SimpleImputer(strategy=<span style="color: #2d9574;">"median"</span>)
+<span class="linenr">229: </span><span style="background-color: #fff;"> </span>   <span style="color: #7590db;">df</span> = pd.DataFrame(imputer.fit_transform(df), columns=df.columns)
+<span class="linenr">230: </span>
+<span class="linenr">231: </span><span style="background-color: #fff;"> </span>   <span style="color: #2aa1ae; background-color: #fff;"># </span><span style="color: #2aa1ae; background-color: #fff;">rescale the features</span>
+<span class="linenr">232: </span><span style="background-color: #fff;"> </span>   <span style="color: #7590db;">non_numeric_features</span> = [<span style="color: #2d9574;">'&lt;1H OCEAN'</span>, <span style="color: #2d9574;">'INLAND'</span>, <span style="color: #2d9574;">'ISLAND'</span>, <span style="color: #2d9574;">'NEAR BAY'</span>,
+<span class="linenr">233: </span><span style="background-color: #fff;"> </span>   <span style="background-color: #fff;"> </span>   <span style="background-color: #fff;"> </span>   <span style="background-color: #fff;"> </span>   <span style="background-color: #fff;"> </span>   <span style="background-color: #fff;"> </span>   <span style="background-color: #fff;"> </span>   <span style="color: #2d9574;">'NEAR OCEAN'</span>]
+<span class="linenr">234: </span><span style="background-color: #fff;"> </span>   <span style="color: #7590db;">do_not_to_scale</span> = non_numeric_features+[y_label]
+<span class="linenr">235: </span><span style="background-color: #fff;"> </span>   <span style="color: #7590db;">scaler</span> = StandardScaler()
+<span class="linenr">236: </span><span style="background-color: #fff;"> </span>   <span style="color: #7590db;">df_scaled</span> = pd.DataFrame(scaler.fit_transform(
+<span class="linenr">237: </span><span style="background-color: #fff;"> </span>   <span style="background-color: #fff;"> </span>   df.drop(do_not_to_scale, axis=1)), columns=df.columns.drop(do_not_to_scale))
+<span class="linenr">238: </span><span style="background-color: #fff;"> </span>   <span style="color: #7590db;">df</span> = df_scaled.join(df[do_not_to_scale])
+<span class="linenr">239: </span>
+<span class="linenr">240: </span><span style="background-color: #fff;"> </span>   <span style="color: #7590db;">X</span> = df[df.columns.drop(y_label)]
+<span class="linenr">241: </span><span style="background-color: #fff;"> </span>   <span style="color: #7590db;">y</span> = df[[y_label]]
+<span class="linenr">242: </span>
+<span class="linenr">243: </span><span style="background-color: #fff;"> </span>   <span style="color: #4f97d7; font-weight: bold;">return</span> X, y
+</pre>
+</div>
+
+<div class="org-src-container">
 <pre class="src src-python"><span class="linenr"> 1: </span><span style="color: #4f97d7; font-weight: bold;">from</span> sklearn.model_selection <span style="color: #4f97d7; font-weight: bold;">import</span> GroupShuffleSplit
 <span class="linenr"> 2: </span><span style="color: #4f97d7; font-weight: bold;">from</span> skopt <span style="color: #4f97d7; font-weight: bold;">import</span> BayesSearchCV 
-<span class="linenr"> 3: </span><span style="color: #4f97d7; font-weight: bold;">from</span> sklearn.linear_model <span style="color: #4f97d7; font-weight: bold;">import</span> ElasticNet
-<span class="linenr"> 4: </span><span style="color: #4f97d7; font-weight: bold;">from</span> get_data <span style="color: #4f97d7; font-weight: bold;">import</span> get_mindfulness <span style="color: #4f97d7; font-weight: bold;">as</span> get_data
+<span class="linenr"> 3: </span><span style="color: #4f97d7; font-weight: bold;">from</span> get_data <span style="color: #4f97d7; font-weight: bold;">import</span> get_mindfulness <span style="color: #4f97d7; font-weight: bold;">as</span> get_data
+<span class="linenr"> 4: </span><span style="color: #4f97d7; font-weight: bold;">from</span> regressors <span style="color: #4f97d7; font-weight: bold;">import</span> get_regressor
 <span class="linenr"> 5: </span><span style="color: #4f97d7; font-weight: bold;">from</span> utils <span style="color: #4f97d7; font-weight: bold;">import</span> split_train_test
-<span class="linenr"> 6: </span><span style="color: #4f97d7; font-weight: bold;">import</span> time
-<span class="linenr"> 7: </span>
-<span class="linenr"> 8: </span>
-<span class="linenr"> 9: </span><span style="color: #4f97d7; font-weight: bold;">def</span> <span style="color: #bc6ec5; font-weight: bold;">main</span>():
+<span class="linenr"> 6: </span><span style="color: #4f97d7; font-weight: bold;">from</span> skopt.plots <span style="color: #4f97d7; font-weight: bold;">import</span> plot_objective, plot_evaluations, plot_convergence
+<span class="linenr"> 7: </span><span style="color: #4f97d7; font-weight: bold;">import</span> matplotlib.pyplot <span style="color: #4f97d7; font-weight: bold;">as</span> plt
+<span class="linenr"> 8: </span><span style="color: #4f97d7; font-weight: bold;">import</span> numpy <span style="color: #4f97d7; font-weight: bold;">as</span> np
+<span class="linenr"> 9: </span><span style="color: #4f97d7; font-weight: bold;">import</span> time
 <span class="linenr">10: </span>
-<span class="linenr">11: </span><span style="background-color: #fff;"> </span>   <span style="color: #7590db;">start</span> = time.time()
-<span class="linenr">12: </span><span style="background-color: #fff;"> </span>   
-<span class="linenr">13: </span><span style="background-color: #fff;"> </span>   <span style="color: #7590db;">X</span>, <span style="color: #7590db;">y</span> = get_data()
-<span class="linenr">14: </span><span style="background-color: #fff;"> </span>   
-<span class="linenr">15: </span><span style="background-color: #fff;"> </span>   <span style="color: #7590db;">hyperparams_dist</span> = {
-<span class="linenr">16: </span><span style="background-color: #fff;"> </span>   <span style="background-color: #fff;"> </span>   <span style="color: #2d9574;">"alpha"</span>: (1e-4,1e3,<span style="color: #2d9574;">"log-uniform"</span>),
-<span class="linenr">17: </span><span style="background-color: #fff;"> </span>   <span style="background-color: #fff;"> </span>   <span style="color: #2d9574;">"l1_ratio"</span>: (1e-3,1.0,<span style="color: #2d9574;">"uniform"</span>)
-<span class="linenr">18: </span><span style="background-color: #fff;"> </span>   }
-<span class="linenr">19: </span><span style="background-color: #fff;"> </span>   
-<span class="linenr">20: </span><span style="background-color: #fff;"> </span>   <span style="color: #7590db;">reg</span> = ElasticNet()
-<span class="linenr">21: </span><span style="background-color: #fff;"> </span>   
-<span class="linenr">22: </span><span style="background-color: #fff;"> </span>   <span style="color: #7590db;">outer_cv</span> = GroupShuffleSplit(
-<span class="linenr">23: </span><span style="background-color: #fff;"> </span>   <span style="background-color: #fff;"> </span>   n_splits=5,
-<span class="linenr">24: </span><span style="background-color: #fff;"> </span>   <span style="background-color: #fff;"> </span>   test_size=0.2,
-<span class="linenr">25: </span><span style="background-color: #fff;"> </span>   <span style="background-color: #fff;"> </span>   random_state=0)
-<span class="linenr">26: </span><span style="background-color: #fff;"> </span>   
-<span class="linenr">27: </span><span style="background-color: #fff;"> </span>   <span style="color: #2aa1ae; background-color: #fff;"># </span><span style="color: #2aa1ae; background-color: #fff;">iterate over outer CV splitter</span>
-<span class="linenr">28: </span><span style="background-color: #fff;"> </span>   <span style="color: #4f97d7; font-weight: bold;">for</span> i_cv, (i_train, i_test) <span style="color: #4f97d7; font-weight: bold;">in</span> <span style="color: #4f97d7;">enumerate</span>(outer_cv.split(X, y, groups=X.index), start=1):
-<span class="linenr">29: </span><span style="background-color: #fff;"> </span>   
-<span class="linenr">30: </span><span style="background-color: #fff;"> </span>   <span style="background-color: #fff;"> </span>   <span style="color: #7590db;">y_train</span>, <span style="color: #7590db;">y_test</span> = split_train_test(y, i_train, i_test)
-<span class="linenr">31: </span><span style="background-color: #fff;"> </span>   <span style="background-color: #fff;"> </span>   <span style="color: #7590db;">X_train</span>, <span style="color: #7590db;">X_test</span> = split_train_test(X, i_train, i_test)
-<span class="linenr">32: </span><span style="background-color: #fff;"> </span>   
-<span class="linenr">33: </span><span style="background-color: #fff;"> </span>   <span style="background-color: #fff;"> </span>   <span style="color: #2aa1ae; background-color: #fff;"># </span><span style="color: #2aa1ae; background-color: #fff;">nested CV with parameter optimization</span>
-<span class="linenr">34: </span><span style="background-color: #fff;"> </span>   <span style="background-color: #fff;"> </span>   <span style="color: #7590db;">search_reg</span> = BayesSearchCV(
-<span class="linenr">35: </span><span style="background-color: #fff;"> </span>   <span style="background-color: #fff;"> </span>   <span style="background-color: #fff;"> </span>   estimator=reg,
-<span class="linenr">36: </span><span style="background-color: #fff;"> </span>   <span style="background-color: #fff;"> </span>   <span style="background-color: #fff;"> </span>   search_spaces=hyperparams_dist,
-<span class="linenr">37: </span><span style="background-color: #fff;"> </span>   <span style="background-color: #fff;"> </span>   <span style="background-color: #fff;"> </span>   n_iter=50,
-<span class="linenr">38: </span><span style="background-color: #fff;"> </span>   <span style="background-color: #fff;"> </span>   <span style="background-color: #fff;"> </span>   cv=5,
-<span class="linenr">39: </span><span style="background-color: #fff;"> </span>   <span style="background-color: #fff;"> </span>   <span style="background-color: #fff;"> </span>   n_jobs=8,
-<span class="linenr">40: </span><span style="background-color: #fff;"> </span>   <span style="background-color: #fff;"> </span>   <span style="background-color: #fff;"> </span>   random_state=0)
-<span class="linenr">41: </span><span style="background-color: #fff;"> </span>   <span style="background-color: #fff;"> </span>   <span style="color: #7590db;">result</span> = search_reg.fit(X_train, y_train)
-<span class="linenr">42: </span><span style="background-color: #fff;"> </span>   
-<span class="linenr">43: </span><span style="background-color: #fff;"> </span>   <span style="background-color: #fff;"> </span>   <span style="color: #4f97d7; font-weight: bold;">print</span>(f<span style="color: #2d9574;">"Split {i_cv}:"</span>, result.best_estimator_)
-<span class="linenr">44: </span><span style="background-color: #fff;"> </span>   <span style="background-color: #fff;"> </span>   <span style="color: #4f97d7; font-weight: bold;">print</span>(<span style="color: #2d9574;">"train score:"</span>, <span style="color: #4f97d7;">round</span>(result.score(X_train, y_train), 5))
-<span class="linenr">45: </span><span style="background-color: #fff;"> </span>   <span style="background-color: #fff;"> </span>   <span style="color: #4f97d7; font-weight: bold;">print</span>(<span style="color: #2d9574;">"test  score:"</span>, <span style="color: #4f97d7;">round</span>(result.score(X_test, y_test), 5))
-<span class="linenr">46: </span><span style="background-color: #fff;"> </span>   <span style="background-color: #fff;"> </span>   <span style="color: #4f97d7; font-weight: bold;">print</span>(<span style="color: #2d9574;">"\n"</span>)
-<span class="linenr">47: </span><span style="background-color: #fff;"> </span>   
-<span class="linenr">48: </span><span style="background-color: #fff;"> </span>   <span style="color: #4f97d7; font-weight: bold;">print</span>(f<span style="color: #2d9574;">"Execution time: {(time.time()-start):.3f}s"</span>)
-<span class="linenr">49: </span>
-<span class="linenr">50: </span>
-<span class="linenr">51: </span><span style="color: #4f97d7; font-weight: bold;">if</span> <span style="color: #4f97d7;">__name__</span> == <span style="color: #2d9574;">"__main__"</span>:
-<span class="linenr">52: </span><span style="background-color: #fff;"> </span>   main()
-</pre>
-</div>
-
-<pre class="example" id="org02eac7f">
-   Split 1: ElasticNet(alpha=0.18719219516699595, l1_ratio=1.0)
-   train score: 0.40553
-   test  score: 0.36028
-
-
-   Split 2: ElasticNet(alpha=0.47323207415464175, l1_ratio=0.4289707228514357)
-   train score: 0.35507
-   test  score: 0.33208
-
-
-   Split 3: ElasticNet(alpha=0.21108453310560205, l1_ratio=1.0)
-   train score: 0.39937
-   test  score: 0.32944
-
-
-   Split 4: ElasticNet(alpha=0.14144276806413866, l1_ratio=1.0)
-   train score: 0.4173
-   test  score: 0.38794
-
-
-   Split 5: ElasticNet(alpha=0.18333780804975994, l1_ratio=1.0)
-   train score: 0.43841
-   test  score: 0.25232
-
-
-   Execution time: 217.066s
+<span class="linenr">11: </span>
+<span class="linenr">12: </span><span style="color: #4f97d7; font-weight: bold;">def</span> <span style="color: #bc6ec5; font-weight: bold;">main</span>():
+<span class="linenr">13: </span>
+<span class="linenr">14: </span><span style="background-color: #fff;"> </span>   <span style="color: #7590db;">start</span> = time.time()
+<span class="linenr">15: </span><span style="background-color: #fff;"> </span>   
+<span class="linenr">16: </span>
+<span class="linenr">17: </span><span style="background-color: #fff;"> </span>   <span style="color: #7590db;">X</span>, <span style="color: #7590db;">y</span> = get_data()
+<span class="linenr">18: </span>
+<span class="linenr">19: </span>
+<span class="linenr">20: </span><span style="background-color: #fff;"> </span>   <span style="color: #7590db;">reg_type</span> = <span style="color: #2d9574;">"rf"</span>
+<span class="linenr">21: </span><span style="background-color: #fff;"> </span>   <span style="color: #2aa1ae; background-color: #fff;">#</span><span style="color: #2aa1ae; background-color: #fff;">for reg_type in ["elasticnet", "rf", "extratrees", "gradientboost"]:</span>
+<span class="linenr">22: </span>
+<span class="linenr">23: </span><span style="background-color: #fff;"> </span>   <span style="color: #7590db;">reg</span>,<span style="color: #7590db;">hyperparams_dist</span> = get_regressor(reg_type) <span style="color: #2aa1ae; background-color: #fff;"># </span><span style="color: #2aa1ae; background-color: #fff;">"elasticnet", "rf", "extratrees", "gradientboost"</span>
+<span class="linenr">24: </span>
+<span class="linenr">25: </span>
+<span class="linenr">26: </span><span style="background-color: #fff;"> </span>   <span style="color: #7590db;">outer_cv</span> = GroupShuffleSplit(n_splits=5,
+<span class="linenr">27: </span><span style="background-color: #fff;"> </span>   <span style="background-color: #fff;"> </span>   <span style="background-color: #fff;"> </span>   <span style="background-color: #fff;"> </span>   <span style="background-color: #fff;"> </span>   <span style="background-color: #fff;"> </span>   <span style="background-color: #fff;"> </span>   <span style="background-color: #fff;"> </span>   <span style="background-color: #fff;"> </span>test_size=0.2,
+<span class="linenr">28: </span><span style="background-color: #fff;"> </span>   <span style="background-color: #fff;"> </span>   <span style="background-color: #fff;"> </span>   <span style="background-color: #fff;"> </span>   <span style="background-color: #fff;"> </span>   <span style="background-color: #fff;"> </span>   <span style="background-color: #fff;"> </span>   <span style="background-color: #fff;"> </span>   <span style="background-color: #fff;"> </span>random_state=0
+<span class="linenr">29: </span><span style="background-color: #fff;"> </span>   <span style="background-color: #fff;"> </span>   <span style="background-color: #fff;"> </span>   <span style="background-color: #fff;"> </span>   <span style="background-color: #fff;"> </span>   <span style="background-color: #fff;"> </span>   <span style="background-color: #fff;"> </span>   <span style="background-color: #fff;"> </span>   )
+<span class="linenr">30: </span>
+<span class="linenr">31: </span><span style="background-color: #fff;"> </span>   <span style="color: #2aa1ae; background-color: #fff;"># </span><span style="color: #2aa1ae; background-color: #fff;">iterate over outer CV splitter</span>
+<span class="linenr">32: </span><span style="background-color: #fff;"> </span>   <span style="color: #4f97d7; font-weight: bold;">for</span> i_cv, (i_train, i_test) <span style="color: #4f97d7; font-weight: bold;">in</span> <span style="color: #4f97d7;">enumerate</span>(outer_cv.split(X, y, groups=X.index), start=1):
+<span class="linenr">33: </span>
+<span class="linenr">34: </span><span style="background-color: #fff;"> </span>   <span style="background-color: #fff;"> </span>   <span style="color: #7590db;">y_train</span>, <span style="color: #7590db;">y_test</span> = split_train_test(y, i_train, i_test)
+<span class="linenr">35: </span><span style="background-color: #fff;"> </span>   <span style="background-color: #fff;"> </span>   <span style="color: #7590db;">X_train</span>, <span style="color: #7590db;">X_test</span> = split_train_test(X, i_train, i_test)
+<span class="linenr">36: </span>
+<span class="linenr">37: </span><span style="background-color: #fff;"> </span>   <span style="background-color: #fff;"> </span>   <span style="color: #2aa1ae; background-color: #fff;"># </span><span style="color: #2aa1ae; background-color: #fff;">nested CV with parameter optimization</span>
+<span class="linenr">38: </span><span style="background-color: #fff;"> </span>   <span style="background-color: #fff;"> </span>   <span style="color: #7590db;">search_reg</span> = BayesSearchCV(
+<span class="linenr">39: </span><span style="background-color: #fff;"> </span>   <span style="background-color: #fff;"> </span>   <span style="background-color: #fff;"> </span>   estimator=reg,
+<span class="linenr">40: </span><span style="background-color: #fff;"> </span>   <span style="background-color: #fff;"> </span>   <span style="background-color: #fff;"> </span>   search_spaces=hyperparams_dist,
+<span class="linenr">41: </span><span style="background-color: #fff;"> </span>   <span style="background-color: #fff;"> </span>   <span style="background-color: #fff;"> </span>   n_iter=200,
+<span class="linenr">42: </span><span style="background-color: #fff;"> </span>   <span style="background-color: #fff;"> </span>   <span style="background-color: #fff;"> </span>   cv=5,
+<span class="linenr">43: </span><span style="background-color: #fff;"> </span>   <span style="background-color: #fff;"> </span>   <span style="background-color: #fff;"> </span>   n_jobs=8,
+<span class="linenr">44: </span><span style="background-color: #fff;"> </span>   <span style="background-color: #fff;"> </span>   <span style="background-color: #fff;"> </span>   random_state=0
+<span class="linenr">45: </span><span style="background-color: #fff;"> </span>   <span style="background-color: #fff;"> </span>   )
+<span class="linenr">46: </span>
+<span class="linenr">47: </span><span style="background-color: #fff;"> </span>   <span style="background-color: #fff;"> </span>   <span style="color: #7590db;">result</span> = search_reg.fit(X_train, y_train.values.ravel())
+<span class="linenr">48: </span>
+<span class="linenr">49: </span><span style="background-color: #fff;"> </span>   <span style="background-color: #fff;"> </span>   <span style="color: #4f97d7; font-weight: bold;">print</span>(f<span style="color: #2d9574;">"Split {i_cv}:"</span>, result.best_estimator_)
+<span class="linenr">50: </span><span style="background-color: #fff;"> </span>   <span style="background-color: #fff;"> </span>   <span style="color: #4f97d7; font-weight: bold;">print</span>(<span style="color: #2d9574;">"train score:"</span>, <span style="color: #4f97d7;">round</span>(result.score(X_train, y_train), 5))
+<span class="linenr">51: </span><span style="background-color: #fff;"> </span>   <span style="background-color: #fff;"> </span>   <span style="color: #4f97d7; font-weight: bold;">print</span>(<span style="color: #2d9574;">"test  score:"</span>, <span style="color: #4f97d7;">round</span>(result.score(X_test, y_test), 5))
+<span class="linenr">52: </span><span style="background-color: #fff;"> </span>   <span style="background-color: #fff;"> </span>   <span style="color: #4f97d7; font-weight: bold;">print</span>(<span style="color: #2d9574;">"\n"</span>)
+<span class="linenr">53: </span>
+<span class="linenr">54: </span><span style="background-color: #fff;"> </span>   plot_convergence(search_reg.optimizer_results_)
+<span class="linenr">55: </span><span style="background-color: #fff;"> </span>   plt.show()
+<span class="linenr">56: </span><span style="background-color: #fff;"> </span>   plot_evaluations(search_reg.optimizer_results_[0])
+<span class="linenr">57: </span><span style="background-color: #fff;"> </span>   plt.show()
+<span class="linenr">58: </span><span style="background-color: #fff;"> </span>   plot_objective(search_reg.optimizer_results_[0])
+<span class="linenr">59: </span><span style="background-color: #fff;"> </span>   plt.show()
+<span class="linenr">60: </span>
+<span class="linenr">61: </span><span style="background-color: #fff;"> </span>   <span style="color: #4f97d7; font-weight: bold;">print</span>(f<span style="color: #2d9574;">"Execution time: {(time.time()-start):.3f}s"</span>)
+<span class="linenr">62: </span>
+<span class="linenr">63: </span>
+<span class="linenr">64: </span><span style="color: #4f97d7; font-weight: bold;">if</span> <span style="color: #4f97d7;">__name__</span> == <span style="color: #2d9574;">"__main__"</span>:
+<span class="linenr">65: </span><span style="background-color: #fff;"> </span>   main()
 </pre>
 </div>
 </div>
+</div>
 
-<div id="outline-container-org9a94a60" class="outline-3">
-<h3 id="org9a94a60"><span class="todo TODO">TODO</span> Writing the report</h3>
-<div class="outline-text-3" id="text-org9a94a60">
+
+<div id="outline-container-org7d29bef" class="outline-3">
+<h3 id="org7d29bef"><span class="todo TODO">TODO</span> Writing the report</h3>
+<div class="outline-text-3" id="text-org7d29bef">
 <p><span class="timestamp-wrapper"><span class="timestamp-kwd">DEADLINE:</span> <span class="timestamp">&lt;2022-04-30 Sat&gt;</span></span></p>
 
 <p>
@@ -3066,43 +3298,43 @@ Here a brief overview of what was going on each week &#x2026;
 </p>
 </div>
 
-<div id="outline-container-org6b7a149" class="outline-4">
-<h4 id="org6b7a149">Week 1</h4>
-<div class="outline-text-4" id="text-org6b7a149">
+<div id="outline-container-orgfe76700" class="outline-4">
+<h4 id="orgfe76700">Week 1</h4>
+<div class="outline-text-4" id="text-orgfe76700">
 <p>
 Intro, Data preprocessing &amp; cross-validation, scikit-learn-documentation,
 regularized linear models (Ridge, Lasso etc.)
 </p>
 </div>
 </div>
-<div id="outline-container-org2e74eeb" class="outline-4">
-<h4 id="org2e74eeb">Week 2</h4>
-<div class="outline-text-4" id="text-org2e74eeb">
+<div id="outline-container-org57b11fb" class="outline-4">
+<h4 id="org57b11fb">Week 2</h4>
+<div class="outline-text-4" id="text-org57b11fb">
 <p>
 Literature, continuation script (implementing ElasticNet, RandomSearchCV, BayesSearchCV), manually computing gradients
 for simple OR- und XOR-networks
 </p>
 </div>
 </div>
-<div id="outline-container-org2d7ca63" class="outline-4">
-<h4 id="org2d7ca63">Weeks 3&#x2013;8</h4>
+<div id="outline-container-org4c7d872" class="outline-4">
+<h4 id="org4c7d872">Weeks 3&#x2013;8</h4>
 </div>
 </div>
 </div>
 
-<div id="outline-container-orgd801892" class="outline-2">
-<h2 id="orgd801892">Meetings</h2>
-<div class="outline-text-2" id="text-orgd801892">
+<div id="outline-container-org11369a5" class="outline-2">
+<h2 id="org11369a5">Meetings</h2>
+<div class="outline-text-2" id="text-org11369a5">
 </div>
-<div id="outline-container-orgcda4caa" class="outline-3">
-<h3 id="orgcda4caa"><span class="todo TODO">TODO</span> 2. Meeting with Steyrl-Group via Skype</h3>
-<div class="outline-text-3" id="text-orgcda4caa">
+<div id="outline-container-orged11824" class="outline-3">
+<h3 id="orged11824"><span class="todo TODO">TODO</span> 2. Meeting with Steyrl-Group via Skype</h3>
+<div class="outline-text-3" id="text-orged11824">
 <p><span class="timestamp-wrapper"><span class="timestamp-kwd">SCHEDULED:</span> <span class="timestamp">&lt;2022-03-15 Tue 11:00&gt;</span></span></p>
 </div>
 </div>
-<div id="outline-container-org22e65ee" class="outline-3">
-<h3 id="org22e65ee"><span class="done DONE">DONE</span> 2. Meeting with David</h3>
-<div class="outline-text-3" id="text-org22e65ee">
+<div id="outline-container-orgd16e5ce" class="outline-3">
+<h3 id="orgd16e5ce"><span class="done DONE">DONE</span> 2. Meeting with David</h3>
+<div class="outline-text-3" id="text-orgd16e5ce">
 <p><span class="timestamp-wrapper"><span class="timestamp-kwd">CLOSED:</span> <span class="timestamp">[2022-03-08 Tue 22:05] </span> <span class="timestamp-kwd">SCHEDULED:</span> <span class="timestamp">&lt;2022-03-08 Tue 10:00&gt;</span></span></p>
 <ol class="org-ol">
 <li>Progress of standard script creation</li>
@@ -3111,9 +3343,9 @@ for simple OR- und XOR-networks
 </div>
 </div>
 
-<div id="outline-container-org57d5103" class="outline-3">
-<h3 id="org57d5103"><span class="done DONE">DONE</span> 1. Meeting with Steyrl-Group via Skype</h3>
-<div class="outline-text-3" id="text-org57d5103">
+<div id="outline-container-orgb5dbe9e" class="outline-3">
+<h3 id="orgb5dbe9e"><span class="done DONE">DONE</span> 1. Meeting with Steyrl-Group via Skype</h3>
+<div class="outline-text-3" id="text-orgb5dbe9e">
 <p><span class="timestamp-wrapper"><span class="timestamp-kwd">CLOSED:</span> <span class="timestamp">[2022-03-02 Wed 11:35] </span> <span class="timestamp-kwd">SCHEDULED:</span> <span class="timestamp">&lt;2022-03-02 Wed 11:00&gt;</span></span></p>
 <ul class="org-ul">
 <li>Introducing group and master thesis topics</li>
@@ -3121,9 +3353,9 @@ for simple OR- und XOR-networks
 </div>
 </div>
 
-<div id="outline-container-org7e72d85" class="outline-3">
-<h3 id="org7e72d85"><span class="done DONE">DONE</span> 1. Meeting with David via Zoom</h3>
-<div class="outline-text-3" id="text-org7e72d85">
+<div id="outline-container-org771060b" class="outline-3">
+<h3 id="org771060b"><span class="done DONE">DONE</span> 1. Meeting with David via Zoom</h3>
+<div class="outline-text-3" id="text-org771060b">
 <p><span class="timestamp-wrapper"><span class="timestamp-kwd">CLOSED:</span> <span class="timestamp">[2022-02-28 Mon 10:55] </span> <span class="timestamp-kwd">SCHEDULED:</span> <span class="timestamp">&lt;2022-02-28 Mon 10:00&gt;</span></span></p>
 <ol class="org-ol">
 <li>Topic of internship
@@ -3149,9 +3381,9 @@ for simple OR- und XOR-networks
 </div>
 </div>
 
-<div id="outline-container-orga84c8cb" class="outline-2">
-<h2 id="orga84c8cb">Reading</h2>
-<div class="outline-text-2" id="text-orga84c8cb">
+<div id="outline-container-orgfe81f2d" class="outline-2">
+<h2 id="orgfe81f2d">Reading</h2>
+<div class="outline-text-2" id="text-orgfe81f2d">
 <ul class="org-ul">
 <li>Géron, A. (2019). Hands-On Machine Learning with Scikit-Learn, Keras,
 and TensorFlow, 2nd Edition. O'Reilly. <a href="https://www.oreilly.com/library/view/hands-on-machine-learning/9781492032632">https://www.oreilly.com/library/view/hands-on-machine-learning/9781492032632</a></li>
@@ -3163,8 +3395,8 @@ and TensorFlow, 2nd Edition. O'Reilly. <a href="https://www.oreilly.com/library/
 </div>
 <div id="postamble" class="status">
 <p class="author">Author: Dominik PEGLER</p>
-<p class="email">Email: <a href="mailto:dominikpegler@posteo.org">dominikpegler@posteo.org</a></p>
-<p class="date">Created: 2022-03-12 Sat 11:07</p>
+<p class="email">Email: <a href="mailto:a01468373@unet.univie.ac.at">a01468373@unet.univie.ac.at</a></p>
+<p class="date">Created: 2022-03-15 Tue 19:25</p>
 <p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>
