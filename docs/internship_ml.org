@@ -301,6 +301,7 @@ def get_housing():
     return X, y
 #+end_src
 
+run_regression.py
 #+begin_src python -n :eval never-export :session *py* :exports both :results output :dir /home/user/data/psy_misc/internship_ml
 from sklearn.model_selection import GroupShuffleSplit
 from skopt import BayesSearchCV 
