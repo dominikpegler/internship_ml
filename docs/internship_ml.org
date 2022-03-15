@@ -52,8 +52,8 @@ Predicting problematic alcohol consumpion by trait
 mindfulness (FFMQ), impulsiveness (UPPS-P), drinking-to-cope motives
 (DMQ-R-Cope), sex and weekly working hours.
 
+regressors.py
 #+begin_src python -n :eval never-export :session *py* :eval never-export :exports both :results output
-# regressors.py
 import numpy as np
 from sklearn.linear_model import ElasticNet
 from sklearn.ensemble import RandomForestRegressor
@@ -124,16 +124,18 @@ def get_regressor(reg_type="elasticnet"):
         raise Exception("No valid regressor defined!")
         
     return reg,hyperparams_dist
+#+end_src
 
-# utils.py
-
+utils.py
+#+begin_src python -n :eval never-export :session *py* :eval never-export :exports both :results output
 def split_train_test(data, i_train, i_test):
     train = data.iloc[i_train, :]
     test = data.iloc[i_test, :]
     return train, test
+#+end_src
 
-# get_data.py
-
+get_data.py
+#+begin_src python -n :eval never-export :session *py* :eval never-export :exports both :results output
 import pandas as pd
 from sklearn.preprocessing import StandardScaler
 from sklearn.impute import SimpleImputer
