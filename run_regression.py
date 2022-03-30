@@ -17,8 +17,7 @@ DATA_VARIANT = "complete"
 
 def main():
 
-    start = time.time()
-    
+    start = time.time()    
     X, y = get_data(DATA_VARIANT)
     
     
@@ -30,13 +29,15 @@ def main():
         filewriter = csv.writer(csvfile, delimiter=';')
         filewriter.writerow(["Type", "Split", "Model", "Train score (R²)", "Test score (R²)", "Finished at timestamp (s)"])
         
+    # iterate over regressor types
+    for reg_type in ["ElasticNet",
+                     "LGBMRegressor",
+                     "RandomForestRegressor",
+                     "GradientBoostingRegressor",
+                     "ExtraTreesRegressor",
+                     ]:
     
-    #reg_type = "LGBMRegressor"
-    for reg_type in ["ElasticNet", "LGBMRegressor", "RandomForestRegressor", "GradientBoostingRegressor", "ExtraTreesRegressor"]:
-    
-        reg, hyper_space = get_regressor(reg_type) # "elasticnet", "rf", "extratrees", "gradientboost"
-        
-        
+        reg, hyper_space = get_regressor(reg_type)
         outer_cv = GroupShuffleSplit(n_splits=5 if SIMULATION==False else 2,
                                      test_size=0.2,
                                      random_state=0)    
