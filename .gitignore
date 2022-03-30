@@ -1,5 +1,6 @@
 credentials.json
 img_data/
+output/
 *.log
 *.sav
 # Byte-compiled / optimized / DLL files
@@ -9,6 +10,8 @@ __pycache__/
 *.tex
 docs/*.tex
 docs/tmp/*
+
+*.png
 
 # C extensions
 *.so
