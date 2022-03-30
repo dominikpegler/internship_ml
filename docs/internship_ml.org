@@ -25,8 +25,9 @@ file:./img/mlicon2.png
 * Tasks
 
 ** TODO Create a standard ML Script
-DEADLINE: <2022-03-15 Tue>
+DEADLINE: <2022-03-29 Tue>
    :LOGBOOK:
+   CLOCK: [2022-03-28 Mon 20:55]
    CLOCK: [2022-03-15 Tue 16:34]--[2022-03-15 Tue 19:34] =>  3:00
    CLOCK: [2022-03-12 Sat 08:35]--[2022-03-12 Sat 11:05] =>  2:30
    CLOCK: [2022-03-11 Fri 09:45]--[2022-03-11 Fri 12:10] =>  2:25
@@ -365,7 +366,6 @@ if __name__ == "__main__":
     main()
 #+end_src
 
-
 ** TODO Writing the report
 DEADLINE: <2022-04-30 Sat>
 
@@ -381,10 +381,12 @@ for simple OR- und XOR-networks
 
 * Meetings
 
-** TODO 3. Meeting with David
-SCHEDULED: <2022-03-10 Thu 10:00>
 ** TODO 3. Meeting with Steyrl-Group via Skype
-SCHEDULED: <2022-03-22 Tue 11:00>
+SCHEDULED: <2022-03-29 Tue 11:00>
+** DONE 3. Meeting with David
+CLOSED: [2022-03-17 Thu 14:56] SCHEDULED: <2022-03-17 Thu 13:00>
+- feature importance
+- computervision project
 ** DONE 2. Meeting with Steyrl-Group via Skype
 CLOSED: [2022-03-15 Tue 11:50] SCHEDULED: <2022-03-15 Tue 11:00>
 :LOGBOOK:

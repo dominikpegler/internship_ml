@@ -1,5 +1,5 @@
 from sklearn.model_selection import GroupShuffleSplit
-from skopt import BayesSearchCV 
+from skopt import BayesSearchCV
 from get_data import get_mindfulness as get_data
 from regressors import get_regressor
 from utils import split_train_test
@@ -39,9 +39,8 @@ for reg_type in ["ElasticNet", "LGBMRegressor", "RandomForestRegressor", "Gradie
     
     outer_cv = GroupShuffleSplit(n_splits=5 if SIMULATION==False else 2,
                                  test_size=0.2,
-                                 random_state=0
-                                )
-    
+                                 random_state=0)    
+
     # iterate over outer CV splitter
     for i_cv, (i_train, i_test) in enumerate(outer_cv.split(X, y, groups=X.index), start=1):
     
@@ -74,7 +73,7 @@ for reg_type in ["ElasticNet", "LGBMRegressor", "RandomForestRegressor", "Gradie
                     )
                 )
     
-    # create plots
+    # create hyperparamater optimization plots
     try:
         plot_convergence(search_reg.optimizer_results_)
         plt.savefig(report_dir + reg_type + "_plot_convergence.png")
@@ -97,6 +96,22 @@ for reg_type in ["ElasticNet", "LGBMRegressor", "RandomForestRegressor", "Gradie
             fo.write(traceback.format_exc())
         
 
+    # # scatter + regression line plots
+    # fig, ax = plt.subplots()
+    # ax.scatter(X, y, alpha=0.3)
+    # x = pd.DataFrame(np.linspace(0, 5), columns=X.columns)
+    # ax.plot(x.values, result.best_estimator_.predict(x))
+    # ax.title.set_text(reg_type)
+    # try:
+    #     plt.text(
+    #         0.4, 25, f"y = {result.best_estimator_.coef_[0].round(2)}x + {result.best_estimator_.intercept_.round(2)}", fontsize=12)
+    # except:
+    #     ...
+    # plt.text(
+    #     0.4, 22, f"Best score $R²$ = {result.best_score_.round(3)} ($r$ = {(result.best_score_.round(3)**(1/2)).round(2)})", fontsize=12)
+    # ax.set_ylim(0, 30)
+    # ax.set_xlim(0, 5)
+    # fig.savefig("predictions_"+reg_type+".png")
 
 
 print(f"Overall execution time: {(time.time()-start):.3f}s")
@@ -104,3 +119,6 @@ print(f"Overall execution time: {(time.time()-start):.3f}s")
 
 # if __name__ == "__main__":
 #     main()
+
+
+
