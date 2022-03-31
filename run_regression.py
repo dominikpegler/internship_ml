@@ -65,6 +65,11 @@ def main():
             )
         
             result = search_reg.fit(X_train, y_train.values.ravel())
+            
+            print(f"Split {i_cv}:", result.best_estimator_)
+            print("train score:", round(result.score(X_train, y_train), 5))
+            print("test  score:", round(result.score(X_test, y_test), 5))
+            print("\n")
     
             # compute feature importance and write to json files
             m_imp,s_imp = get_feature_importance(reg_type, search_reg.best_estimator_, X_test, max_samples_SHAP)       
