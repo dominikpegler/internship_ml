@@ -1,4 +1,4 @@
-from sklearn.model_selection import GroupShuffleSplit
+from sklearn.model_selection import ShuffleSplit
 from skopt import BayesSearchCV
 from get_data import get_mindfulness as get_data
 from regressors import get_regressor
@@ -13,13 +13,14 @@ import codecs, json
 from feature_importance import get_feature_importance
         
 
-SIMULATION = False # quick run for testing purposes
+SIMULATION = True # quick run for testing purposes
 OUTPUT_PATH = "./output/"
 DATA_VARIANT = "complete"
 N_OUTER_SPLITS = 30
 N_INNER_SPLITS = 30
 
 max_samples_SHAP = 99
+
 
 def main():
 
@@ -43,22 +44,23 @@ def main():
                      ]:
     
         reg, hyper_space = get_regressor(reg_type)
-        outer_cv = GroupShuffleSplit(n_splits=N_OUTER_SPLITS if SIMULATION==False else 2,
-                                     test_size=0.2,
-                                     random_state=0)    
+        outer_cv = ShuffleSplit(n_splits=N_OUTER_SPLITS if SIMULATION==False else 2,
+                                     test_size=0.2)    
     
         # iterate over outer CV splitter
-        for i_cv, (i_train, i_test) in enumerate(outer_cv.split(X, y, groups=X.index), start=1):
+        for i_cv, (i_train, i_test) in enumerate(outer_cv.split(X, y), start=1):
         
             y_train, y_test = split_train_test(y, i_train, i_test)
             X_train, X_test = split_train_test(X, i_train, i_test)
         
             # nested CV with parameter optimization
+            inner_cv = ShuffleSplit(n_splits=N_INNER_SPLITS if SIMULATION == False else 2,
+                                         test_size=0.2)   
             search_reg = BayesSearchCV(
                 estimator=reg,
                 search_spaces=hyper_space,
                 n_iter=200 if SIMULATION == False else 10,
-                cv=N_INNER_SPLITS if SIMULATION == False else 2,
+                cv=inner_cv,
                 n_jobs=-2,
                 random_state=0
             )
