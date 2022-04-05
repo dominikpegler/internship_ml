@@ -13,7 +13,7 @@ import codecs, json
 from feature_importance import get_feature_importance
         
 
-SIMULATION = True # quick run for testing purposes
+SIMULATION = False # quick run for testing purposes
 OUTPUT_PATH = "./output/"
 DATA_VARIANT = "complete"
 N_OUTER_SPLITS = 30
