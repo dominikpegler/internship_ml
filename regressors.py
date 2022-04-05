@@ -2,20 +2,21 @@ import numpy as np
 from sklearn.linear_model import ElasticNet
 from sklearn.ensemble import RandomForestRegressor
 from sklearn.ensemble import ExtraTreesRegressor
-from sklearn.ensemble import GradientBoostingRegressor
 from lightgbm import LGBMRegressor
+from skopt.space import Real, Integer
 
 
-n_estimators = [int(x) for x in np.linspace(start = 200, stop = 2000, num = 10)]
-max_features = (1e-2,1e0,"uniform")
+max_features = Real(1e-2,1e0,prior="uniform")
 max_depth = [int(x) for x in np.linspace(10, 110, num = 11)]
 max_depth.append(None)
-min_samples_split = (2,256,"log-uniform")
-min_samples_leaf = (1,256,"log-uniform")
-bootstrap = [True, False]
-learning_rate = (1e-3,1e0,"log-uniform")
-num_leaves = (2,256,"log-uniform")
-min_child_samples = (1,256,"log-uniform")
+min_samples_split = Integer(2,256,prior="log-uniform")
+min_samples_leaf = Integer(1,256,prior="log-uniform")
+learning_rate = Real(1e-3,1e0,prior="log-uniform")
+num_leaves = Integer(2,256,prior="log-uniform")
+min_child_samples = Integer(1,256,prior="log-uniform")
+n_estimators = 256
+
+# Real Numbers import
 
 def get_regressor(reg_type="ElasticNet"):
     """
@@ -41,36 +42,21 @@ def get_regressor(reg_type="ElasticNet"):
             }
 
     elif reg_type == "RandomForestRegressor":
-        reg = RandomForestRegressor(random_state = 0)
+        reg = RandomForestRegressor( n_estimators=n_estimators,random_state = 0)
         hyper_space = {
-            'n_estimators': n_estimators,
             'max_features': max_features,
-            'max_depth': max_depth,
             'min_samples_split': min_samples_split,
             'min_samples_leaf': min_samples_leaf,
-            'bootstrap': bootstrap
         }
 
     elif reg_type == "ExtraTreesRegressor":
-        reg = ExtraTreesRegressor(random_state = 0)
+        reg = ExtraTreesRegressor( n_estimators=n_estimators,random_state = 0)
         hyper_space = {
-            'n_estimators': n_estimators,
-            'max_features': max_features,
-            'max_depth': max_depth,
-            'min_samples_split': min_samples_split,
-            'min_samples_leaf': min_samples_leaf,
-            'bootstrap': bootstrap
-        }
+           'max_features': max_features,
+           'min_samples_split': min_samples_split,
+           'min_samples_leaf': min_samples_leaf,
+       }
         
-    elif reg_type == "GradientBoostingRegressor":
-        reg = GradientBoostingRegressor(random_state=0)
-        hyper_space = {
-            'n_estimators': n_estimators,
-            'max_features': max_features,
-            'max_depth': max_depth,
-            'min_samples_split': min_samples_split,
-            'min_samples_leaf': min_samples_leaf,
-        }
         
     elif reg_type == "LGBMRegressor":
         reg = LGBMRegressor(
@@ -78,7 +64,7 @@ def get_regressor(reg_type="ElasticNet"):
                 num_leaves=31,
                 max_depth=-1,
                 learning_rate=0.1,
-                n_estimators=256,
+                n_estimators=n_estimators,
                 subsample_for_bin=200000,
                 objective=None,
                 class_weight=None,
@@ -87,13 +73,13 @@ def get_regressor(reg_type="ElasticNet"):
                 min_child_samples=0,
                 subsample=1.0,
                 subsample_freq=0,
-                colsample_bytree=1.0,
+                colsample_bytree=1e-2,
                 reg_alpha=0.0,
                 reg_lambda=0.0,
                 random_state=None,
                 n_jobs=1,
                 importance_type='gain',
-                **{'extra_trees': True})
+                )
         
         hyper_space = {
             'learning_rate': learning_rate,

@@ -13,10 +13,11 @@ import codecs, json
 from feature_importance import get_feature_importance
         
 
-
 SIMULATION = False # quick run for testing purposes
 OUTPUT_PATH = "./output/"
 DATA_VARIANT = "complete"
+N_OUTER_SPLITS = 30
+N_INNER_SPLITS = 30
 
 max_samples_SHAP = 99
 
@@ -38,13 +39,11 @@ def main():
     # iterate over regressor types
     for reg_type in ["ElasticNet",
                      "LGBMRegressor",
-                     "RandomForestRegressor",
-                     "GradientBoostingRegressor",
                      "ExtraTreesRegressor",
                      ]:
     
         reg, hyper_space = get_regressor(reg_type)
-        outer_cv = GroupShuffleSplit(n_splits=5 if SIMULATION==False else 2,
+        outer_cv = GroupShuffleSplit(n_splits=N_OUTER_SPLITS if SIMULATION==False else 2,
                                      test_size=0.2,
                                      random_state=0)    
     
@@ -59,7 +58,7 @@ def main():
                 estimator=reg,
                 search_spaces=hyper_space,
                 n_iter=200 if SIMULATION == False else 10,
-                cv=5 if SIMULATION == False else 2,
+                cv=N_INNER_SPLITS if SIMULATION == False else 2,
                 n_jobs=-2,
                 random_state=0
             )
@@ -112,24 +111,7 @@ def main():
             with open(report_dir + reg_type + "_plot_objective.log", "w") as fo:
                 fo.write(traceback.format_exc())
             
-    
-        # # scatter + regression line plots
-        # fig, ax = plt.subplots()
-        # ax.scatter(X, y, alpha=0.3)
-        # x = pd.DataFrame(np.linspace(0, 5), columns=X.columns)
-        # ax.plot(x.values, result.best_estimator_.predict(x))
-        # ax.title.set_text(reg_type)
-        # try:
-        #     plt.text(
-        #         0.4, 25, f"y = {result.best_estimator_.coef_[0].round(2)}x + {result.best_estimator_.intercept_.round(2)}", fontsize=12)
-        # except:
-        #     ...
-        # plt.text(
-        #     0.4, 22, f"Best score $R²$ = {result.best_score_.round(3)} ($r$ = {(result.best_score_.round(3)**(1/2)).round(2)})", fontsize=12)
-        # ax.set_ylim(0, 30)
-        # ax.set_xlim(0, 5)
-        # fig.savefig("predictions_"+reg_type+".png")
-    
+   
     
     print(f"Overall execution time: {(time.time()-start):.3f}s")
 
