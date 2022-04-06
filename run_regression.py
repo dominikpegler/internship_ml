@@ -16,8 +16,8 @@ from feature_importance import get_feature_importance
 SIMULATION = False # quick run for testing purposes
 OUTPUT_PATH = "./output/"
 DATA_VARIANT = "complete"
-N_OUTER_SPLITS = 30
-N_INNER_SPLITS = 30
+N_OUTER_SPLITS = 50
+N_INNER_SPLITS = 50
 
 max_samples_SHAP = 99
 
