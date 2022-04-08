@@ -47,7 +47,7 @@ Literature, continuation script (implementing ElasticNet, RandomSearchCV, BayesS
 for simple OR- und XOR-networks
 *** Week 3
 
-Not very activte due to covid-19 infection, mostly reading literature
+Not very active due to covid-19 infection, mostly reading literature
 
 *** Week 4
 
