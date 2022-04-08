@@ -25,6 +25,15 @@ file:./img/mlicon2.png
 * Tasks
 
 ** TODO Running the script and logging results
+
+see results here -> [[https://www.github.com/dominikpegler/internship_ml/blob/main/results.ipynb][results.ipynb]]
+
+see main script here -> [[https://www.github.com/dominikpegler/internship_ml/blob/main/run_regression.py][run_regression.py]]
+
+see regressors and hyperparameters here -> [[https://www.github.com/dominikpegler/internship_ml/blob/main/regressors.py][regressors.py]]
+
+see data preprocessing here -> [[https://www.github.com/dominikpegler/internship_ml/blob/main/get_data.py][get_data.py]]
+
 ** TODO Writing the report
 DEADLINE: <2022-04-30 Sat>
 
