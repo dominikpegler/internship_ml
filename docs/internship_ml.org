@@ -85,45 +85,6 @@ SCHEDULED: <2022-04-11 Mon 10:00>
 SCHEDULED: <2022-04-12 Tue 11:00>
 ** DONE 3. Meeting with Steyrl-Group via Skype
 CLOSED: [2022-04-05 Tue 23:58] SCHEDULED: <2022-04-05 Tue 11:00>
-** DONE 2. Meeting with Steyrl-Group via Skype
-CLOSED: [2022-03-15 Tue 11:50] SCHEDULED: <2022-03-15 Tue 11:00>
-:LOGBOOK:
-CLOCK: [2022-03-15 Tue 11:00]--[2022-03-15 Tue 11:55] =>  0:55
-:END:
-** DONE 2. Meeting with David
-CLOSED: [2022-03-08 Tue 22:05] SCHEDULED: <2022-03-08 Tue 10:00>
-:LOGBOOK:
-CLOCK: [2022-03-08 Tue 10:00]--[2022-03-08 Tue 10:50] =>  0:50
-:END:
-     1. Progress of standard script creation
-     2. Discussing regressors and their hyperparameters
-     
-** DONE 1. Meeting with Steyrl-Group via Skype
-    CLOSED: [2022-03-02 Wed 11:35] SCHEDULED: <2022-03-02 Wed 11:00>
-    :LOGBOOK:
-    CLOCK: [2022-03-02 Wed 11:00]--[2022-03-02 Wed 11:35] =>  0:35
-    :END:
-- Introducing group and master thesis topics
-
-** DONE 1. Meeting with David via Zoom
-    CLOSED: [2022-02-28 Mon 10:55] SCHEDULED: <2022-02-28 Mon 10:00>
-    :LOGBOOK:
-    CLOCK: [2022-02-28 Mon 10:00]--[2022-02-28 Mon 10:55] =>  0:55
-    :END:
-
-    1. Topic of internship
-       1. Analyze my bachelor thesis data with ML methods
-          (regularized linear models & random forests)
-       2. Further topics and tasks we may discuss at a later stage
-    2. General concepts about python libraries and workflow
-    3. First goal: Creating a standard ML script that does the following
-       1. reads the data,
-       2. splits data into X and y, into train and test sets,
-       3. carries out cross validation (GroupShuffleSplit) 
-	      1. outer loop (to prevent overfitting)
-	      2. inner loop (for finding optimal hyperparameters)
-    4. Agreed to meet next in two days (together with the master thesis students)
-   
 ** DONE 3. Meeting with David
 CLOSED: [2022-03-17 Thu 14:56] SCHEDULED: <2022-03-17 Thu 13:00>
 - feature importance
