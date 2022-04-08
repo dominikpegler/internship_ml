@@ -24,10 +24,24 @@ file:./img/mlicon2.png
 
 * Tasks
 
-** TODO Create a standard ML Script
-DEADLINE: <2022-03-29 Tue>
+** TODO Running the script and logging results
+** TODO Writing the report
+DEADLINE: <2022-04-30 Sat>
+
+Here a brief overview of what was going on each week ...
+
+*** Week 1
+Intro, Data preprocessing & cross-validation, scikit-learn-documentation,
+regularized linear models (Ridge, Lasso etc.)
+*** Week 2
+Literature, continuation script (implementing ElasticNet, RandomSearchCV, BayesSearchCV), manually computing gradients
+for simple OR- und XOR-networks
+*** Weeks 3--8
+
+** DONE Creating a standard ML Script
+CLOSED: [2022-04-04 Mon 00:00] DEADLINE: <2022-04-07 Thu>
    :LOGBOOK:
-   CLOCK: [2022-03-28 Mon 20:55]
+   CLOCK: [2022-03-28 Mon 20:55]--
    CLOCK: [2022-03-15 Tue 16:34]--[2022-03-15 Tue 19:34] =>  3:00
    CLOCK: [2022-03-12 Sat 08:35]--[2022-03-12 Sat 11:05] =>  2:30
    CLOCK: [2022-03-11 Fri 09:45]--[2022-03-11 Fri 12:10] =>  2:25
@@ -50,339 +64,57 @@ DEADLINE: <2022-03-29 Tue>
    CLOCK: [2022-02-28 Mon 19:45]--[2022-02-28 Mon 23:43] =>  3:58
    :END:
 
-Predicting problematic alcohol consumpion by trait
-mindfulness (FFMQ), impulsiveness (UPPS-P), drinking-to-cope motives
-(DMQ-R-Cope), sex and weekly working hours.
-
-regressors.py
-#+begin_src python -n :eval never-export :session *py* :eval never-export :exports both :results output
-import numpy as np
-from sklearn.linear_model import ElasticNet
-from sklearn.ensemble import RandomForestRegressor
-from sklearn.ensemble import ExtraTreesRegressor
-from sklearn.ensemble import GradientBoostingRegressor
-
-
-n_estimators = [int(x) for x in np.linspace(start = 200, stop = 2000, num = 10)]
-max_features = ['auto', 'sqrt']
-max_depth = [int(x) for x in np.linspace(10, 110, num = 11)]
-max_depth.append(None)
-min_samples_split = [2, 5, 10]
-min_samples_leaf = [1, 2, 4]
-bootstrap = [True, False]
-
-
-def get_regressor(reg_type="elasticnet"):
-    """
-    scikit-learn regressors ready to use for bayesCV
-        
-        returns regressor model and dictionary for possible hyperparameter distributions
-    
-        Parameters
-        ----------
-        reg_type : {'elasticnet', 'rf', 'extratrees', 'gradienboost'} default='elasticnet'
-    
-    """
-    
-    if reg_type == "elasticnet":
-        reg = ElasticNet()
-        hyperparams_dist = {
-            "alpha": (1e-4,1e3,"log-uniform"),
-            "l1_ratio": (1e-3,1.0,"uniform")
-            }
-
-    elif reg_type == "rf":
-        reg = RandomForestRegressor(random_state = 0)
-        hyperparams_dist = {
-            'n_estimators': n_estimators,
-            'max_features': max_features,
-            'max_depth': max_depth,
-            'min_samples_split': min_samples_split,
-            'min_samples_leaf': min_samples_leaf,
-            'bootstrap': bootstrap
-        }
-
-    elif reg_type == "extratrees":
-        reg = ExtraTreesRegressor(random_state = 0)
-        hyperparams_dist = {
-            'n_estimators': n_estimators,
-            'max_features': max_features,
-            'max_depth': max_depth,
-            'min_samples_split': min_samples_split,
-            'min_samples_leaf': min_samples_leaf,
-            'bootstrap': bootstrap
-        }
-        
-    elif reg_type == "gradientboost":
-        reg = GradientBoostingRegressor(random_state=0)
-        hyperparams_dist = {
-            'n_estimators': n_estimators,
-            'max_features': max_features,
-            'max_depth': max_depth,
-            'min_samples_split': min_samples_split,
-            'min_samples_leaf': min_samples_leaf,
-        }        
-    else:
-        raise Exception("No valid regressor defined!")
-        
-    return reg,hyperparams_dist
-#+end_src
-
-utils.py
-#+begin_src python -n :eval never-export :session *py* :eval never-export :exports both :results output
-def split_train_test(data, i_train, i_test):
-    train = data.iloc[i_train, :]
-    test = data.iloc[i_test, :]
-    return train, test
-#+end_src
-
-get_data.py
-#+begin_src python -n :eval never-export :session *py* :eval never-export :exports both :results output
-import pandas as pd
-from sklearn.preprocessing import StandardScaler
-from sklearn.impute import SimpleImputer
-
-
-def get_mindfulness(variant="complete"):
-    """
-    Mindfulness dataset from bachelor survey
-        
-        loads tab-separated file and returns pandas dataframes for X and y
-    
-        Parameters
-        ----------
-        variant : {'complete', 'ffmq', 'ffmq-overall', 'ffmq-factors'} default='complete'
-        
-    """
-
-    ffmq_items = [
-        "ffmq_ds1",
-        "ffmq_aa1",
-        "ffmq_ds2",
-        "ffmq_aa2",
-        "ffmq_nr1",
-        "ffmq_nr2",
-        "ffmq_aa3",
-        "ffmq_nj1",
-        "ffmq_ob1",
-        "ffmq_aa4",
-        "ffmq_nr3",
-        "ffmq_ob2",
-        "ffmq_nr4",
-        "ffmq_nr5",
-        "ffmq_nj2",
-        "ffmq_ob3",
-        "ffmq_ds3",
-        "ffmq_nr6",
-        "ffmq_nj3",
-        "ffmq_ob4",
-        "ffmq_ds4",
-        "ffmq_nr7",
-        "ffmq_nj4"
-    ]
-
-    df = pd.read_csv("./data/mindfulness.csv", sep='\t', index_col=0)
-    
-    if variant == "complete":
-        X = df[[
-            "ffmq_ds1",
-            "ffmq_aa1",
-            "ffmq_ds2",
-            "ffmq_aa2",
-            "ffmq_nr1",
-            "ffmq_nr2",
-            "ffmq_aa3",
-            "ffmq_nj1",
-            "ffmq_ob1",
-            "ffmq_aa4",
-            "ffmq_nr3",
-            "ffmq_ob2",
-            "ffmq_nr4",
-            "ffmq_nr5",
-            "ffmq_nj2",
-            "ffmq_ob3",
-            "ffmq_ds3",
-            "ffmq_nr6",
-            "ffmq_nj3",
-            "ffmq_ob4",
-            "ffmq_ds4",
-            "ffmq_nr7",
-            "ffmq_nj4",
-            "upps_ur_1",
-            "upps_ur_2",
-            "upps_ur_3",
-            "upps_ur_4",
-            "upps_ur_5",
-            "upps_pm_1",
-            "upps_pm_2",
-            "upps_pm_3",
-            "upps_pm_4",
-            "upps_pm_5",
-            "upps_pe_1",
-            "upps_pe_2",
-            "upps_pe_3",
-            "upps_pe_4",
-            "upps_pe_5",
-            "upps_ss_1",
-            "upps_ss_2",
-            "upps_ss_3",
-            "upps_ss_4",
-            "upps_ss_5",
-            "dmq_cope_1",
-            "dmq_cope_2",
-            "dmq_cope_3",
-            "dmq_cope_4",
-            "dmq_cope_5",
-            "geschlecht_kod_male",
-            "erwerbstaetig_sub"
-        ]]
-    
-    elif variant == "ffmq":
-        
-        X = df[ffmq_items]
-        
-    elif variant == "ffmq-factors":
-        
-        df["ffmq_ob"] = df[["ffmq_ob1","ffmq_ob2","ffmq_ob3","ffmq_ob4"]].mean(axis=1)
-        df["ffmq_ds"] = df[["ffmq_ds1","ffmq_ds2","ffmq_ds3","ffmq_ds4"]].mean(axis=1)
-        df["ffmq_aa"] = df[["ffmq_aa1","ffmq_aa2","ffmq_aa3","ffmq_aa4"]].mean(axis=1)
-        df["ffmq_nj"] = df[["ffmq_nj1","ffmq_nj2","ffmq_nj3","ffmq_nj4"]].mean(axis=1)
-        df["ffmq_nr"] = df[["ffmq_nr1","ffmq_nr2","ffmq_nr3","ffmq_nr4","ffmq_nr5","ffmq_nr6","ffmq_nr7"]].mean(axis=1)
-        
-        X = df[[
-            "ffmq_ob",
-            "ffmq_ds",
-            "ffmq_aa",
-            "ffmq_nj",
-            "ffmq_nr"
-        ]]
-
-    elif variant == "ffmq-overall":
-        
-        df["ffmq_ob"] = df[["ffmq_ob1","ffmq_ob2","ffmq_ob3","ffmq_ob4"]].mean(axis=1)
-        df["ffmq_ds"] = df[["ffmq_ds1","ffmq_ds2","ffmq_ds3","ffmq_ds4"]].mean(axis=1)
-        df["ffmq_aa"] = df[["ffmq_aa1","ffmq_aa2","ffmq_aa3","ffmq_aa4"]].mean(axis=1)
-        df["ffmq_nj"] = df[["ffmq_nj1","ffmq_nj2","ffmq_nj3","ffmq_nj4"]].mean(axis=1)
-        df["ffmq_nr"] = df[["ffmq_nr1","ffmq_nr2","ffmq_nr3","ffmq_nr4","ffmq_nr5","ffmq_nr6","ffmq_nr7"]].mean(axis=1)
-        df["ffmq"] = df[["ffmq_ob","ffmq_ds","ffmq_aa","ffmq_nj","ffmq_nr"]].mean(axis=1)
-        X = df[["ffmq"]]
-        
-    else:
-        raise Exception("Invalid variant of dataset!")
-
-    y = df[["audit"]]
-
-    return X, y
-
-
-def get_housing():
-
-    df = pd.read_csv("./data/housing.csv")
-    y_label = "median_house_value"
-
-    # convert categorial variables to bool
-    df = pd.get_dummies(df, prefix="", prefix_sep="")
-
-    # impute missing values
-    imputer = SimpleImputer(strategy="median")
-    df = pd.DataFrame(imputer.fit_transform(df), columns=df.columns)
-
-    # rescale the features
-    non_numeric_features = ['<1H OCEAN', 'INLAND', 'ISLAND', 'NEAR BAY',
-                            'NEAR OCEAN']
-    do_not_to_scale = non_numeric_features+[y_label]
-    scaler = StandardScaler()
-    df_scaled = pd.DataFrame(scaler.fit_transform(
-        df.drop(do_not_to_scale, axis=1)), columns=df.columns.drop(do_not_to_scale))
-    df = df_scaled.join(df[do_not_to_scale])
-
-    X = df[df.columns.drop(y_label)]
-    y = df[[y_label]]
-
-    return X, y
-#+end_src
-
-run_regression.py
-#+begin_src python -n :eval never-export :session *py* :exports both :results output :dir /home/user/data/psy_misc/internship_ml
-from sklearn.model_selection import GroupShuffleSplit
-from skopt import BayesSearchCV 
-from get_data import get_mindfulness as get_data
-from regressors import get_regressor
-from utils import split_train_test
-from skopt.plots import plot_objective, plot_evaluations, plot_convergence
-import matplotlib.pyplot as plt
-import numpy as np
-import time
-
-
-def main():
-
-    start = time.time()
-    
-
-    X, y = get_data()
-    reg_type = "rf"
-    #for reg_type in ["elasticnet", "rf", "extratrees", "gradientboost"]:
-    reg,hyperparams_dist = get_regressor(reg_type) # "elasticnet", "rf", "extratrees", "gradientboost"
-    outer_cv = GroupShuffleSplit(n_splits=5,
-                                 test_size=0.2,
-                                 random_state=0
-                                )
-
-    # iterate over outer CV splitter
-    for i_cv, (i_train, i_test) in enumerate(outer_cv.split(X, y, groups=X.index), start=1):
-
-        y_train, y_test = split_train_test(y, i_train, i_test)
-        X_train, X_test = split_train_test(X, i_train, i_test)
-
-        # nested CV with parameter optimization
-        search_reg = BayesSearchCV(
-            estimator=reg,
-            search_spaces=hyperparams_dist,
-            n_iter=200,
-            cv=5,
-            n_jobs=8,
-            random_state=0
-        )
-
-        result = search_reg.fit(X_train, y_train.values.ravel())
-
-        print(f"Split {i_cv}:", result.best_estimator_)
-        print("train score:", round(result.score(X_train, y_train), 5))
-        print("test  score:", round(result.score(X_test, y_test), 5))
-        print("\n")
-
-    plot_convergence(search_reg.optimizer_results_)
-    plt.show()
-    plot_evaluations(search_reg.optimizer_results_[0])
-    plt.show()
-    plot_objective(search_reg.optimizer_results_[0])
-    plt.show()
-
-    print(f"Execution time: {(time.time()-start):.3f}s")
-
-
-if __name__ == "__main__":
-    main()
-#+end_src
-
-** TODO Writing the report
-DEADLINE: <2022-04-30 Sat>
-
-Here a brief overview of what was going on each week ...
-
-*** Week 1
-Intro, Data preprocessing & cross-validation, scikit-learn-documentation,
-regularized linear models (Ridge, Lasso etc.)
-*** Week 2
-Literature, continuation script (implementing ElasticNet, RandomSearchCV, BayesSearchCV), manually computing gradients
-for simple OR- und XOR-networks
-*** Weeks 3--8
-
+[[https://github.com/dominikpegler/internship_ml][github.com/dominikpegler/internship_ml]]
+   
 * Meetings
 
-** TODO 3. Meeting with Steyrl-Group via Skype
-SCHEDULED: <2022-03-29 Tue 11:00>
+** TODO 4. Meeting with David
+SCHEDULED: <2022-04-11 Mon 10:00>
+- feature importance
+- computervision project
+** TODO 4. Meeting with Steyrl-Group via Skype
+SCHEDULED: <2022-04-12 Tue 11:00>
+** DONE 3. Meeting with Steyrl-Group via Skype
+CLOSED: [2022-04-05 Tue 23:58] SCHEDULED: <2022-04-05 Tue 11:00>
+** DONE 2. Meeting with Steyrl-Group via Skype
+CLOSED: [2022-03-15 Tue 11:50] SCHEDULED: <2022-03-15 Tue 11:00>
+:LOGBOOK:
+CLOCK: [2022-03-15 Tue 11:00]--[2022-03-15 Tue 11:55] =>  0:55
+:END:
+** DONE 2. Meeting with David
+CLOSED: [2022-03-08 Tue 22:05] SCHEDULED: <2022-03-08 Tue 10:00>
+:LOGBOOK:
+CLOCK: [2022-03-08 Tue 10:00]--[2022-03-08 Tue 10:50] =>  0:50
+:END:
+     1. Progress of standard script creation
+     2. Discussing regressors and their hyperparameters
+     
+** DONE 1. Meeting with Steyrl-Group via Skype
+    CLOSED: [2022-03-02 Wed 11:35] SCHEDULED: <2022-03-02 Wed 11:00>
+    :LOGBOOK:
+    CLOCK: [2022-03-02 Wed 11:00]--[2022-03-02 Wed 11:35] =>  0:35
+    :END:
+- Introducing group and master thesis topics
+
+** DONE 1. Meeting with David via Zoom
+    CLOSED: [2022-02-28 Mon 10:55] SCHEDULED: <2022-02-28 Mon 10:00>
+    :LOGBOOK:
+    CLOCK: [2022-02-28 Mon 10:00]--[2022-02-28 Mon 10:55] =>  0:55
+    :END:
+
+    1. Topic of internship
+       1. Analyze my bachelor thesis data with ML methods
+          (regularized linear models & random forests)
+       2. Further topics and tasks we may discuss at a later stage
+    2. General concepts about python libraries and workflow
+    3. First goal: Creating a standard ML script that does the following
+       1. reads the data,
+       2. splits data into X and y, into train and test sets,
+       3. carries out cross validation (GroupShuffleSplit) 
+	      1. outer loop (to prevent overfitting)
+	      2. inner loop (for finding optimal hyperparameters)
+    4. Agreed to meet next in two days (together with the master thesis students)
+   
 ** DONE 3. Meeting with David
 CLOSED: [2022-03-17 Thu 14:56] SCHEDULED: <2022-03-17 Thu 13:00>
 - feature importance
