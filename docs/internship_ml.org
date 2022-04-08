@@ -55,8 +55,10 @@ Catching up with writing the script, preparing feature importance
 logs, running simulations, running the script with real parameters,
 adapting script and checking results
 
-preparing datasets for computer vision project: flickr30k for
-captions, flickr-aes for image aesthetics assessment, own dataset with
+preparing and checking datasets for computer vision project: 1)
+flickr30k for captions, 2) flickr-aes for image aesthetics
+assessment, 3) own dataset for personalized image aesthetics
+assessment.
 
 *** Weeks 5--8
 
