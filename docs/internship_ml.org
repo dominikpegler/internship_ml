@@ -35,7 +35,7 @@ see regressors and hyperparameters here -> [[https://www.github.com/dominikpegle
 see data preprocessing here -> [[https://www.github.com/dominikpegler/internship_ml/blob/main/get_data.py][get_data.py]]
 
 ** TODO Writing the report
-DEADLINE: <2022-04-30 Sat>
+DEADLINE: <2022-05-13 Fri> SCHEDULED: <2022-04-30 Sat>
 
 Here a brief overview of what was going on each week ...
 
