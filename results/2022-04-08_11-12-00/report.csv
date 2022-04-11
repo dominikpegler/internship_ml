@@ -1,0 +1,351 @@
+Type;Split;Model;Train score (R²);Test score (R²);Finished at timestamp (s)
+ElasticNet;1;ElasticNet(alpha=0.2475765283005601, l1_ratio=0.7364676814799669);0.3841297823924501;0.4279540518648468;834.8424534797668
+ElasticNet;2;ElasticNet(alpha=0.14614981647464922, l1_ratio=1.0);0.4043678509305326;0.4235351537341413;1677.2488656044006
+ElasticNet;3;ElasticNet(alpha=0.13194120006776514, l1_ratio=1.0);0.4170648740313977;0.39103890351217063;2509.8784744739532
+ElasticNet;4;ElasticNet(alpha=0.16794414003661898, l1_ratio=0.876022269131294);0.43442703011691775;0.2506176148551117;3324.2625017166138
+ElasticNet;5;ElasticNet(alpha=0.179005629335488, l1_ratio=0.6351826352335416);0.43633248784098766;0.31888502002872643;4099.401672840118
+ElasticNet;6;ElasticNet(alpha=0.19703291506354556, l1_ratio=0.7507902341554163);0.42449877324017593;0.30004639014600776;4909.581746578217
+ElasticNet;7;ElasticNet(alpha=0.12768843646966266, l1_ratio=1.0);0.4174884440093788;0.4015088831619714;5721.298225879669
+ElasticNet;8;ElasticNet(alpha=0.2030104900468997, l1_ratio=1.0);0.4104866350688323;0.34732546795503827;6536.327600002289
+ElasticNet;9;ElasticNet(alpha=0.6917139479927163, l1_ratio=0.001);0.4180794206694838;0.26314831955291373;7317.406552553177
+ElasticNet;10;ElasticNet(alpha=0.19081630756937376, l1_ratio=0.8470780245512602);0.4446549517138525;0.2349293117846234;8120.768798112869
+ElasticNet;11;ElasticNet(alpha=0.20956618927116785, l1_ratio=0.8190915367370069);0.403953958039037;0.3791709640923199;8884.260966539383
+ElasticNet;12;ElasticNet(alpha=0.13558626981162517, l1_ratio=1.0);0.4242301079148523;0.3365011878972418;9709.95426273346
+ElasticNet;13;ElasticNet(alpha=0.15780816535921746, l1_ratio=1.0);0.40063982347168436;0.39760305156935094;10500.204898834229
+ElasticNet;14;ElasticNet(alpha=0.17912471163992952, l1_ratio=0.7715396011576641);0.4083620542967261;0.40692897982894805;11249.55829000473
+ElasticNet;15;ElasticNet(alpha=0.15313618958312297, l1_ratio=1.0);0.40755231784170853;0.3939565960313235;12057.440967559814
+ElasticNet;16;ElasticNet(alpha=0.2609620102644162, l1_ratio=0.6709580420657463);0.3875643904700342;0.3506539798785351;12867.461820840836
+ElasticNet;17;ElasticNet(alpha=0.1652168735411579, l1_ratio=0.7022060433740904);0.4229061801555192;0.39082110275622095;13665.063512563705
+ElasticNet;18;ElasticNet(alpha=0.14865167465788232, l1_ratio=0.812310998946776);0.4336020739521729;0.2583294270438323;14454.091265439987
+ElasticNet;19;ElasticNet(alpha=0.1378213803487438, l1_ratio=1.0);0.44670115900876683;0.2549312237006546;15266.844955682755
+ElasticNet;20;ElasticNet(alpha=0.1609164896527334, l1_ratio=1.0);0.4105441448301137;0.38858404095086385;16092.872373104095
+ElasticNet;21;ElasticNet(alpha=0.2074653902025515, l1_ratio=0.8019144695842845);0.39834506308312323;0.4032052083182569;16886.323434829712
+ElasticNet;22;ElasticNet(alpha=0.44718353042669057, l1_ratio=0.001);0.44289909339278355;0.24673695629882564;17698.9346575737
+ElasticNet;23;ElasticNet(alpha=0.18671201642678856, l1_ratio=1.0);0.40243404146907846;0.3682579373105783;18515.12309718132
+ElasticNet;24;ElasticNet(alpha=0.15065035799069304, l1_ratio=1.0);0.4191419999010192;0.378898412836596;19281.1965944767
+ElasticNet;25;ElasticNet(alpha=0.15844589970199682, l1_ratio=1.0);0.44139967483490283;0.287104978651608;20090.585879087448
+ElasticNet;26;ElasticNet(alpha=0.19765795535510627, l1_ratio=0.8437257749387633);0.4038219640571583;0.3680525790839021;20895.593337774277
+ElasticNet;27;ElasticNet(alpha=0.12879534717749502, l1_ratio=1.0);0.4332180279470036;0.33190105876789555;21718.184324264526
+ElasticNet;28;ElasticNet(alpha=0.24411100482776063, l1_ratio=0.5819205550887002);0.4259584820576974;0.287497186252466;22537.141575574875
+ElasticNet;29;ElasticNet(alpha=0.1347148077609543, l1_ratio=0.9294172833966654);0.4274953781411944;0.3029319224083139;23342.035378694534
+ElasticNet;30;ElasticNet(alpha=0.17244118355717072, l1_ratio=0.8511818175481897);0.42196148770911246;0.32656811911694883;24120.787458896637
+ElasticNet;31;ElasticNet(alpha=0.1596321299425674, l1_ratio=1.0);0.4244323827844225;0.30151017917461487;24895.382472515106
+ElasticNet;32;ElasticNet(alpha=0.3744510265524359, l1_ratio=0.2951075661400031);0.40693077580695713;0.3207881265443243;25659.936702251434
+ElasticNet;33;ElasticNet(alpha=0.36554903211661577, l1_ratio=0.27441292709891363);0.4017480192554762;0.3227264100253133;26413.06364274025
+ElasticNet;34;ElasticNet(alpha=0.1769111680178846, l1_ratio=0.48066277500745064);0.43456912791173874;0.2877974569603444;27196.92079114914
+ElasticNet;35;ElasticNet(alpha=0.15113966959806102, l1_ratio=1.0);0.4493382592806422;0.2218538601821055;27988.15826535225
+ElasticNet;36;ElasticNet(alpha=0.14169370766226166, l1_ratio=1.0);0.43073389911906124;0.31625129112989425;28803.714225769043
+ElasticNet;37;ElasticNet(alpha=0.18136400463756325, l1_ratio=1.0);0.4321249056732718;0.2893636294982401;29612.765144586563
+ElasticNet;38;ElasticNet(alpha=0.18155190531086401, l1_ratio=1.0);0.4003805310991888;0.33623059206654016;30407.709651470184
+ElasticNet;39;ElasticNet(alpha=0.14154168638586773, l1_ratio=1.0);0.4431765611782409;0.2678942766816582;31226.947375774384
+ElasticNet;40;ElasticNet(alpha=0.170672266152856, l1_ratio=0.825309849517267);0.37731497363004673;0.387340435716956;32036.685741186142
+ElasticNet;41;ElasticNet(alpha=0.16962289513409723, l1_ratio=0.8431462068765873);0.40774879051202706;0.40475459933344693;32869.582243680954
+ElasticNet;42;ElasticNet(alpha=0.18748925607243394, l1_ratio=0.5412118644383083);0.44694985373193297;0.27323543589060884;33647.27097272873
+ElasticNet;43;ElasticNet(alpha=0.18318595432251722, l1_ratio=0.7973019933604396);0.449216356435593;0.2400530355018382;34428.27785539627
+ElasticNet;44;ElasticNet(alpha=0.21216742661036211, l1_ratio=1.0);0.39937901991474967;0.3389874748974162;35238.141566991806
+ElasticNet;45;ElasticNet(alpha=0.17160368344756585, l1_ratio=1.0);0.36950827394861063;0.44934654652138584;36016.435376644135
+ElasticNet;46;ElasticNet(alpha=0.14721564409964158, l1_ratio=0.7689803578848953);0.44246631331540787;0.22758680656906882;36821.795348882675
+ElasticNet;47;ElasticNet(alpha=0.14603157168638986, l1_ratio=1.0);0.4243096557239576;0.3386601964383268;37653.89493083954
+ElasticNet;48;ElasticNet(alpha=0.21286716129094901, l1_ratio=0.656961640018568);0.4238593969845853;0.33109287718435;38442.341381788254
+ElasticNet;49;ElasticNet(alpha=0.17817972601159218, l1_ratio=1.0);0.4132786675483696;0.33541737395831506;39237.93398785591
+ElasticNet;50;ElasticNet(alpha=0.23503435640505121, l1_ratio=0.5356774903591162);0.3889154902042523;0.3812078516153624;40037.79768538475
+LGBMRegressor;1;"LGBMRegressor(colsample_bytree=0.01, importance_type='gain',
+              learning_rate=0.10902360191916745, min_child_samples=1,
+              min_child_weight=0.0001, n_estimators=256, n_jobs=1,
+              num_leaves=256)";0.571356993709789;0.23220012855468197;40957.17649650574
+LGBMRegressor;2;"LGBMRegressor(colsample_bytree=0.01, importance_type='gain',
+              learning_rate=0.13045235905392638, min_child_samples=76,
+              min_child_weight=0.0001, n_estimators=256, n_jobs=1,
+              num_leaves=256)";0.4077232128019763;0.26799102343863823;41904.04718089104
+LGBMRegressor;3;"LGBMRegressor(colsample_bytree=0.01, importance_type='gain',
+              learning_rate=0.11555069932348276, min_child_samples=19,
+              min_child_weight=0.0001, n_estimators=256, n_jobs=1,
+              num_leaves=2)";0.4515617932682142;0.12790844999066053;42808.769312143326
+LGBMRegressor;4;"LGBMRegressor(colsample_bytree=0.01, importance_type='gain',
+              learning_rate=0.15146063110307112, min_child_samples=88,
+              min_child_weight=0.0001, n_estimators=256, n_jobs=1,
+              num_leaves=2)";0.3919896944986466;0.2819673204264601;43725.17065048218
+LGBMRegressor;5;"LGBMRegressor(colsample_bytree=0.01, importance_type='gain',
+              learning_rate=0.13966372114550396, min_child_samples=65,
+              min_child_weight=0.0001, n_estimators=256, n_jobs=1,
+              num_leaves=2)";0.38589767254872265;0.3587946411772429;44650.84880065918
+LGBMRegressor;6;"LGBMRegressor(colsample_bytree=0.01, importance_type='gain',
+              learning_rate=0.11335116292027354, min_child_samples=71,
+              min_child_weight=0.0001, n_estimators=256, n_jobs=1,
+              num_leaves=2)";0.3959620027224834;0.0851346268600206;45607.106394290924
+LGBMRegressor;7;"LGBMRegressor(colsample_bytree=0.01, importance_type='gain',
+              learning_rate=0.10431920575303683, min_child_samples=68,
+              min_child_weight=0.0001, n_estimators=256, n_jobs=1,
+              num_leaves=2)";0.366379103911758;0.3122686771965322;46588.47975611687
+LGBMRegressor;8;"LGBMRegressor(colsample_bytree=0.01, importance_type='gain',
+              learning_rate=0.11095925789345625, min_child_samples=78,
+              min_child_weight=0.0001, n_estimators=256, n_jobs=1,
+              num_leaves=256)";0.36084122712723943;0.35145590882365085;47558.24625873566
+LGBMRegressor;9;"LGBMRegressor(colsample_bytree=0.01, importance_type='gain',
+              learning_rate=0.14972439814952868, min_child_samples=81,
+              min_child_weight=0.0001, n_estimators=256, n_jobs=1,
+              num_leaves=2)";0.3801926742403109;0.37759542614807196;48500.78382754326
+LGBMRegressor;10;"LGBMRegressor(colsample_bytree=0.01, importance_type='gain',
+              learning_rate=0.09617414814339734, min_child_samples=1,
+              min_child_weight=0.0001, n_estimators=256, n_jobs=1,
+              num_leaves=2)";0.47083748369040046;0.22467683827544804;49413.52174568176
+LGBMRegressor;11;"LGBMRegressor(colsample_bytree=0.01, importance_type='gain',
+              learning_rate=0.1202529303140332, min_child_samples=17,
+              min_child_weight=0.0001, n_estimators=256, n_jobs=1,
+              num_leaves=2)";0.4622978650680497;-0.07292886721519443;50305.757202386856
+LGBMRegressor;12;"LGBMRegressor(colsample_bytree=0.01, importance_type='gain',
+              learning_rate=0.15156605674996773, min_child_samples=40,
+              min_child_weight=0.0001, n_estimators=256, n_jobs=1,
+              num_leaves=2)";0.4469696418882051;0.21077222926551897;51263.33098101616
+LGBMRegressor;13;"LGBMRegressor(colsample_bytree=0.01, importance_type='gain',
+              learning_rate=0.13876154243563998, min_child_samples=16,
+              min_child_weight=0.0001, n_estimators=256, n_jobs=1,
+              num_leaves=2)";0.465183491430779;0.24255341153993948;52146.06487083435
+LGBMRegressor;14;"LGBMRegressor(colsample_bytree=0.01, importance_type='gain',
+              learning_rate=0.1725427860384043, min_child_samples=65,
+              min_child_weight=0.0001, n_estimators=256, n_jobs=1,
+              num_leaves=2)";0.4326590209384099;0.1932411946485446;53105.937002658844
+LGBMRegressor;15;"LGBMRegressor(colsample_bytree=0.01, importance_type='gain',
+              learning_rate=0.21034220872347623, min_child_samples=1,
+              min_child_weight=0.0001, n_estimators=256, n_jobs=1,
+              num_leaves=2)";0.5728678924156101;0.19907271857758468;54027.79097557068
+LGBMRegressor;16;"LGBMRegressor(colsample_bytree=0.01, importance_type='gain',
+              learning_rate=0.16356654466580528, min_child_samples=19,
+              min_child_weight=0.0001, n_estimators=256, n_jobs=1,
+              num_leaves=2)";0.5017522881960296;0.09845062329544907;54933.24644589424
+LGBMRegressor;17;"LGBMRegressor(colsample_bytree=0.01, importance_type='gain',
+              learning_rate=0.12489769914572137, min_child_samples=76,
+              min_child_weight=0.0001, n_estimators=256, n_jobs=1,
+              num_leaves=2)";0.37997434028595034;0.29329525557117475;55868.2290699482
+LGBMRegressor;18;"LGBMRegressor(colsample_bytree=0.01, importance_type='gain',
+              learning_rate=0.15478243660101676, min_child_samples=31,
+              min_child_weight=0.0001, n_estimators=256, n_jobs=1,
+              num_leaves=2)";0.44434952304497544;0.2846485099835756;56779.182094573975
+LGBMRegressor;19;"LGBMRegressor(colsample_bytree=0.01, importance_type='gain',
+              learning_rate=0.12205921262518103, min_child_samples=1,
+              min_child_weight=0.0001, n_estimators=256, n_jobs=1,
+              num_leaves=2)";0.5026056160398296;0.2122747317176037;57720.39053893089
+LGBMRegressor;20;"LGBMRegressor(colsample_bytree=0.01, importance_type='gain',
+              learning_rate=0.0928333325449526, min_child_samples=73,
+              min_child_weight=0.0001, n_estimators=256, n_jobs=1,
+              num_leaves=256)";0.38109010222314177;0.19138653082696155;58698.050860881805
+LGBMRegressor;21;"LGBMRegressor(colsample_bytree=0.01, importance_type='gain',
+              learning_rate=0.08737131990723264, min_child_samples=1,
+              min_child_weight=0.0001, n_estimators=256, n_jobs=1,
+              num_leaves=256)";0.544549646058301;0.225113363534175;59633.179216861725
+LGBMRegressor;22;"LGBMRegressor(colsample_bytree=0.01, importance_type='gain',
+              learning_rate=0.11445279783068502, min_child_samples=76,
+              min_child_weight=0.0001, n_estimators=256, n_jobs=1,
+              num_leaves=2)";0.38309119778956047;0.2672610950016221;60568.454459905624
+LGBMRegressor;23;"LGBMRegressor(colsample_bytree=0.01, importance_type='gain',
+              learning_rate=0.08111701991219647, min_child_samples=1,
+              min_child_weight=0.0001, n_estimators=256, n_jobs=1,
+              num_leaves=256)";0.5365107992881463;0.1768100863891714;61513.16443347931
+LGBMRegressor;24;"LGBMRegressor(colsample_bytree=0.01, importance_type='gain',
+              learning_rate=0.14814262334369388, min_child_samples=74,
+              min_child_weight=0.0001, n_estimators=256, n_jobs=1,
+              num_leaves=2)";0.3939672066981038;0.27178869495411284;62465.254720687866
+LGBMRegressor;25;"LGBMRegressor(colsample_bytree=0.01, importance_type='gain',
+              learning_rate=0.14304300049427102, min_child_samples=71,
+              min_child_weight=0.0001, n_estimators=256, n_jobs=1,
+              num_leaves=2)";0.4062515452154296;0.10998194039105802;63396.52021074295
+LGBMRegressor;26;"LGBMRegressor(colsample_bytree=0.01, importance_type='gain',
+              learning_rate=0.11959773662022842, min_child_samples=73,
+              min_child_weight=0.0001, n_estimators=256, n_jobs=1,
+              num_leaves=2)";0.37454177830468516;0.31005608683371544;64331.69109392166
+LGBMRegressor;27;"LGBMRegressor(colsample_bytree=0.01, importance_type='gain',
+              learning_rate=0.09417918536945039, min_child_samples=1,
+              min_child_weight=0.0001, n_estimators=256, n_jobs=1,
+              num_leaves=256)";0.5344452228037616;0.2507230042079075;65259.29692864418
+LGBMRegressor;28;"LGBMRegressor(colsample_bytree=0.01, importance_type='gain',
+              learning_rate=0.15982909426325598, min_child_samples=75,
+              min_child_weight=0.0001, n_estimators=256, n_jobs=1,
+              num_leaves=2)";0.38825434563671357;0.3512323288138578;66200.96320819855
+LGBMRegressor;29;"LGBMRegressor(colsample_bytree=0.01, importance_type='gain',
+              learning_rate=0.14045053835243038, min_child_samples=7,
+              min_child_weight=0.0001, n_estimators=256, n_jobs=1,
+              num_leaves=2)";0.4913800492400463;0.16860059197104338;67110.5942940712
+LGBMRegressor;30;"LGBMRegressor(colsample_bytree=0.01, importance_type='gain',
+              learning_rate=0.08354997275689736, min_child_samples=72,
+              min_child_weight=0.0001, n_estimators=256, n_jobs=1,
+              num_leaves=256)";0.3616800065481367;0.2621407514351223;68047.91452002525
+LGBMRegressor;31;"LGBMRegressor(colsample_bytree=0.01, importance_type='gain',
+              learning_rate=0.1310262536622884, min_child_samples=83,
+              min_child_weight=0.0001, n_estimators=256, n_jobs=1,
+              num_leaves=256)";0.40902623034825836;0.08825651820676972;68953.27448296547
+LGBMRegressor;32;"LGBMRegressor(colsample_bytree=0.01, importance_type='gain',
+              learning_rate=0.10664126993785222, min_child_samples=96,
+              min_child_weight=0.0001, n_estimators=256, n_jobs=1,
+              num_leaves=256)";0.39228420334398684;0.19619772879741249;69914.04938650131
+LGBMRegressor;33;"LGBMRegressor(colsample_bytree=0.01, importance_type='gain',
+              learning_rate=0.1118639487503592, min_child_samples=79,
+              min_child_weight=0.0001, n_estimators=256, n_jobs=1,
+              num_leaves=256)";0.374544851715533;0.3143345129289946;70853.14538359642
+LGBMRegressor;34;"LGBMRegressor(colsample_bytree=0.01, importance_type='gain',
+              learning_rate=0.12121893133363759, min_child_samples=83,
+              min_child_weight=0.0001, n_estimators=256, n_jobs=1,
+              num_leaves=2)";0.3837664457815275;0.21705253083579445;71820.10621261597
+LGBMRegressor;35;"LGBMRegressor(colsample_bytree=0.01, importance_type='gain',
+              learning_rate=0.10647022235657909, min_child_samples=76,
+              min_child_weight=0.0001, n_estimators=256, n_jobs=1,
+              num_leaves=2)";0.37378905978413846;0.2891913702341403;72702.44385385513
+LGBMRegressor;36;"LGBMRegressor(colsample_bytree=0.01, importance_type='gain',
+              learning_rate=0.11664927626380482, min_child_samples=82,
+              min_child_weight=0.0001, n_estimators=256, n_jobs=1,
+              num_leaves=2)";0.3626912383911973;0.34092630174146277;73656.94541239738
+LGBMRegressor;37;"LGBMRegressor(colsample_bytree=0.01, importance_type='gain',
+              learning_rate=0.1442563172820494, min_child_samples=64,
+              min_child_weight=0.0001, n_estimators=256, n_jobs=1,
+              num_leaves=2)";0.411024008487628;0.25021732417218945;74577.30454516411
+LGBMRegressor;38;"LGBMRegressor(colsample_bytree=0.01, importance_type='gain',
+              learning_rate=0.13248391876822396, min_child_samples=31,
+              min_child_weight=0.0001, n_estimators=256, n_jobs=1,
+              num_leaves=2)";0.43496964317502984;0.2771073038748062;75524.61201047897
+LGBMRegressor;39;"LGBMRegressor(colsample_bytree=0.01, importance_type='gain',
+              learning_rate=0.11115780556965951, min_child_samples=81,
+              min_child_weight=0.0001, n_estimators=256, n_jobs=1,
+              num_leaves=256)";0.39781369895439955;0.2560610282849132;76459.37746071815
+LGBMRegressor;40;"LGBMRegressor(colsample_bytree=0.01, importance_type='gain',
+              learning_rate=0.1270800018120272, min_child_samples=68,
+              min_child_weight=0.0001, n_estimators=256, n_jobs=1,
+              num_leaves=2)";0.3869553107632224;0.2953746869558137;77388.05402708054
+LGBMRegressor;41;"LGBMRegressor(colsample_bytree=0.01, importance_type='gain',
+              learning_rate=0.11605343783665997, min_child_samples=36,
+              min_child_weight=0.0001, n_estimators=256, n_jobs=1,
+              num_leaves=2)";0.4496970399907575;-0.07411232745929963;78304.10215210915
+LGBMRegressor;42;"LGBMRegressor(colsample_bytree=0.01, importance_type='gain',
+              learning_rate=0.10259647122745091, min_child_samples=31,
+              min_child_weight=0.0001, n_estimators=256, n_jobs=1,
+              num_leaves=256)";0.44446049736391346;0.27921812919507893;79284.73381209373
+LGBMRegressor;43;"LGBMRegressor(colsample_bytree=0.01, importance_type='gain',
+              learning_rate=0.09767384390301141, min_child_samples=78,
+              min_child_weight=0.0001, n_estimators=256, n_jobs=1,
+              num_leaves=2)";0.35084348064928117;0.26263995085465175;80226.21489930153
+LGBMRegressor;44;"LGBMRegressor(colsample_bytree=0.01, importance_type='gain',
+              learning_rate=0.0989972283437245, min_child_samples=1,
+              min_child_weight=0.0001, n_estimators=256, n_jobs=1,
+              num_leaves=256)";0.5502653460305406;0.2545355882845005;81176.92364382744
+LGBMRegressor;45;"LGBMRegressor(colsample_bytree=0.01, importance_type='gain',
+              learning_rate=0.11465216199731268, min_child_samples=35,
+              min_child_weight=0.0001, n_estimators=256, n_jobs=1,
+              num_leaves=2)";0.41478082302756125;0.22725778124275808;82132.41666507721
+LGBMRegressor;46;"LGBMRegressor(colsample_bytree=0.01, importance_type='gain',
+              learning_rate=0.10500775217681692, min_child_samples=76,
+              min_child_weight=0.0001, n_estimators=256, n_jobs=1,
+              num_leaves=256)";0.3895017830806764;0.25327213474283927;83092.71711468697
+LGBMRegressor;47;"LGBMRegressor(colsample_bytree=0.01, importance_type='gain',
+              learning_rate=0.10549626833306475, min_child_samples=74,
+              min_child_weight=0.0001, n_estimators=256, n_jobs=1,
+              num_leaves=2)";0.3862099937088562;0.13407921639805498;84028.29408788681
+LGBMRegressor;48;"LGBMRegressor(colsample_bytree=0.01, importance_type='gain',
+              learning_rate=0.13457201118295847, min_child_samples=29,
+              min_child_weight=0.0001, n_estimators=256, n_jobs=1,
+              num_leaves=2)";0.4508247806565887;0.1778523754588005;84963.6400744915
+LGBMRegressor;49;"LGBMRegressor(colsample_bytree=0.01, importance_type='gain',
+              learning_rate=0.10389194997991397, min_child_samples=78,
+              min_child_weight=0.0001, n_estimators=256, n_jobs=1,
+              num_leaves=2)";0.365268958581754;0.2780825179311516;85962.90521097183
+LGBMRegressor;50;"LGBMRegressor(colsample_bytree=0.01, importance_type='gain',
+              learning_rate=0.08318676559700844, min_child_samples=75,
+              min_child_weight=0.0001, n_estimators=256, n_jobs=1,
+              num_leaves=2)";0.3242237368835824;0.3251408042477143;86889.53509283066
+ExtraTreesRegressor;1;"ExtraTreesRegressor(max_features=0.2843695723799096, min_samples_split=5,
+                    n_estimators=256, random_state=0)";0.9704163567658901;0.34313487657630826;88373.10768604279
+ExtraTreesRegressor;2;"ExtraTreesRegressor(max_features=0.5563468954292498, min_samples_leaf=6,
+                    n_estimators=256, random_state=0)";0.6917560556547138;0.4217828297571856;89854.16987037659
+ExtraTreesRegressor;3;"ExtraTreesRegressor(max_features=0.36862016785822627, min_samples_split=14,
+                    n_estimators=256, random_state=0)";0.8184723460906467;0.3066306493079458;91301.3197183609
+ExtraTreesRegressor;4;"ExtraTreesRegressor(max_features=0.3165588059427236, min_samples_split=7,
+                    n_estimators=256, random_state=0)";0.9341491647991654;0.3571303720945914;92779.35978579521
+ExtraTreesRegressor;5;"ExtraTreesRegressor(max_features=0.39256276034916, min_samples_split=26,
+                    n_estimators=256, random_state=0)";0.6638743083077793;0.3195997702589555;94205.76368260384
+ExtraTreesRegressor;6;"ExtraTreesRegressor(max_features=0.39513629066482336, min_samples_leaf=6,
+                    min_samples_split=7, n_estimators=256, random_state=0)";0.6726006174135538;0.3455871760553376;95663.00307774544
+ExtraTreesRegressor;7;"ExtraTreesRegressor(max_features=0.22366126676250428, min_samples_split=10,
+                    n_estimators=256, random_state=0)";0.8462536709091353;0.19041078028380098;97124.5103225708
+ExtraTreesRegressor;8;"ExtraTreesRegressor(max_features=0.24827771778587016, min_samples_split=4,
+                    n_estimators=256, random_state=0)";0.9839674364830899;0.31262059584123325;98615.07904839516
+ExtraTreesRegressor;9;"ExtraTreesRegressor(max_features=0.448902383214693, min_samples_leaf=3,
+                    min_samples_split=12, n_estimators=256, random_state=0)";0.7694127937194934;0.34435213046985347;100072.58997535706
+ExtraTreesRegressor;10;"ExtraTreesRegressor(max_features=0.38894862203882685, min_samples_split=15,
+                    n_estimators=256, random_state=0)";0.8012111130009134;0.33497744170450794;101562.87352323532
+ExtraTreesRegressor;11;"ExtraTreesRegressor(max_features=0.29152870343852133, min_samples_split=14,
+                    n_estimators=256, random_state=0)";0.7870518097771981;0.2931024006241887;103006.99291682243
+ExtraTreesRegressor;12;"ExtraTreesRegressor(max_features=0.6225465914997821, min_samples_leaf=9,
+                    min_samples_split=13, n_estimators=256, random_state=0)";0.6120436214757671;0.22300792388967472;104495.77868843079
+ExtraTreesRegressor;13;"ExtraTreesRegressor(max_features=0.722592505948396, min_samples_leaf=8,
+                    n_estimators=256, random_state=0)";0.6429506388859607;0.3184976483843833;106021.09015727043
+ExtraTreesRegressor;14;"ExtraTreesRegressor(max_features=0.38548599652626464, min_samples_split=15,
+                    n_estimators=256, random_state=0)";0.803168875263189;0.24691447871862282;107511.2261660099
+ExtraTreesRegressor;15;"ExtraTreesRegressor(max_features=0.6576064971960346, min_samples_leaf=3,
+                    min_samples_split=9, n_estimators=256, random_state=0)";0.8518768285107275;0.40454118337264455;109025.42448997498
+ExtraTreesRegressor;16;"ExtraTreesRegressor(max_features=0.43928929811694967, min_samples_leaf=6,
+                    min_samples_split=9, n_estimators=256, random_state=0)";0.6895263631805099;0.317477731117923;110483.758736372
+ExtraTreesRegressor;17;"ExtraTreesRegressor(max_features=0.25346779677193554, min_samples_leaf=2,
+                    min_samples_split=8, n_estimators=256, random_state=0)";0.8452583814102055;0.290045823254656;111935.87418198586
+ExtraTreesRegressor;18;"ExtraTreesRegressor(max_features=0.3379003666647652, min_samples_split=22,
+                    n_estimators=256, random_state=0)";0.6878017235993968;0.3664920651073984;113364.4644408226
+ExtraTreesRegressor;19;"ExtraTreesRegressor(max_features=0.5018209169591095, min_samples_split=22,
+                    n_estimators=256, random_state=0)";0.7237934391336058;0.3584091905168372;114827.06242609024
+ExtraTreesRegressor;20;"ExtraTreesRegressor(max_features=0.33737146180555594, min_samples_split=4,
+                    n_estimators=256, random_state=0)";0.9888640927281567;0.15137244472146327;116445.61644053459
+ExtraTreesRegressor;21;"ExtraTreesRegressor(max_features=0.35345388118326, n_estimators=256,
+                    random_state=0)";1.0;0.2068483691448969;117998.89820837975
+ExtraTreesRegressor;22;"ExtraTreesRegressor(max_features=0.6238579675591727, min_samples_leaf=6,
+                    min_samples_split=9, n_estimators=256, random_state=0)";0.7093146738517057;0.35488376984804526;119445.47614908218
+ExtraTreesRegressor;23;"ExtraTreesRegressor(max_features=0.26082396734008845, min_samples_split=5,
+                    n_estimators=256, random_state=0)";0.9710259277209388;0.14771788791267182;120915.78699159622
+ExtraTreesRegressor;24;"ExtraTreesRegressor(max_features=0.37103899222684794, min_samples_split=5,
+                    n_estimators=256, random_state=0)";0.9774230113068083;0.35761383131828317;122489.27765440941
+ExtraTreesRegressor;25;"ExtraTreesRegressor(max_features=0.7072345104747977, min_samples_leaf=8,
+                    min_samples_split=18, n_estimators=256, random_state=0)";0.6125086287363222;0.36654955282409607;123962.65128993988
+ExtraTreesRegressor;26;"ExtraTreesRegressor(max_features=0.35349258257324406, min_samples_split=9,
+                    n_estimators=256, random_state=0)";0.9039019517907044;0.3119990514128348;125441.83638358116
+ExtraTreesRegressor;27;"ExtraTreesRegressor(max_features=0.3444097195623215, min_samples_split=12,
+                    n_estimators=256, random_state=0)";0.8481416492668962;0.1475980996111501;126886.74637794495
+ExtraTreesRegressor;28;"ExtraTreesRegressor(max_features=0.44748499553691, min_samples_leaf=9,
+                    min_samples_split=6, n_estimators=256, random_state=0)";0.573315128099237;0.31626960968909235;128315.42969560623
+ExtraTreesRegressor;29;"ExtraTreesRegressor(max_features=0.3598372402299003, min_samples_split=4,
+                    n_estimators=256, random_state=0)";0.9898044178362824;0.1461130314551805;129887.49664664268
+ExtraTreesRegressor;30;"ExtraTreesRegressor(max_features=0.28990625340664467, min_samples_split=5,
+                    n_estimators=256, random_state=0)";0.9721099036595072;0.24493758335352578;131375.9320385456
+ExtraTreesRegressor;31;"ExtraTreesRegressor(max_features=0.34337298813527595, min_samples_split=16,
+                    n_estimators=256, random_state=0)";0.780464483545752;0.29429413311585495;132848.38921761513
+ExtraTreesRegressor;32;"ExtraTreesRegressor(max_features=0.4138693771463143, min_samples_leaf=4,
+                    min_samples_split=16, n_estimators=256, random_state=0)";0.692249593643435;0.34527977724220504;134305.7230231762
+ExtraTreesRegressor;33;"ExtraTreesRegressor(max_features=0.41648719442271026, min_samples_split=16,
+                    n_estimators=256, random_state=0)";0.7772209507445497;0.36757145432400373;135795.90841460228
+ExtraTreesRegressor;34;"ExtraTreesRegressor(max_features=0.2938002301389886, min_samples_split=11,
+                    n_estimators=256, random_state=0)";0.8475199611033576;0.27538726323925766;137257.79675006866
+ExtraTreesRegressor;35;"ExtraTreesRegressor(max_features=0.3490953271714796, min_samples_leaf=3,
+                    min_samples_split=13, n_estimators=256, random_state=0)";0.7486429099176897;0.25372700860871944;138726.55494475365
+ExtraTreesRegressor;36;"ExtraTreesRegressor(max_features=0.29785272040309296, min_samples_split=6,
+                    n_estimators=256, random_state=0)";0.9504207244067943;0.2950762084700953;140226.5000295639
+ExtraTreesRegressor;37;"ExtraTreesRegressor(max_features=0.3130573833678977, min_samples_leaf=2,
+                    min_samples_split=5, n_estimators=256, random_state=0)";0.9390726807073213;0.36092031009832426;141722.9321961403
+ExtraTreesRegressor;38;"ExtraTreesRegressor(max_features=0.33793069955113514, min_samples_split=13,
+                    n_estimators=256, random_state=0)";0.823020247987568;0.3237356725743563;143173.75153923035
+ExtraTreesRegressor;39;"ExtraTreesRegressor(max_features=0.2995987306371756, min_samples_split=8,
+                    n_estimators=256, random_state=0)";0.9116873142416506;0.28481111666438075;144660.27924871445
+ExtraTreesRegressor;40;"ExtraTreesRegressor(max_features=0.6970554858085418, min_samples_leaf=9,
+                    n_estimators=256, random_state=0)";0.6067599337330906;0.31306632804074863;146111.7786064148
+ExtraTreesRegressor;41;"ExtraTreesRegressor(max_features=0.3305997898848817, min_samples_leaf=2,
+                    min_samples_split=9, n_estimators=256, random_state=0)";0.8476297582906185;0.2960218744197448;147592.1302037239
+ExtraTreesRegressor;42;"ExtraTreesRegressor(max_features=0.31203597027160446, min_samples_split=7,
+                    n_estimators=256, random_state=0)";0.9344363370212403;0.32451682219931544;149070.17387366295
+ExtraTreesRegressor;43;"ExtraTreesRegressor(max_features=0.36007585009254195, min_samples_split=7,
+                    n_estimators=256, random_state=0)";0.9372400473805019;0.4137047948072381;150555.74489617348
+ExtraTreesRegressor;44;"ExtraTreesRegressor(max_features=0.26205073663565154, n_estimators=256,
+                    random_state=0)";1.0;0.28818131095362776;152111.84602999687
+ExtraTreesRegressor;45;"ExtraTreesRegressor(max_features=0.4295411734061711, min_samples_split=22,
+                    n_estimators=256, random_state=0)";0.7131617437413511;0.34983238173934483;153587.84459400177
+ExtraTreesRegressor;46;"ExtraTreesRegressor(max_features=0.34183736527037106, min_samples_leaf=5,
+                    min_samples_split=8, n_estimators=256, random_state=0)";0.6962371337031085;0.5024391876659859;155027.04821419716
+ExtraTreesRegressor;47;"ExtraTreesRegressor(max_features=0.2935742377617231, min_samples_split=7,
+                    n_estimators=256, random_state=0)";0.9323431635554321;0.14700148242462074;156514.1507411003
+ExtraTreesRegressor;48;"ExtraTreesRegressor(max_features=0.5076908851367955, n_estimators=256,
+                    random_state=0)";1.0;0.3627436339594843;158043.40171790123
+ExtraTreesRegressor;49;"ExtraTreesRegressor(max_features=0.3622615867770864, min_samples_split=9,
+                    n_estimators=256, random_state=0)";0.8994320032971858;0.3633915325114978;159517.8939397335
+ExtraTreesRegressor;50;"ExtraTreesRegressor(max_features=0.350023895553192, min_samples_leaf=2,
+                    min_samples_split=22, n_estimators=256, random_state=0)";0.6331852788215468;0.33642968516672345;160952.93085289001
