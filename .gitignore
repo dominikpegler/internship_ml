@@ -10,6 +10,7 @@ __pycache__/
 *.tex
 docs/*.tex
 docs/tmp/*
+scripts_david/
 
 *.png
 
