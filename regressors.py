@@ -7,7 +7,6 @@ from skopt.space import Real, Integer
 
 
 max_features = Real(1e-2,1e0,prior="uniform")
-max_depth = [int(x) for x in np.linspace(10, 110, num = 11)]
 max_depth.append(None)
 min_samples_split = Integer(2,256,prior="log-uniform")
 min_samples_leaf = Integer(1,256,prior="log-uniform")
@@ -16,7 +15,6 @@ num_leaves = Integer(2,256,prior="log-uniform")
 min_child_samples = Integer(1,256,prior="log-uniform")
 n_estimators = 256
 
-# Real Numbers import
 
 def get_regressor(reg_type="ElasticNet"):
     """
