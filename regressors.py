@@ -7,7 +7,6 @@ from skopt.space import Real, Integer
 
 
 max_features = Real(1e-2,1e0,prior="uniform")
-max_depth.append(None)
 min_samples_split = Integer(2,256,prior="log-uniform")
 min_samples_leaf = Integer(1,256,prior="log-uniform")
 learning_rate = Real(1e-3,1e0,prior="log-uniform")
