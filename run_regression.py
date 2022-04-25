@@ -1,8 +1,5 @@
 from sklearn.model_selection import ShuffleSplit
 from skopt import BayesSearchCV
-from get_data import get_mindfulness as get_data
-from regressors import get_regressor
-from utils import split_train_test
 from skopt.plots import plot_objective, plot_evaluations, plot_convergence
 import matplotlib.pyplot as plt
 import time
@@ -11,7 +8,10 @@ import csv
 import os
 import codecs, json 
 from feature_importance import get_feature_importance
-        
+# helper functions
+from get_data import get_mindfulness as get_data
+from regressors import get_regressor
+from utils import split_train_test
 
 SIMULATION = False # quick run for testing purposes
 OUTPUT_PATH = "./output/"
