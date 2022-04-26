@@ -121,10 +121,14 @@ CLOSED: [2022-04-04 Mon 00:00] DEADLINE: <2022-04-07 Thu>
    
 * Meetings
 
-** 5. Meeting with Steyrl-Group via Skype
+** TODO 5. Meeting with Steyrl-Group via Skype
 SCHEDULED: <2022-05-03 Tue 11:00>
 ** DONE 4. Meeting with Steyrl-Group via Skype
 CLOSED: [2022-04-26 Tue 17:16] SCHEDULED: <2022-04-26 Tue 11:00>
+
+discussing the latest results of david's gradient boost regressor on
+my data set.
+
 ** DONE 4. Meeting with David
 CLOSED: [2022-04-22 Fri 11:04] SCHEDULED: <2022-04-22 Fri 10:00>
 - feature importance
