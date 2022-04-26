@@ -24,16 +24,6 @@ file:./img/mlicon2.png
 
 * Tasks
 
-** TODO Debugging script
-
-see results here -> [[https://www.github.com/dominikpegler/internship_ml/blob/main/results.ipynb][results.ipynb]]
-
-see main script here -> [[https://www.github.com/dominikpegler/internship_ml/blob/main/run_regression.py][run_regression.py]]
-
-see regressors and hyperparameters here -> [[https://www.github.com/dominikpegler/internship_ml/blob/main/regressors.py][regressors.py]]
-
-see data preprocessing here -> [[https://www.github.com/dominikpegler/internship_ml/blob/main/get_data.py][get_data.py]]
-
 ** TODO Writing the report
 DEADLINE: <2022-05-13 Fri> SCHEDULED: <2022-04-30 Sat>
 
@@ -60,9 +50,46 @@ flickr30k for captions, 2) flickr-aes for image aesthetics
 assessment, 3) own dataset for personalized image aesthetics
 assessment.
 
-*** Weeks 5--8
+*** Week 5
 
-Interpreting results, preparing report, 
+Interpreting results, preparing report, starting
+with cv project
+
+*** Week 6
+
+Debugging script, re-run, shapley values, prepare data for cv project
+
+*** Week 7
+
+Debugging script, compare results
+
+*** Week 8
+
+Write final results notebook. Download model for cv project and
+prepare it for the label task.
+
+** TODO Debugging script
+
+see results here -> [[https://www.github.com/dominikpegler/internship_ml/blob/main/results.ipynb][results.ipynb]]
+
+see main script here -> [[https://www.github.com/dominikpegler/internship_ml/blob/main/run_regression.py][run_regression.py]]
+
+see regressors and hyperparameters here -> [[https://www.github.com/dominikpegler/internship_ml/blob/main/regressors.py][regressors.py]]
+
+see data preprocessing here -> [[https://www.github.com/dominikpegler/internship_ml/blob/main/get_data.py][get_data.py]]
+
+*** Compare with results of David's script [1/3]
+- [X] GB
+- [ ] ET
+- [ ] EN
+
+** TODO Prepare pre-trained model for cv project (image captions)
+** DONE Prepare data for computer vision project [4/4]
+
+- [X] Fetch photo ids
+- [X] Fetch comments and likes
+- [X] Fetch photo urls
+- [X] Download photos
 
 ** DONE Running the script and logging results
 CLOSED: [2022-04-22 Fri 19:05]
@@ -97,8 +124,10 @@ CLOSED: [2022-04-04 Mon 00:00] DEADLINE: <2022-04-07 Thu>
    
 * Meetings
 
-** TODO 4. Meeting with Steyrl-Group via Skype
-SCHEDULED: <2022-04-26 Tue 11:00>
+** 5. Meeting with Steyrl-Group via Skype
+SCHEDULED: <2022-05-03 Tue 11:00>
+** DONE 4. Meeting with Steyrl-Group via Skype
+CLOSED: [2022-04-26 Tue 17:16] SCHEDULED: <2022-04-26 Tue 11:00>
 ** DONE 4. Meeting with David
 CLOSED: [2022-04-22 Fri 11:04] SCHEDULED: <2022-04-22 Fri 10:00>
 - feature importance
