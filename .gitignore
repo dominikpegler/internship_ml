@@ -12,7 +12,6 @@ docs/*.tex
 docs/tmp/*
 scripts_david/
 
-*.png
 
 # C extensions
 *.so
