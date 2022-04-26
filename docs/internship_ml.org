@@ -24,6 +24,18 @@ file:./img/mlicon2.png
 
 * Tasks
 
+** TODO Debugging script
+
+- [[https://www.github.com/dominikpegler/internship_ml/blob/main/results.ipynb][results]]
+- main script -> [[https://www.github.com/dominikpegler/internship_ml/blob/main/run_regression.py][run_regression.py]]
+- regressors & hyperparameters -> [[https://www.github.com/dominikpegler/internship_ml/blob/main/regressors.py][regressors.py]]
+- data preprocessing -> [[https://www.github.com/dominikpegler/internship_ml/blob/main/get_data.py][get_data.py]]
+
+*** Compare with results of David's script [1/3]
+- [X] GB [[https://github.com/dominikpegler/internship_ml/blob/main/res_reg_GB_audit/results_dsteyrl.ipynb ][results]]
+- [ ] ET
+- [ ] EN
+
 ** TODO Writing the report
 DEADLINE: <2022-05-13 Fri> SCHEDULED: <2022-04-30 Sat>
 
@@ -67,18 +79,6 @@ Debugging script, compare results
 
 Write final results notebook. Download model for cv project and
 prepare it for the label task.
-
-** TODO Debugging script
-
-- [[https://www.github.com/dominikpegler/internship_ml/blob/main/results.ipynb][results]]
-- main script -> [[https://www.github.com/dominikpegler/internship_ml/blob/main/run_regression.py][run_regression.py]]
-- regressors & hyperparameters -> [[https://www.github.com/dominikpegler/internship_ml/blob/main/regressors.py][regressors.py]]
-- data preprocessing -> [[https://www.github.com/dominikpegler/internship_ml/blob/main/get_data.py][get_data.py]]
-
-*** Compare with results of David's script [1/3]
-- [X] GB [[https://github.com/dominikpegler/internship_ml/blob/main/res_reg_GB_audit/results_dsteyrl.ipynb ][results]]
-- [ ] ET
-- [ ] EN
 
 ** TODO Prepare pre-trained model for cv project (image captions)
 ** DONE Prepare data for computer vision project [4/4]
