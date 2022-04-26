@@ -1,4 +1,3 @@
-import numpy as np
 from sklearn.linear_model import ElasticNet
 from sklearn.ensemble import RandomForestRegressor
 from sklearn.ensemble import ExtraTreesRegressor
@@ -6,6 +5,7 @@ from lightgbm import LGBMRegressor
 from skopt.space import Real, Integer
 
 
+# hyperparameter spaces 
 max_features = Real(1e-2,1e0,prior="uniform")
 min_samples_split = Integer(2,256,prior="log-uniform")
 min_samples_leaf = Integer(1,256,prior="log-uniform")
@@ -17,17 +17,23 @@ n_estimators = 256
 
 def get_regressor(reg_type="ElasticNet"):
     """
-    scikit-learn regressors ready to use for bayesCV
+    Prepares scikit-learn regressor and hyperparameters ready to use
+    with bayes cross validation (scikit-optimize)
+
+    Parameters
+    ----------
+    reg_type : str
+        Type of Regressor to be used. One of the following:
+        {'ElasticNet',
+        'RandomForestRegressor',
+        'ExtraTreesRegressor',
+        'GradientBoostingRegressor',
+        'LGBMRegressor'} default='ElasticNet'
         
-        returns regressor model and dictionary for possible hyperparameter distributions
-    
-        Parameters
-        ----------
-        reg_type : {'ElasticNet',
-                    'RandomForestRegressor',
-                    'ExtraTreesRegressor',
-                    'GradientBoostingRegressor',
-                    'LGBMRegressor'} default='ElasticNet'
+    Returns
+    ---------
+    reg : model-object
+    hyper_space : dict
     
     """
     
@@ -87,4 +93,4 @@ def get_regressor(reg_type="ElasticNet"):
     else:
         raise Exception("No valid regressor defined!")
         
-    return reg,hyper_space
+    return reg, hyper_space

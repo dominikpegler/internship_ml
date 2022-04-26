@@ -1,6 +1,8 @@
 import shap
 import numpy as np
 
+# written by david steyrl
+
 def get_feature_importance(reg_type, model, X_test,max_samples_SHAP=99):
     """
     Parameters
