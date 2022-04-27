@@ -11,6 +11,9 @@ __pycache__/
 docs/*.tex
 docs/tmp/*
 scripts_david/
+*.svg
+*.pickle
+*.pkl
 
 
 # C extensions
