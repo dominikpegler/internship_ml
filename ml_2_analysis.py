@@ -1463,7 +1463,7 @@ def main():
     # if kind == clf: LR, ET, RF, GB -> classification
     # if kind == reg: EN, ET, RF, GB -> regression
     # if kind == reg_multi: EN, ET, RF -> multi target regression
-    predictor_name = 'ET'
+    predictor_name = 'EN'
     # Number of permutation importance repetitions. int (default: 10).
     n_rep_p_imp = 10
     # Limit number of SHAP importance samples. int (default: 100).

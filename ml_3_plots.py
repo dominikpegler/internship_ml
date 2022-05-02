@@ -708,7 +708,8 @@ def print_model_importance(task, m_imp, m_imp_sh, plots_path, class_label=-99):
             # Calculate the p-value
             _, _, _, c_pval = dep_two_sample_ttest(
                 m_imp_sort_df.iloc[:, i], m_imp_sh_sort_df.iloc[:, i],
-                task['tst_size_frac']/task['trn_size_frac'], 0.05)
+                task['test_size_frac']/(1-task['test_size_frac']), 0.05,
+                side='one')
         elif ('ET' in task['predictor_name'] or
               'RF' in task['predictor_name'] or
               'GB' in task['predictor_name']):
