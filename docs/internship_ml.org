@@ -73,9 +73,9 @@ prepare it for the label task.
 CLOSED: [2022-05-10 Tue 13:03]
 
 - [[https://www.github.com/dominikpegler/internship_ml/blob/main/results.ipynb][results]]
-- main script -> [[https://www.github.com/dominikpegler/internship_ml/blob/main/run_regression.py][run_regression.py]]
-- regressors & hyperparameters -> [[https://www.github.com/dominikpegler/internship_ml/blob/main/regressors.py][regressors.py]]
-- data preprocessing -> [[https://www.github.com/dominikpegler/internship_ml/blob/main/get_data.py][get_data.py]]
+- main script \to [[https://www.github.com/dominikpegler/internship_ml/blob/main/run_regression.py][run_regression.py]]
+- regressors & hyperparameters \to [[https://www.github.com/dominikpegler/internship_ml/blob/main/regressors.py][regressors.py]]
+- data preprocessing \to [[https://www.github.com/dominikpegler/internship_ml/blob/main/get_data.py][get_data.py]]
 
 *** Compare with results of David's script [3/3]
 - [X] GB [[https://github.com/dominikpegler/internship_ml/blob/main/res_reg_GB_audit/results_dsteyrl.ipynb ][results]]
