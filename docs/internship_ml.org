@@ -24,18 +24,6 @@ file:./img/mlicon2.png
 
 * Tasks
 
-** TODO Debugging script
-
-- [[https://www.github.com/dominikpegler/internship_ml/blob/main/results.ipynb][results]]
-- main script -> [[https://www.github.com/dominikpegler/internship_ml/blob/main/run_regression.py][run_regression.py]]
-- regressors & hyperparameters -> [[https://www.github.com/dominikpegler/internship_ml/blob/main/regressors.py][regressors.py]]
-- data preprocessing -> [[https://www.github.com/dominikpegler/internship_ml/blob/main/get_data.py][get_data.py]]
-
-*** Compare with results of David's script [1/3]
-- [X] GB [[https://github.com/dominikpegler/internship_ml/blob/main/res_reg_GB_audit/results_dsteyrl.ipynb ][results]]
-- [ ] ET
-- [ ] EN
-
 ** TODO Writing the report
 DEADLINE: <2022-05-13 Fri> SCHEDULED: <2022-04-30 Sat>
 
@@ -80,7 +68,20 @@ Debugging script, compare results
 Write final results notebook. Download model for cv project and
 prepare it for the label task.
 
-** TODO Prepare pre-trained model for cv project (image captions)
+** WAIT Prepare pre-trained model for cv project (image captions)
+** DONE Debugging script
+CLOSED: [2022-05-10 Tue 13:03]
+
+- [[https://www.github.com/dominikpegler/internship_ml/blob/main/results.ipynb][results]]
+- main script -> [[https://www.github.com/dominikpegler/internship_ml/blob/main/run_regression.py][run_regression.py]]
+- regressors & hyperparameters -> [[https://www.github.com/dominikpegler/internship_ml/blob/main/regressors.py][regressors.py]]
+- data preprocessing -> [[https://www.github.com/dominikpegler/internship_ml/blob/main/get_data.py][get_data.py]]
+
+*** Compare with results of David's script [1/3]
+- [X] GB [[https://github.com/dominikpegler/internship_ml/blob/main/res_reg_GB_audit/results_dsteyrl.ipynb ][results]]
+- [ ] ET
+- [ ] EN
+
 ** DONE Prepare data for computer vision project [4/4]
 
 - [X] Fetch photo ids
@@ -121,21 +122,27 @@ CLOSED: [2022-04-04 Mon 00:00] DEADLINE: <2022-04-07 Thu>
    
 * Meetings
 
-** TODO 5. Meeting with Steyrl-Group via Skype
-SCHEDULED: <2022-05-03 Tue 11:00>
+** DONE Conclusion meeting with David
+CLOSED: [2022-05-11 Wed 15:04] SCHEDULED: <2022-05-11 Wed 14:00>
+- finishing the internship
+- formal matters
+- computervision project
+- possible master thesis topics
+** DONE 5. Meeting with Steyrl-Group via Skype
+CLOSED: [2022-05-10 Tue 13:03] SCHEDULED: <2022-05-03 Tue 11:00>
 ** DONE 4. Meeting with Steyrl-Group via Skype
 CLOSED: [2022-04-26 Tue 17:16] SCHEDULED: <2022-04-26 Tue 11:00>
 
 discussing the latest results of david's gradient boost regressor on
 my data set.
 
-** DONE 4. Meeting with David
+** DONE Discussing feature importance II with David
 CLOSED: [2022-04-22 Fri 11:04] SCHEDULED: <2022-04-22 Fri 10:00>
 - feature importance
 - computervision project
 ** DONE 3. Meeting with Steyrl-Group via Skype
 CLOSED: [2022-04-05 Tue 23:58] SCHEDULED: <2022-04-05 Tue 11:00>
-** DONE 3. Meeting with David
+** DONE Discussing feature importance with David
 CLOSED: [2022-03-17 Thu 14:56] SCHEDULED: <2022-03-17 Thu 13:00>
 - feature importance
 - computervision project
@@ -144,7 +151,7 @@ CLOSED: [2022-03-15 Tue 11:50] SCHEDULED: <2022-03-15 Tue 11:00>
 :LOGBOOK:
 CLOCK: [2022-03-15 Tue 11:00]--[2022-03-15 Tue 11:55] =>  0:55
 :END:
-** DONE 2. Meeting with David
+** DONE Discussing Hyper parameters with David
 CLOSED: [2022-03-08 Tue 22:05] SCHEDULED: <2022-03-08 Tue 10:00>
 :LOGBOOK:
 CLOCK: [2022-03-08 Tue 10:00]--[2022-03-08 Tue 10:50] =>  0:50
@@ -159,7 +166,7 @@ CLOCK: [2022-03-08 Tue 10:00]--[2022-03-08 Tue 10:50] =>  0:50
     :END:
 - Introducing group and master thesis topics
 
-** DONE 1. Meeting with David via Zoom
+** DONE Intro talk with David
     CLOSED: [2022-02-28 Mon 10:55] SCHEDULED: <2022-02-28 Mon 10:00>
     :LOGBOOK:
     CLOCK: [2022-02-28 Mon 10:00]--[2022-02-28 Mon 10:55] =>  0:55
