@@ -77,10 +77,10 @@ CLOSED: [2022-05-10 Tue 13:03]
 - regressors & hyperparameters -> [[https://www.github.com/dominikpegler/internship_ml/blob/main/regressors.py][regressors.py]]
 - data preprocessing -> [[https://www.github.com/dominikpegler/internship_ml/blob/main/get_data.py][get_data.py]]
 
-*** Compare with results of David's script [1/3]
+*** Compare with results of David's script [3/3]
 - [X] GB [[https://github.com/dominikpegler/internship_ml/blob/main/res_reg_GB_audit/results_dsteyrl.ipynb ][results]]
-- [ ] ET
-- [ ] EN
+- [X] ET [[https://github.com/dominikpegler/internship_ml/blob/main/res_reg_ET_audit/results_dsteyrl.ipynb ][results]]
+- [X] EN [[https://github.com/dominikpegler/internship_ml/blob/main/res_reg_EN_audit/results_dsteyrl.ipynb ][results]]
 
 ** DONE Prepare data for computer vision project [4/4]
 
