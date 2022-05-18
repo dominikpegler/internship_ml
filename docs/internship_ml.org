@@ -24,8 +24,9 @@ file:./img/mlicon2.png
 
 * Tasks
 
-** TODO Writing the report
-DEADLINE: <2022-05-13 Fri> SCHEDULED: <2022-04-30 Sat>
+** WAIT Prepare pre-trained model for cv project (image captions)
+** DONE Writing the report
+CLOSED: [2022-05-13 Fri 21:30] DEADLINE: <2022-05-13 Fri> SCHEDULED: <2022-04-30 Sat>
 
 Here a brief overview of what was going on each week ...
 
@@ -68,7 +69,6 @@ Debugging script, compare results
 Write final results notebook. Download model for cv project and
 prepare it for the label task.
 
-** WAIT Prepare pre-trained model for cv project (image captions)
 ** DONE Debugging script
 CLOSED: [2022-05-10 Tue 13:03]
 
